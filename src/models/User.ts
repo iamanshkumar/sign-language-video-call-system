@@ -1,43 +1,31 @@
-import mongoose, { mongo } from "mongoose";
-import { unique } from "next/dist/build/utils";
+import mongoose, { type Document, type Model } from "mongoose";
 
-export type UserRole = 'disabled' | 'normal';
+export type UserRole = "disabled" | "normal";
 
-export interface IUser extends mongoose.Document{
-    name : string;
-    email : string;
-    password : string;
-    role : UserRole;
-    createdAt : Date
+export interface IUser extends Document {
+  name: string;
+  email: string;
+  password: string;
+  role: UserRole;
+  createdAt: Date;
 }
 
-const UserSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Name is required"],
-    trim: true,
+const UserSchema = new mongoose.Schema<IUser>(
+  {
+    name: { type: String, required: true, trim: true, minlength: 2, maxlength: 80 },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
+      maxlength: 254,
+    },
+    password: { type: String, required: true, minlength: 8, select: false },
+    role: { type: String, enum: ["disabled", "normal"], default: "normal", required: true },
   },
-  email: {
-    type: String,
-    requird: [true, "Email is required"],
-    unique: true,
-    lowercase: true,
-    trim: true,
-  },
-  password: {
-    type: String,
-    required: [true, "Password is required"],
-    minlength: [6, "Password must be at least 6 characters long"],
-  },
-  role: {
-    type: String,
-    enum: ["disabled", "normal"],
-    required: [true, 'Role must be specified as either "disabled" or "normal"'],
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  { timestamps: { createdAt: true, updatedAt: false } },
+);
 
-export const User = mongoose.models.User || mongoose.model("User", UserSchema);
+export const User = (mongoose.models.User as Model<IUser> | undefined) ??
+  mongoose.model<IUser>("User", UserSchema);

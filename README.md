@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Signcall
 
-## Getting Started
+Signcall is a Next.js video calling starter that uses browser-native WebRTC for peer-to-peer media and MongoDB for room presence and signaling. It does not use Agora or another managed media provider.
 
-First, run the development server:
+## Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Create `.env.local` in the project root:
+
+```dotenv
+MONGODB_URI=mongodb://localhost:27017/sign-language
+SESSION_SECRET=replace_with_at_least_32_random_characters
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start MongoDB, then run:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open `http://localhost:3000`, sign in or create an account, then select **Create a room**. Share the invite link; the other participant can paste it into the **Room ID or invite link** field or open it directly.
 
-## Learn More
+Camera and microphone access requires localhost or HTTPS and browser permission. WebRTC media is sent peer-to-peer. Signaling messages and room presence are stored temporarily in MongoDB and removed using TTL indexes. A public STUN server helps peers discover direct routes, but some networks block direct peer connections. For reliable connectivity across restrictive NATs/firewalls, configure a TURN relay such as a self-hosted coturn server and add it to the `RTCPeerConnection` ICE server list.
 
-To learn more about Next.js, take a look at the following resources:
+## API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `POST /api/auth/register` creates a normal account; role is assigned on the server.
+- `POST /api/auth/login` verifies credentials and sets a signed, HTTP-only session cookie.
+- `GET /api/auth/me` returns the current account when a valid session is present.
+- `POST /api/auth/logout` clears the session cookie.
+- `GET`, `POST`, and `DELETE /api/signaling/[roomId]` heartbeat room presence, exchange WebRTC offer/answer/ICE messages, and leave a room.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Room URLs are unlisted links, not access-controlled invitations. The initial signaling endpoint does not require a signed-in session, and this prototype supports one-to-one calls. Add server-verified room membership and rate limits before using it as a private production service.

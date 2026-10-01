@@ -1,60 +1,37 @@
+import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 import { dbConnect } from "@/lib/dbConnect";
 import { User } from "@/models/User";
-import bcrypt from "bcryptjs";
 
 export async function POST(request: Request) {
   try {
+    const body = await request.json();
+    const name = typeof body.name === "string" ? body.name.trim() : "";
+    const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+    const password = typeof body.password === "string" ? body.password : "";
+
+    if (name.length < 2 || name.length > 80 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json({ error: "Enter a valid name and email address." }, { status: 400 });
+    }
+    if (password.length < 8 || password.length > 72) {
+      return NextResponse.json({ error: "Password must be between 8 and 72 characters." }, { status: 400 });
+    }
+
     await dbConnect();
-    const { name, email, password, role } = await request.json();
-    if (!name || !email || !password || !role) {
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 },
-      );
-    }
+    const existingUser = await User.findOne({ email }).select("_id").lean();
+    if (existingUser) return NextResponse.json({ error: "Email already registered." }, { status: 409 });
 
-    if (role !== "disabled" && role !== "normal") {
-      return NextResponse.json(
-        { error: "Invalid role assignment" },
-        { status: 400 },
-      );
-    }
-
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return NextResponse.json(
-        { error: "Email already registered" },
-        { status: 400 },
-      );
-    }
-
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-
-    const newUser = await User.create({
-      name,
-      email,
-      password: hashedPassword,
-      role,
-    });
-
+    const user = await User.create({ name, email, password: await bcrypt.hash(password, 12) });
     return NextResponse.json(
-      {
-        message: "User registered successfully",
-        user: {
-          id: newUser._id,
-          name: newUser.name,
-          email: newUser.email,
-          role: newUser.role,
-        },
-      },
+      { message: "Account created. You can now sign in.", user: { id: user.id, name: user.name, email: user.email, role: user.role } },
       { status: 201 },
     );
-  } catch (error: any) {
-    return NextResponse.json(
-      { error: error.message || "Internal Server Error" },
-      { status: 500 },
-    );
+  } catch (error) {
+    if (error instanceof SyntaxError) return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    if (error && typeof error === "object" && "code" in error && error.code === 11000) {
+      return NextResponse.json({ error: "Email already registered." }, { status: 409 });
+    }
+    console.error("Registration failed", error);
+    return NextResponse.json({ error: "Unable to create your account right now." }, { status: 500 });
   }
 }
