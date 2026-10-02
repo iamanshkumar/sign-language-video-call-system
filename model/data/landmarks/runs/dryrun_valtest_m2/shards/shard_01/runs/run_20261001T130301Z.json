@@ -1,0 +1,8 @@
+{
+  "started_utc": "2026-10-01T13:03:01+00:00",
+  "videos_attempted": 0,
+  "wall_s": 0.006950667011551559,
+  "workers": 1,
+  "download_workers": 8,
+  "batch_size": 50
+}

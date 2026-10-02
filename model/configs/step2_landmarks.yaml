@@ -1,0 +1,55 @@
+# Step 2: MediaPipe Holistic landmark extraction (Phase A: benchmark only).
+mediapipe:
+  version: "0.10.21"            # mediapipe 1.0.1 aborts on this Mac (Metal service unavailable)
+  model_complexity: 1
+  refine_face_landmarks: false  # 468 face landmarks
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+
+preprocessing:
+  target_fps: 30
+  max_interp_gap: 5             # interior gaps <= 5 frames (at 30 FPS) are linearly interpolated
+  shoulder_visibility_min: 0.5  # both shoulders need this pose visibility to define the body frame
+
+rejection:
+  # Methodology v2: hand rules are evaluated only inside the active signing interval
+  # (first -> last meaningful hand detection); resting frames outside it are not "missing".
+  min_decoded_frames: 30              # whole clip (decoded frames)
+  active_interval_min_hand_run: 3     # a meaningful hand detection = >= 3 consecutive frames with a hand
+  max_both_hands_missing_frac: 0.30   # inside the active interval
+  max_both_hands_missing_run: 15      # inside the active interval
+  short_active_interval_frames: 30    # FLAG only (metadata `short_active_interval`), NOT a rejection rule
+
+# Feature configurations are selections of the single stored Holistic output.
+configurations:
+  hands: [left_hand, right_hand]
+  hands_pose: [left_hand, right_hand, pose]
+  hands_pose_face: [left_hand, right_hand, pose, face]
+
+benchmark:
+  seed: 42
+  n_videos: 500
+  split: train
+  quotas:                        # guaranteed coverage; the rest is stratified by decoded frame count
+    short_clips: 10              # < 30 decoded frames (known from the Step 1 EDA sample)
+    non_default_resolution: 15   # not 640x480
+    augmented: 15                # *_aug_N files
+    duplicate_groups: 25         # members of multi-file SHA-256 groups
+  workers: 1                     # M2 is for development only (thermal limits); override on a cloud machine
+  download_workers: 8
+  batch_size: 50
+  out_dir: data/landmarks/benchmark
+
+output:
+  format_version: 2
+  # Mixed precision (approved): float16 where validated, pose in float32. Pure float16 failed the
+  # pre-registered criteria (reports/step2/methodology_v2_report.md). flags are uint8 bit fields.
+  coord_dtype:
+    pose: float32                 # pose coordinates AND pose visibility
+    face: float16
+    left_hand: float16
+    right_hand: float16
+  compress: false                 # np.savez vs np.savez_compressed (measured in the same report)
+  groups_to_store: [pose, face, left_hand, right_hand]
+  keep_arrays_for_hand_rejections: false
+  max_videos_without_approval: 1000   # s2_02 refuses larger runs unless --approved-large-run is given

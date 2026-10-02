@@ -1,0 +1,147 @@
+{
+  "version": "v1",
+  "file": "split_v1.csv",
+  "sha256": "fd3b88f73496659a6d51b9f967edbdc3d1e37cfd85c14aae72b7e8494fba3d9d",
+  "class_counts_file": "split_v1_class_counts.csv",
+  "class_counts_sha256": "9141eb7c8a6a323acae10d147dd4ca6dc7cff698e40c45764f2154523ff7f9cd",
+  "per_split_files": {
+    "train": {
+      "file": "split_v1_train.csv",
+      "sha256": "60177c2b0f6e4e794c782e6541ef0296c14eb5675ef390f6002fd2df4992ff82"
+    },
+    "val": {
+      "file": "split_v1_val.csv",
+      "sha256": "84e3680bd181435f7fa8474439db745f577af33923cb97113eb9994d08497e0b"
+    },
+    "test": {
+      "file": "split_v1_test.csv",
+      "sha256": "83db66dc8c91d483b1b70ddf481606c20a134bdae7a511ba6870cfd2c77d0ed3"
+    }
+  },
+  "created_utc": "2026-09-28T17:54:18+00:00",
+  "n_samples": 108616,
+  "n_classes": 2207,
+  "counts": {
+    "train": 75993,
+    "val": 16272,
+    "test": 16351
+  },
+  "fractions": {
+    "train": 0.699648,
+    "val": 0.149812,
+    "test": 0.15054
+  },
+  "classes_per_split": {
+    "train": 2207,
+    "val": 2207,
+    "test": 2207
+  },
+  "duplicate_groups": {
+    "unit_definition": "SHA-256 of file content (from HF LFS metadata, verified on download)",
+    "n_content_units": 102808,
+    "n_multi_file_groups": 3410,
+    "n_files_in_multi_file_groups": 9218,
+    "n_cross_label_groups": 2810,
+    "multi_file_groups_per_split": {
+      "train": 2220,
+      "val": 633,
+      "test": 557
+    }
+  },
+  "split_groups": {
+    "unit_definition": "union of SHA-256 groups and augmentation families (source + *_aug_N copies)",
+    "n_units": 102068,
+    "n_multi_file_units": 3418,
+    "largest_unit_files": 22,
+    "augmented_files": 1025,
+    "units_per_split": {
+      "train": 71670,
+      "val": 15111,
+      "test": 15287
+    }
+  },
+  "seed": 42,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "stratified_by": "word",
+  "grouping": "indivisible split unit = SHA-256 duplicate group joined (transitively) with augmentation families: <source>.mp4 and every <source>_<word>_aug_<n>.mp4 (asl.data.groups)",
+  "grouping_decision": "augmentation families grouped with their source by user decision, 2026-09-28",
+  "algorithm": "asl.data.split.assign_splits: group-aware greedy stratification by word",
+  "classes_infeasible_for_all_splits": [],
+  "dataset_repo": "akasheroor/American-Sign-Language-Dataset",
+  "dataset_revision": "e7979505c0dff7072ef36d45b3cddfffb50ba871",
+  "source": "complete metadata manifest (eligible_pre_probe)",
+  "manifest_excluded_by_issue": {
+    "file_missing_in_repo": 1,
+    "duplicate_csv_row": 1
+  },
+  "manifest_sha256": "9b815828e7df4cd4f411b5aa5ee3580e47130da1f0a3670e0e84cb53b924e883",
+  "known_bad_videos_from_sample_probe": [
+    "part_1/03433722050776988-TIRED OF.mp4",
+    "part_1/062188296039833-LET ME_SEE.mp4",
+    "part_1/11842735888140044-ANY.mp4",
+    "part_1/12668711408656264-LAPTOP.mp4",
+    "part_1/130187777265373-HARD OF_HEARING.mp4",
+    "part_1/15653902435798894-FASCINATED.mp4",
+    "part_10/place_video_23.mp4",
+    "part_10/problem_20241119_172651_18.mp4",
+    "part_10/register_video_6.mp4",
+    "part_10/ruin_video_2.mp4",
+    "part_10/seven_5.mp4",
+    "part_10/skirt_video_18.mp4",
+    "part_10/spaghetti_video_1.mp4",
+    "part_11/vanish.mp4",
+    "part_11/vomit_7.mp4",
+    "part_11/want_20241119_172657_6.mp4",
+    "part_11/whistle_20241119_172658_31.mp4",
+    "part_11/why_video_7.mp4",
+    "part_2/18207981361044623-UP.mp4",
+    "part_2/24918317051208416-SEE SEE.mp4",
+    "part_2/2700670818989992-COCONUT.mp4",
+    "part_2/3015034607163163-DORMITORY.mp4",
+    "part_2/35359931273860434-ARIZONA.mp4",
+    "part_3/3971637067514109-SUSPECT.mp4",
+    "part_4/5646306760457318-BLUE.mp4",
+    "part_4/5719477017744072-SSHH.mp4",
+    "part_4/5736958277048834-NEXT.mp4",
+    "part_4/6262923592222667-TRY.mp4",
+    "part_4/6610582264477418-SKILL.mp4",
+    "part_5/7634160961141707-COME.mp4",
+    "part_5/7964077639125973-WILL GO.mp4",
+    "part_5/8227831990208962-5 DOLLARS.mp4",
+    "part_5/8825809251775667-BUS.mp4",
+    "part_6/9061752761485327-CURIOUS.mp4",
+    "part_6/9260383471979989-SHRIMP.mp4",
+    "part_6/929892595638057-PUZZLED.mp4",
+    "part_6/9376363226153179-GRENADE.mp4",
+    "part_6/adopt_6.mp4",
+    "part_6/back_video_8.mp4",
+    "part_6/backup_video_6.mp4",
+    "part_7/before_26.mp4",
+    "part_7/break_video_3.mp4",
+    "part_7/cake_video_10.mp4",
+    "part_7/comb_20241119_172637_42.mp4",
+    "part_7/contact_video_4.mp4",
+    "part_7/continue_video_6.mp4",
+    "part_7/cool_20241119_172638_46.mp4",
+    "part_7/cut_2.mp4",
+    "part_7/decide_20241119_172639_11.mp4",
+    "part_8/farm_5.mp4",
+    "part_8/fired_video_4.mp4",
+    "part_8/floor_11.mp4",
+    "part_8/function_5.mp4",
+    "part_8/g_2_g_aug_38.mp4",
+    "part_8/go_video_30.mp4",
+    "part_9/lettuce_20241119_172646_67.mp4",
+    "part_9/line_video_37.mp4",
+    "part_9/match_video_8.mp4",
+    "part_9/more_5.mp4",
+    "part_9/my_8.mp4",
+    "part_9/one_8.mp4",
+    "part_9/out_6.mp4"
+  ],
+  "note": "Video-level and landmark rejections (Step 2+) are recorded as flags; they never change this split."
+}

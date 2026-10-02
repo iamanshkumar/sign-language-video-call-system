@@ -1,0 +1,379 @@
+{
+  "full_metadata": {
+    "manifest": {
+      "revision": "e7979505c0dff7072ef36d45b3cddfffb50ba871",
+      "csv_rows": 108618,
+      "csv_unique_words": 2207,
+      "repo_video_files": 108616,
+      "repo_files_per_folder": {
+        "part_1": 10000,
+        "part_10": 10000,
+        "part_11": 8616,
+        "part_2": 10000,
+        "part_3": 10000,
+        "part_4": 10000,
+        "part_5": 10000,
+        "part_6": 10000,
+        "part_7": 10000,
+        "part_8": 10000,
+        "part_9": 10000
+      },
+      "repo_total_bytes": 54293681516,
+      "repo_extensions": {
+        "mp4": 108616
+      },
+      "repo_files_missing_sha256": 0,
+      "issues": {
+        "file_missing_in_repo": 1,
+        "duplicate_csv_row": 1
+      },
+      "issue_rows": [
+        {
+          "csv_row": 13,
+          "word": "b",
+          "filename": "b_8.mp4",
+          "issue": "file_missing_in_repo"
+        },
+        {
+          "csv_row": 82,
+          "word": "h",
+          "filename": "h_5.mp4",
+          "issue": "duplicate_csv_row"
+        }
+      ],
+      "eligible_pre_probe_samples": 108616,
+      "eligible_pre_probe_classes": 2207,
+      "duplicate_content": {
+        "groups": 3410,
+        "files_in_groups": 9218,
+        "redundant_copies": 5808,
+        "cross_label_groups": 2810,
+        "files_in_cross_label_groups": 7940
+      },
+      "source_proxy_counts": {
+        "numericid-WORD": 55751,
+        "word_timestamp_n": 25669,
+        "word_video_n": 16961,
+        "word_n": 9172,
+        "word_only": 1062,
+        "other": 1
+      },
+      "label_anomaly_counts": {
+        "classifier_suffix": 1,
+        "concatenation_of_labels": 159,
+        "contains_digit": 5,
+        "long_unseparated": 13,
+        "near_duplicate_label": 2,
+        "repeated_word": 6,
+        "uppercase": 1
+      }
+    },
+    "files": 108616,
+    "classes": 2207,
+    "class_counts": {
+      "count": 2207,
+      "mean": 49.21431807884005,
+      "std": 19.10895452506806,
+      "min": 31.0,
+      "p01": 31.0,
+      "p05": 31.0,
+      "p25": 37.0,
+      "median": 44.0,
+      "p75": 53.0,
+      "p95": 87.0,
+      "p99": 127.88000000000011,
+      "max": 160.0
+    },
+    "imbalance_ratio_max_min": 5.161290322580645,
+    "file_size_bytes": {
+      "count": 108616,
+      "mean": 499868.17334462696,
+      "std": 278192.0043448943,
+      "min": 258.0,
+      "p01": 45249.65,
+      "p05": 130916.25,
+      "p25": 323018.5,
+      "median": 470163.5,
+      "p75": 623849.0,
+      "p95": 1026480.75,
+      "p99": 1370704.6500000006,
+      "max": 4597877.0
+    },
+    "files_under_10kb": 63,
+    "metadata_checks": {
+      "csv_rows_with_empty_word_or_filename": 0,
+      "repo_files_missing_sha256": 0,
+      "csv_duplicate_filenames": 1,
+      "duplicate_repo_paths_among_eligible": 0,
+      "filenames_in_multiple_folders": 0,
+      "repo_files_not_in_csv": 0,
+      "files_listed_under_conflicting_labels": 0
+    },
+    "content_overlap": {
+      "classes_sharing_any_video_with_another_class": 968,
+      "classes_with_>=50pct_shared": 56,
+      "classes_with_100pct_shared": 24,
+      "label_pairs_sharing_videos": 1415
+    },
+    "source_proxy": {
+      "numericid-WORD": 55751,
+      "word_timestamp_n": 25669,
+      "word_video_n": 16961,
+      "word_n": 9172,
+      "word_only": 1062,
+      "other": 1
+    },
+    "augmented_files": {
+      "files": 1025,
+      "classes": 26,
+      "classes_list": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z"
+      ],
+      "source_file_identifiable": 1021,
+      "share_of_files_in_those_classes": 0.7958074534161491
+    }
+  },
+  "sample": {
+    "selection": {
+      "seed": 42,
+      "per_class": 2,
+      "target_total": 5000,
+      "pool_files": 108616,
+      "sampled_files": 5000,
+      "classes_in_pool": 2207,
+      "classes_sampled": 2207,
+      "samples_per_class_counts": {
+        "2": 1621,
+        "3": 586
+      },
+      "selection_counts": {
+        "base": 1621,
+        "extra_smallest_class": 293,
+        "extra_largest_class": 293
+      },
+      "sampled_in_duplicate_groups": 371,
+      "sampled_in_cross_label_groups": 319,
+      "sampled_distinct_sha256": 4974,
+      "source_proxy_sample": {
+        "numericid-WORD": 3021,
+        "word_timestamp_n": 840,
+        "word_video_n": 721,
+        "word_n": 377,
+        "word_only": 41
+      },
+      "source_proxy_pool": {
+        "numericid-WORD": 55751,
+        "word_timestamp_n": 25669,
+        "word_video_n": 16961,
+        "word_n": 9172,
+        "word_only": 1062,
+        "other": 1
+      }
+    },
+    "sampled": 5000,
+    "classes_represented": 2207,
+    "unprobed": 0,
+    "download_failed_after_retries": 0,
+    "downloaded": 5000,
+    "sha256_mismatch": 0,
+    "decode_ok": 5000,
+    "decode_failed": 0,
+    "probe_origin": {
+      "sample_probe": 4208,
+      "legacy_full_probe": 792
+    },
+    "rejections_step1_rules": {
+      "fewer_than_min_decoded_frames": 62
+    },
+    "avg_fps": {
+      "count": 5000,
+      "mean": 29.318205360845216,
+      "std": 3.0552340042040926,
+      "min": 13.333333333333334,
+      "p01": 15.003484297696943,
+      "p05": 23.976,
+      "p25": 29.96893312401112,
+      "median": 29.992684711046085,
+      "p75": 30.0,
+      "p95": 30.513050000000003,
+      "p99": 31.03601,
+      "max": 120.0
+    },
+    "decoded_fps": {
+      "count": 5000,
+      "mean": 29.317707933796232,
+      "std": 3.0555319793394276,
+      "min": 13.333333333333332,
+      "p01": 14.997314604571416,
+      "p05": 23.976,
+      "p25": 29.967891544773458,
+      "median": 29.99210734017364,
+      "p75": 30.000000000000004,
+      "p95": 30.513050000000003,
+      "p99": 31.036009999999997,
+      "max": 120.0
+    },
+    "fps_rounded_counts": {
+      "13": 3,
+      "15": 84,
+      "16": 4,
+      "17": 10,
+      "21": 1,
+      "23": 2,
+      "24": 221,
+      "25": 184,
+      "26": 9,
+      "27": 15,
+      "28": 20,
+      "29": 38,
+      "30": 4141,
+      "31": 258,
+      "33": 1,
+      "42": 1,
+      "47": 1,
+      "50": 1,
+      "60": 5,
+      "120": 1
+    },
+    "invalid_container_fps": 0,
+    "invalid_timestamp_fps": 0,
+    "needs_upsampling_fps_below_29.5": {
+      "count": 591,
+      "sample_pct": 11.82,
+      "weighted_est_pct": 12.290853404041147
+    },
+    "needs_downsampling_fps_above_30.5": {
+      "count": 268,
+      "sample_pct": 5.36,
+      "weighted_est_pct": 5.206875598438536
+    },
+    "fps_within_0.5_of_30": 4141,
+    "variable_frame_rate_suspected": 0,
+    "duration_s": {
+      "count": 5000,
+      "mean": 2.877985741816981,
+      "std": 1.468830688362904,
+      "min": 0.06400136536246107,
+      "p01": 1.0677344010677345,
+      "p05": 1.3680347013680345,
+      "p25": 1.9724310344827587,
+      "median": 2.6,
+      "p75": 3.2663298969072168,
+      "p95": 5.539822424242426,
+      "p99": 8.067001964038742,
+      "max": 22.627445760681486
+    },
+    "decoded_frames": {
+      "count": 5000,
+      "mean": 84.513,
+      "std": 44.783578963599574,
+      "min": 3.0,
+      "p01": 29.0,
+      "p05": 39.0,
+      "p25": 57.0,
+      "median": 75.0,
+      "p75": 97.0,
+      "p95": 166.0,
+      "p99": 244.03000000000065,
+      "max": 680.0
+    },
+    "frames_at_30fps": {
+      "count": 5000,
+      "mean": 86.0524,
+      "std": 44.033276509113264,
+      "min": 1.0,
+      "p01": 32.0,
+      "p05": 41.0,
+      "p25": 59.0,
+      "median": 78.0,
+      "p75": 97.0,
+      "p95": 166.0,
+      "p99": 241.03000000000065,
+      "max": 678.0
+    },
+    "decoded_frames_below": {
+      "30": {
+        "count": 62,
+        "sample_pct": 1.24,
+        "weighted_est_pct": 1.3068976946306254
+      },
+      "45": {
+        "count": 464,
+        "sample_pct": 9.28,
+        "weighted_est_pct": 9.51885541724976
+      },
+      "60": {
+        "count": 1374,
+        "sample_pct": 27.48,
+        "weighted_est_pct": 27.71476271144828
+      }
+    },
+    "frames_at_30fps_below": {
+      "30": {
+        "count": 28,
+        "sample_pct": 0.5599999999999999,
+        "weighted_est_pct": 0.5642201271758611
+      },
+      "45": {
+        "count": 370,
+        "sample_pct": 7.3999999999999995,
+        "weighted_est_pct": 7.668145883970441
+      },
+      "60": {
+        "count": 1261,
+        "sample_pct": 25.22,
+        "weighted_est_pct": 25.35047015786501
+      }
+    },
+    "reported_vs_decoded_frame_mismatch": 62,
+    "resolution_counts": {
+      "640x480": 4898,
+      "288x192": 79,
+      "512x384": 16,
+      "480x640": 4,
+      "192x288": 3
+    },
+    "n_resolutions": 5,
+    "codec_counts": {
+      "h264": 3779,
+      "mpeg4": 1221
+    },
+    "pix_fmt_counts": {
+      "yuv420p": 5000
+    },
+    "container_counts": {
+      "mov,mp4,m4a,3gp,3g2,mj2": 5000
+    },
+    "has_audio": 3501,
+    "rotation_metadata": 0,
+    "multi_video_stream": 0,
+    "decode_error_types": {},
+    "in_duplicate_groups": 371,
+    "in_cross_label_groups": 319
+  }
+}

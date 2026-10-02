@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "check": "split file checksum matches lock",
+      "passed": true,
+      "detail": "verified on load"
+    },
+    {
+      "check": "class-count file checksum matches lock",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "unique sample_id",
+      "passed": true,
+      "detail": "0 duplicated ids"
+    },
+    {
+      "check": "each video file in exactly one split",
+      "passed": true,
+      "detail": "0 paths repeated"
+    },
+    {
+      "check": "split values valid",
+      "passed": true,
+      "detail": "values: ['test', 'train', 'val']"
+    },
+    {
+      "check": "no identical content (SHA-256) across splits",
+      "passed": true,
+      "detail": "0 hashes span >1 split"
+    },
+    {
+      "check": "no split group (duplicates + augmentation family) across splits",
+      "passed": true,
+      "detail": "0 groups span >1 split"
+    },
+    {
+      "check": "only eligible samples in split",
+      "passed": true,
+      "detail": "0 ineligible samples present"
+    },
+    {
+      "check": "all eligible samples assigned",
+      "passed": true,
+      "detail": "0 eligible samples missing"
+    },
+    {
+      "check": "every expected class present in train",
+      "passed": true,
+      "detail": "2207/2207 expected classes"
+    },
+    {
+      "check": "every expected class present in val",
+      "passed": true,
+      "detail": "2207/2207 expected classes"
+    },
+    {
+      "check": "every expected class present in test",
+      "passed": true,
+      "detail": "2207/2207 expected classes"
+    },
+    {
+      "check": "train ratio ~ 0.70",
+      "passed": true,
+      "detail": "0.6996"
+    },
+    {
+      "check": "val ratio ~ 0.15",
+      "passed": true,
+      "detail": "0.1498"
+    },
+    {
+      "check": "test ratio ~ 0.15",
+      "passed": true,
+      "detail": "0.1505"
+    },
+    {
+      "check": "class-count file matches split",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "train file checksum matches lock and equals train rows of split",
+      "passed": true,
+      "detail": "split_v1_train.csv"
+    },
+    {
+      "check": "val file checksum matches lock and equals val rows of split",
+      "passed": true,
+      "detail": "split_v1_val.csv"
+    },
+    {
+      "check": "test file checksum matches lock and equals test rows of split",
+      "passed": true,
+      "detail": "split_v1_test.csv"
+    },
+    {
+      "check": "no path assigned to multiple splits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "split groups identical to recomputed grouping",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "lock records dataset revision and seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "deterministic regeneration matches frozen split",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "labels identical to manifest",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "all_passed": true,
+  "counts": {
+    "train": 75993,
+    "val": 16272,
+    "test": 16351
+  },
+  "fractions": {
+    "train": 0.6996,
+    "val": 0.1498,
+    "test": 0.1505
+  },
+  "classes": 2207,
+  "classes_per_split": {
+    "train": 2207,
+    "val": 2207,
+    "test": 2207
+  },
+  "classes_expected_in_all_splits": 2207,
+  "classes_infeasible_for_all_splits": [],
+  "per_class_min_samples": {
+    "train": 22,
+    "val": 4,
+    "test": 4
+  },
+  "per_class_median_samples": {
+    "train": 31.0,
+    "val": 7.0,
+    "test": 7.0
+  },
+  "per_class_train_fraction_range": [
+    0.52,
+    0.7142857142857143
+  ],
+  "source_proxy_by_split": {
+    "numericid-WORD": {
+      "train": 39272,
+      "val": 8175,
+      "test": 8304
+    },
+    "other": {
+      "train": 1,
+      "val": 0,
+      "test": 0
+    },
+    "word_n": {
+      "train": 6349,
+      "val": 1452,
+      "test": 1371
+    },
+    "word_only": {
+      "train": 709,
+      "val": 170,
+      "test": 183
+    },
+    "word_timestamp_n": {
+      "train": 17957,
+      "val": 3851,
+      "test": 3861
+    },
+    "word_video_n": {
+      "train": 11705,
+      "val": 2624,
+      "test": 2632
+    }
+  },
+  "limitation": "No signer IDs: the split is not signer-independent."
+}

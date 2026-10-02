@@ -1,0 +1,115 @@
+{
+  "experiment_id": "hands_w30_lstm",
+  "store": "benchmark_v2_mixed",
+  "model": "lstm",
+  "feature_config": "hands",
+  "groups": [
+    "left_hand",
+    "right_hand"
+  ],
+  "window_size": 30,
+  "feature_dim": 128,
+  "seed": 42,
+  "samples": {
+    "train": 374,
+    "val": 0,
+    "test": 0
+  },
+  "train_classes": 357,
+  "vocabulary_size": 2207,
+  "label_mapping_sha256": "4b231655606bcb69d4968b463e7cc355f2383bdb4c57e1b73db233535651be1f",
+  "environment": {
+    "python": "3.12.13",
+    "torch": "2.14.1",
+    "numpy": "1.26.4",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "device": "cpu",
+    "cpu_threads": 4
+  },
+  "started_utc": "2026-10-01T12:51:18+00:00",
+  "notes": "BENCHMARK PIPELINE CHECK: train-split-only store (no val/test videos extracted); no model selection; train-fit metrics are NOT generalization",
+  "train_seconds": 14.546300916932523,
+  "neural_config": {
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.3,
+    "optimizer": "adamw",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "loss": "cross_entropy",
+    "batch_size": 64,
+    "fallback_batch_size": 32,
+    "max_epochs": 50,
+    "early_stopping_patience": 7,
+    "scheduler": {
+      "name": "reduce_lr_on_plateau",
+      "monitor": "val_macro_f1",
+      "mode": "max",
+      "factor": 0.5,
+      "patience": 3
+    },
+    "selection_metric": "val_macro_f1"
+  },
+  "batch_size_used": 64,
+  "params": 548895,
+  "epochs": 50,
+  "best_epoch": null,
+  "best_val_macro_f1": null,
+  "stopped_early": false,
+  "checkpoint": "final.pt",
+  "selection": "none (no validation data; final epoch saved)",
+  "checkpoint_epoch": 50,
+  "max_epochs_used": 50,
+  "latency": [
+    {
+      "batch_size": 1,
+      "runs": 200,
+      "mean_ms": 0.7429282536031678,
+      "median_ms": 0.741041440051049,
+      "p95_ms": 0.7587642408907413,
+      "throughput_samples_per_s": 1346.0249965592855,
+      "device": "cpu",
+      "warmup": 20,
+      "timing": "model forward only"
+    },
+    {
+      "batch_size": 64,
+      "runs": 200,
+      "mean_ms": 10.009052698151208,
+      "median_ms": 8.77181242685765,
+      "p95_ms": 13.207612856058399,
+      "throughput_samples_per_s": 6394.211513325488,
+      "device": "cpu",
+      "warmup": 20,
+      "timing": "model forward only"
+    },
+    {
+      "batch_size": 1,
+      "runs": 50,
+      "mean_ms": 1.286882539279759,
+      "median_ms": 1.242395956069231,
+      "p95_ms": 1.4517121890094131,
+      "throughput_samples_per_s": 777.0716980585337,
+      "warmup": 5,
+      "timing": "end-to-end per sample: load .npz + resample + assemble + model (no MediaPipe)"
+    }
+  ],
+  "evaluations": {
+    "train_fit": {
+      "samples": 374,
+      "accuracy": 0.1711229946524064,
+      "macro_f1": 0.11647413007160401,
+      "weighted_f1": 0.11501838819042796,
+      "classes_in_y_true": 357
+    }
+  },
+  "finished_utc": "2026-10-01T12:51:36+00:00",
+  "resources": {
+    "peak_rss_mb": 542.734375,
+    "mean_rss_mb": 533.7582720588235,
+    "mean_cpu_pct": 33.71176470588235,
+    "peak_cpu_pct": 78.5,
+    "logical_cpus": 8
+  }
+}

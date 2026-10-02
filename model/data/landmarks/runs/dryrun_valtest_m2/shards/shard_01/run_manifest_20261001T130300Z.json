@@ -1,0 +1,31 @@
+{
+  "run_name": "dryrun_valtest_m2",
+  "shard": 1,
+  "parity": false,
+  "videos": 6,
+  "workers": 1,
+  "hf_token_used": false,
+  "host": {
+    "python": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "cpus": 8,
+    "hostname_hash": "07539ad3198f"
+  },
+  "fingerprint_matches_plan": true,
+  "started_utc": "2026-10-01T13:02:40+00:00",
+  "finished_utc": "2026-10-01T13:03:00+00:00",
+  "run_summary": {
+    "started_utc": "2026-10-01T13:03:00+00:00",
+    "videos_attempted": 6,
+    "wall_s": 20.00832558295224,
+    "workers": 1,
+    "download_workers": 8,
+    "batch_size": 50,
+    "peak_rss_mb": 656.03125,
+    "mean_rss_mb": 600.640625,
+    "mean_cpu_pct": 40.6578947368421,
+    "peak_cpu_pct": 64.0,
+    "logical_cpus": 8
+  }
+}

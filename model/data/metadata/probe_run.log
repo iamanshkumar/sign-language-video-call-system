@@ -1,0 +1,19 @@
+[probe] 800 already done, 107816 to process
+[probe] part 00004: 1000/107816 (dl_fail=0, decode_fail=0) 8.7 files/s, ETA 205 min
+[probe] part 00005: 2000/107816 (dl_fail=0, decode_fail=0) 11.5 files/s, ETA 154 min
+[probe] part 00006: 3000/107816 (dl_fail=0, decode_fail=0) 12.9 files/s, ETA 136 min
+[probe] part 00007: 4000/107816 (dl_fail=1, decode_fail=0) 12.5 files/s, ETA 139 min
+[probe] part 00008: 5000/107816 (dl_fail=96, decode_fail=0) 10.6 files/s, ETA 162 min
+[probe] part 00009: 6000/107816 (dl_fail=0, decode_fail=0) 11.3 files/s, ETA 150 min
+[probe] part 00010: 7000/107816 (dl_fail=0, decode_fail=0) 11.9 files/s, ETA 142 min
+[probe] part 00011: 8000/107816 (dl_fail=96, decode_fail=1) 10.1 files/s, ETA 164 min
+[probe] part 00012: 9000/107816 (dl_fail=0, decode_fail=0) 10.6 files/s, ETA 155 min
+[probe] part 00013: 10000/107816 (dl_fail=0, decode_fail=1) 11.0 files/s, ETA 148 min
+[probe] part 00014: 11000/107816 (dl_fail=96, decode_fail=0) 10.4 files/s, ETA 155 min
+[probe] part 00015: 12000/107816 (dl_fail=0, decode_fail=2) 10.8 files/s, ETA 148 min
+[probe] part 00016: 13000/107816 (dl_fail=0, decode_fail=5) 10.7 files/s, ETA 148 min
+[probe] part 00017: 14000/107816 (dl_fail=63, decode_fail=0) 10.4 files/s, ETA 150 min
+[probe] part 00018: 15000/107816 (dl_fail=0, decode_fail=0) 10.5 files/s, ETA 148 min
+[probe] part 00019: 16000/107816 (dl_fail=0, decode_fail=1) 10.8 files/s, ETA 142 min
+/opt/homebrew/Cellar/python@3.12/3.12.13_4/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 5 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

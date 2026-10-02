@@ -1,0 +1,87 @@
+{
+  "run_name": "dryrun_valtest_m2",
+  "created_utc": "2026-10-01T13:01:55+00:00",
+  "splits": [
+    "val",
+    "test"
+  ],
+  "videos": 12,
+  "by_split": {
+    "test": 6,
+    "val": 6
+  },
+  "shards": 2,
+  "shard_sizes": [
+    6,
+    6
+  ],
+  "parity_videos": 3,
+  "limit_per_split": 6,
+  "dataset_revision": "e7979505c0dff7072ef36d45b3cddfffb50ba871",
+  "step2_output_config": {
+    "format_version": 2,
+    "coord_dtype": {
+      "pose": "float32",
+      "face": "float16",
+      "left_hand": "float16",
+      "right_hand": "float16"
+    },
+    "compress": false,
+    "groups_to_store": [
+      "pose",
+      "face",
+      "left_hand",
+      "right_hand"
+    ],
+    "keep_arrays_for_hand_rejections": false,
+    "max_videos_without_approval": 1000
+  },
+  "fingerprint": {
+    "src/asl/landmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/asl/landmarks/benchmark.py": "318ca0204c99e9c9be834a20ea3e0bb50ad50303c83973cce498185a914fd98c",
+    "src/asl/landmarks/cloud.py": "856f06f51097fd299535de6e52f9866ab04c568881324d1a6c3cf669a2af7d0b",
+    "src/asl/landmarks/convert.py": "036cbd5e9128c2e21d5b2e231f5720bef7f8f0de52b5c04cc606035d47e99c96",
+    "src/asl/landmarks/extract.py": "863a188b3b15587866fe4cd571af534c8be42c0d5085ef934ca569313b6aaedf",
+    "src/asl/landmarks/layout.py": "76ce0d3445bf3e670012c7fbf76c438beb46aec9f91e3511f833889c5aa61ffc",
+    "src/asl/landmarks/outputs.py": "2f60dddaa76a45f7786c60d73399fec2f5a3d0344c73cf31c8fc3448ec8248fd",
+    "src/asl/landmarks/pipeline.py": "ed373ea390bc98f8823efa6cb4edd922d9bd43312ba82eb8db131adbe7b1c562",
+    "src/asl/landmarks/preprocess.py": "1b8878d76d1f6780442f23d3557b048369f5ecaa0477e3cb1a4aa2d0b9c0584d",
+    "src/asl/landmarks/process.py": "2a76963080ab4704e454de576f4297c3ab2ffafc6b74b1649fdca77883720675",
+    "src/asl/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/asl/data/groups.py": "f7760636ea0dccdc1356db9b846512c5912b02a35bbad9bcecc54d4f140d733c",
+    "src/asl/data/hf_index.py": "51cbd10924776dbe42beeb2029d1defa603e7765de580f7d03394e65e6142f07",
+    "src/asl/data/labels.py": "0fc2b72c9c7e83eaf35b4eba152820fe034695a39bf93da0ce1625438a073f77",
+    "src/asl/data/leakage.py": "ba0fca8dc669a8557f3678d2edd4c65ca1081629507506578fd405caf2f734dd",
+    "src/asl/data/manifest.py": "32aacebf256b2f4a47f9a5d4ab3a9a6486cea2d5c3901173d8eb52944658c900",
+    "src/asl/data/probe.py": "cd9021d86a204eabecb117cb1b9ddd27f57b60dfcb45848263aa15cfe6430e1c",
+    "src/asl/data/sampling.py": "af68aaca1c66fb4176ef12f7d8000eb5b3ba9684a20b6a21e50377cc1a1dde05",
+    "src/asl/data/split.py": "ce5b869747f2739c2f7e46063969da67861dfd874121942d73134363b42dea76",
+    "src/asl/data/validate.py": "edfd82cc5e98f54c51cccaf96e0f2aeefa514b57cd9adb5321383524d4ab40c4",
+    "src/asl/sequences/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/asl/sequences/dataset.py": "ec9b343d7a670e25c9a33382f88da42b7b82e3703df203577ee9c438e5754c58",
+    "src/asl/sequences/index.py": "40dfba78918687512b142cf859ad6a61d010818eb003973a80a56edb191c397e",
+    "src/asl/sequences/labels.py": "d0b2cf94972b09cfe30baed9413587132e7949f41209fb1c580cdb1ed98615f7",
+    "src/asl/sequences/resample.py": "7b24b10aaa73b6a3b6acd3726948adec529c820b76c5c3a55d38bb48cca72796",
+    "src/asl/sequences/synthetic.py": "caf038ff043e9764ca491f9d9b675c00021137a64e5b51f9103a3c6eb995f6e9",
+    "src/asl/config.py": "4076eeb1d88d52c87fbcc2a6ba477019ed3a3e141aa0a7116b6d01ccea12849a",
+    "configs/step1_data.yaml": "eb43f65812b8072d813d5c7ea09a6a11cf333e41fdd3f9e50fad656a24cd6ed3",
+    "configs/step2_landmarks.yaml": "e46eaf97808250324a44af7782b486221694d9cec2b06a80fa3bb44bc5da65da",
+    "configs/step3_sequences.yaml": "a410953ea3dfc01e6ace0b6621c04a45f00249287e894bfa96f01b0e2e214795",
+    "data/splits/split_v1.csv": "fd3b88f73496659a6d51b9f967edbdc3d1e37cfd85c14aae72b7e8494fba3d9d",
+    "data/splits/split_v1.lock.json": "8cd4ddea653eac1fc6c47dc83abecafb7f43a13245dfbd68a2efcdbb52ebc65d",
+    "data/sequences/label_mapping.json": "5693a33abae98a7d3a7cb8a494634d5a5ad8ebef88e85b248a26529da71bd6a1"
+  },
+  "planned_on": {
+    "python": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "cpus": 8,
+    "hostname_hash": "07539ad3198f"
+  },
+  "estimates": {
+    "source_frames": 1013.4000000000001,
+    "worker_hours_at_m2_rate_15_5_fps": 0.018161290322580646,
+    "download_gb": 0.007469298,
+    "output_gb_at_93_5pct_acceptance": 0.0035455200000000004
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "store": "smoke_synthetic_20261001T124810Z",
+  "words": [
+    "1dollar",
+    "5dollars",
+    "8hour",
+    "9oclock",
+    "TRUE",
+    "a",
+    "abbreviate",
+    "about",
+    "above",
+    "absolutelynothing"
+  ],
+  "vocabulary_size": 2207,
+  "samples": {
+    "train": 60,
+    "test": 20,
+    "val": 20
+  },
+  "short_active": 26,
+  "forward_backward": {
+    "hands_w30_lstm": {
+      "x": [
+        8,
+        30,
+        128
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.720227241516113,
+      "finite_gradients": true
+    },
+    "hands_w30_bilstm": {
+      "x": [
+        8,
+        30,
+        128
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.655767917633057,
+      "finite_gradients": true
+    },
+    "hands_w45_lstm": {
+      "x": [
+        8,
+        45,
+        128
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.71413516998291,
+      "finite_gradients": true
+    },
+    "hands_w45_bilstm": {
+      "x": [
+        8,
+        45,
+        128
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.717128753662109,
+      "finite_gradients": true
+    },
+    "hands_w60_lstm": {
+      "x": [
+        8,
+        60,
+        128
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.692684173583984,
+      "finite_gradients": true
+    },
+    "hands_w60_bilstm": {
+      "x": [
+        8,
+        60,
+        128
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.678771495819092,
+      "finite_gradients": true
+    },
+    "hands_pose_w30_lstm": {
+      "x": [
+        8,
+        30,
+        261
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.734810829162598,
+      "finite_gradients": true
+    },
+    "hands_pose_w30_bilstm": {
+      "x": [
+        8,
+        30,
+        261
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.777406692504883,
+      "finite_gradients": true
+    },
+    "hands_pose_w45_lstm": {
+      "x": [
+        8,
+        45,
+        261
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.697805404663086,
+      "finite_gradients": true
+    },
+    "hands_pose_w45_bilstm": {
+      "x": [
+        8,
+        45,
+        261
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.686243057250977,
+      "finite_gradients": true
+    },
+    "hands_pose_w60_lstm": {
+      "x": [
+        8,
+        60,
+        261
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.68862771987915,
+      "finite_gradients": true
+    },
+    "hands_pose_w60_bilstm": {
+      "x": [
+        8,
+        60,
+        261
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.69619607925415,
+      "finite_gradients": true
+    },
+    "hands_pose_face_w30_lstm": {
+      "x": [
+        8,
+        30,
+        1666
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.74348258972168,
+      "finite_gradients": true
+    },
+    "hands_pose_face_w30_bilstm": {
+      "x": [
+        8,
+        30,
+        1666
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.7289204597473145,
+      "finite_gradients": true
+    },
+    "hands_pose_face_w45_lstm": {
+      "x": [
+        8,
+        45,
+        1666
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.72422456741333,
+      "finite_gradients": true
+    },
+    "hands_pose_face_w45_bilstm": {
+      "x": [
+        8,
+        45,
+        1666
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.710472583770752,
+      "finite_gradients": true
+    },
+    "hands_pose_face_w60_lstm": {
+      "x": [
+        8,
+        60,
+        1666
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.695748329162598,
+      "finite_gradients": true
+    },
+    "hands_pose_face_w60_bilstm": {
+      "x": [
+        8,
+        60,
+        1666
+      ],
+      "logits": [
+        8,
+        2207
+      ],
+      "loss": 7.674132823944092,
+      "finite_gradients": true
+    }
+  },
+  "experiments": {
+    "hands_w30_lstm": {
+      "exp_dir": "experiments/smoke_synthetic_20261001T124810Z/hands_w30_lstm",
+      "run_utc": "2026-10-01T12:48:15+00:00",
+      "store": "smoke_synthetic_20261001T124810Z",
+      "experiment_id": "hands_w30_lstm",
+      "model": "lstm",
+      "feature_config": "hands",
+      "window_size": 30,
+      "seed": 42,
+      "train_samples": 60,
+      "validation_samples": 20,
+      "test_samples": 20,
+      "train_classes": 10,
+      "vocabulary_size": 2207,
+      "epochs": 10,
+      "best_epoch": 3,
+      "best_val_macro_f1": 0.0974025974025974,
+      "test_accuracy": 0.2,
+      "test_macro_precision": 0.07575757575757575,
+      "test_macro_recall": 0.18181818181818182,
+      "test_macro_f1": 0.10606060606060605,
+      "test_weighted_f1": 0.11666666666666665,
+      "mean_latency_ms": 0.81382971489802,
+      "median_latency_ms": 0.762312498409301,
+      "p95_latency_ms": 1.0662312968634067,
+      "fps": 1228.7582791509508,
+      "latency_device": "cpu",
+      "checkpoint_path": "experiments/smoke_synthetic_20261001T124810Z/hands_w30_lstm/best.pt",
+      "selection": "best validation macro-F1",
+      "notes": "SMOKE TEST on synthetic data (max_epochs=12)",
+      "evaluations": {
+        "val": {
+          "samples": 20,
+          "accuracy": 0.2,
+          "macro_f1": 0.0974025974025974,
+          "weighted_f1": 0.10714285714285714,
+          "classes_in_y_true": 10
+        },
+        "test": {
+          "samples": 20,
+          "accuracy": 0.2,
+          "macro_f1": 0.10606060606060605,
+          "weighted_f1": 0.11666666666666665,
+          "classes_in_y_true": 10
+        }
+      },
+      "checkpoint_reload_reproduces_val_f1": true,
+      "latency": [
+        {
+          "batch_size": 1,
+          "runs": 200,
+          "mean_ms": 0.81382971489802,
+          "median_ms": 0.762312498409301,
+          "p95_ms": 1.0662312968634067,
+          "throughput_samples_per_s": 1228.7582791509508,
+          "device": "cpu",
+          "warmup": 20,
+          "timing": "model forward only"
+        },
+        {
+          "batch_size": 64,
+          "runs": 200,
+          "mean_ms": 8.473036479554139,
+          "median_ms": 8.321646077092737,
+          "p95_ms": 9.348592290189117,
+          "throughput_samples_per_s": 7553.37241311721,
+          "device": "cpu",
+          "warmup": 20,
+          "timing": "model forward only"
+        },
+        {
+          "batch_size": 1,
+          "runs": 50,
+          "mean_ms": 1.2312773987650871,
+          "median_ms": 1.1995835229754448,
+          "p95_ms": 1.4259185350965706,
+          "throughput_samples_per_s": 812.1646681754677,
+          "warmup": 5,
+          "timing": "end-to-end per sample: load .npz + resample + assemble + model (no MediaPipe)"
+        }
+      ],
+      "train_seconds": 0.8140134999994189
+    },
+    "hands_pose_w45_bilstm": {
+      "exp_dir": "experiments/smoke_synthetic_20261001T124810Z/hands_pose_w45_bilstm",
+      "run_utc": "2026-10-01T12:48:24+00:00",
+      "store": "smoke_synthetic_20261001T124810Z",
+      "experiment_id": "hands_pose_w45_bilstm",
+      "model": "bilstm",
+      "feature_config": "hands_pose",
+      "window_size": 45,
+      "seed": 42,
+      "train_samples": 60,
+      "validation_samples": 20,
+      "test_samples": 20,
+      "train_classes": 10,
+      "vocabulary_size": 2207,
+      "epochs": 8,
+      "best_epoch": 1,
+      "best_val_macro_f1": 0.018181818181818184,
+      "test_accuracy": 0.1,
+      "test_macro_precision": 0.0101010101010101,
+      "test_macro_recall": 0.09090909090909091,
+      "test_macro_f1": 0.018181818181818184,
+      "test_weighted_f1": 0.02,
+      "mean_latency_ms": 2.3398918606108055,
+      "median_latency_ms": 2.2396250278688967,
+      "p95_latency_ms": 2.916181553155183,
+      "fps": 427.3701775854547,
+      "latency_device": "cpu",
+      "checkpoint_path": "experiments/smoke_synthetic_20261001T124810Z/hands_pose_w45_bilstm/best.pt",
+      "selection": "best validation macro-F1",
+      "notes": "SMOKE TEST on synthetic data (max_epochs=12)",
+      "evaluations": {
+        "val": {
+          "samples": 20,
+          "accuracy": 0.1,
+          "macro_f1": 0.018181818181818184,
+          "weighted_f1": 0.02,
+          "classes_in_y_true": 10
+        },
+        "test": {
+          "samples": 20,
+          "accuracy": 0.1,
+          "macro_f1": 0.018181818181818184,
+          "weighted_f1": 0.02,
+          "classes_in_y_true": 10
+        }
+      },
+      "checkpoint_reload_reproduces_val_f1": true,
+      "latency": [
+        {
+          "batch_size": 1,
+          "runs": 200,
+          "mean_ms": 2.3398918606108055,
+          "median_ms": 2.2396250278688967,
+          "p95_ms": 2.916181553155183,
+          "throughput_samples_per_s": 427.3701775854547,
+          "device": "cpu",
+          "warmup": 20,
+          "timing": "model forward only"
+        },
+        {
+          "batch_size": 64,
+          "runs": 200,
+          "mean_ms": 31.954375804634765,
+          "median_ms": 29.30429147090763,
+          "p95_ms": 37.14655690127984,
+          "throughput_samples_per_s": 2002.8555835760446,
+          "device": "cpu",
+          "warmup": 20,
+          "timing": "model forward only"
+        },
+        {
+          "batch_size": 1,
+          "runs": 50,
+          "mean_ms": 3.0141366343013942,
+          "median_ms": 2.8513125143945217,
+          "p95_ms": 3.607274970272554,
+          "throughput_samples_per_s": 331.76996311972977,
+          "warmup": 5,
+          "timing": "end-to-end per sample: load .npz + resample + assemble + model (no MediaPipe)"
+        }
+      ],
+      "train_seconds": 1.130583625053987
+    },
+    "hands_pose_face_w60_rf": {
+      "exp_dir": "experiments/smoke_synthetic_20261001T124810Z/hands_pose_face_w60_rf",
+      "run_utc": "2026-10-01T12:48:29+00:00",
+      "store": "smoke_synthetic_20261001T124810Z",
+      "experiment_id": "hands_pose_face_w60_rf",
+      "model": "rf",
+      "feature_config": "hands_pose_face",
+      "window_size": 60,
+      "seed": 42,
+      "train_samples": 60,
+      "validation_samples": 20,
+      "test_samples": 20,
+      "train_classes": 10,
+      "vocabulary_size": 2207,
+      "epochs": null,
+      "best_epoch": null,
+      "best_val_macro_f1": 1.0,
+      "test_accuracy": 1.0,
+      "test_macro_precision": 1.0,
+      "test_macro_recall": 1.0,
+      "test_macro_f1": 1.0,
+      "test_weighted_f1": 1.0,
+      "mean_latency_ms": 8.743603982729837,
+      "median_latency_ms": 7.805854023899883,
+      "p95_latency_ms": 11.009972874308001,
+      "fps": 114.36931521317487,
+      "latency_device": "cpu",
+      "checkpoint_path": "experiments/smoke_synthetic_20261001T124810Z/hands_pose_face_w60_rf/model.joblib",
+      "selection": "none (no hyperparameter search; fixed configuration)",
+      "notes": "SMOKE TEST on synthetic data (max_epochs=12)",
+      "evaluations": {
+        "val": {
+          "samples": 20,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "weighted_f1": 1.0,
+          "classes_in_y_true": 10
+        },
+        "test": {
+          "samples": 20,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "weighted_f1": 1.0,
+          "classes_in_y_true": 10
+        }
+      },
+      "checkpoint_reload_reproduces_val_f1": null,
+      "latency": [
+        {
+          "batch_size": 1,
+          "runs": 200,
+          "mean_ms": 8.743603982729837,
+          "median_ms": 7.805854023899883,
+          "p95_ms": 11.009972874308001,
+          "throughput_samples_per_s": 114.36931521317487,
+          "warmup": 20,
+          "timing": "RF predict on precomputed statistics"
+        },
+        {
+          "batch_size": 64,
+          "runs": 200,
+          "mean_ms": 8.094513698015362,
+          "median_ms": 8.004020492080599,
+          "p95_ms": 8.398108661640434,
+          "throughput_samples_per_s": 7906.589869097599,
+          "warmup": 20,
+          "timing": "RF predict on precomputed statistics"
+        },
+        {
+          "batch_size": 1,
+          "runs": 50,
+          "mean_ms": 8.764551598578691,
+          "median_ms": 8.715541975107044,
+          "p95_ms": 9.291583223966882,
+          "throughput_samples_per_s": 114.09596814538301,
+          "warmup": 5,
+          "timing": "end-to-end per sample: load .npz + resample + assemble + statistics + model (no MediaPipe)"
+        }
+      ],
+      "train_seconds": 0.3139759579207748
+    }
+  },
+  "reproducible_history": true,
+  "reproducible_test_metrics": true,
+  "checkpoint_reload": {
+    "epoch": 3,
+    "val_macro_f1": 0.0974025974025974,
+    "out_features": 2207
+  }
+}

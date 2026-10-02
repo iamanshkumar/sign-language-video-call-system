@@ -1,0 +1,11 @@
+label,word,precision,recall,f1,support
+0,1dollar,1.0,1.0,1.0,2
+1,5dollars,1.0,1.0,1.0,2
+2,8hour,1.0,1.0,1.0,2
+3,9oclock,1.0,1.0,1.0,2
+4,TRUE,1.0,1.0,1.0,2
+5,a,1.0,1.0,1.0,2
+6,abbreviate,1.0,1.0,1.0,2
+7,about,1.0,1.0,1.0,2
+8,above,1.0,1.0,1.0,2
+9,absolutelynothing,1.0,1.0,1.0,2

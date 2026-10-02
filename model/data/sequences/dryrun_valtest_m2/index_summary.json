@@ -1,0 +1,85 @@
+{
+  "landmarks_dir": "data/landmarks/dryrun_valtest_m2_store",
+  "index_dir": "data/sequences/dryrun_valtest_m2",
+  "index_sha256": "6a1b620f954428912e0ef757e5b5efd0d6209ae0502d04d818b7d985a24766b4",
+  "label_mapping_vocabulary_sha256": "4b231655606bcb69d4968b463e7cc355f2383bdb4c57e1b73db233535651be1f",
+  "landmark_videos": 12,
+  "accepted_indexed": 12,
+  "excluded": 0,
+  "excluded_by_split_reason": [],
+  "by_split": {
+    "train": {
+      "videos": 0,
+      "classes": 0,
+      "short_active": 0,
+      "active_bins": {
+        "<30": 0,
+        "30-44": 0,
+        "45-59": 0,
+        ">=60": 0
+      }
+    },
+    "val": {
+      "videos": 6,
+      "classes": 6,
+      "short_active": 4,
+      "active_bins": {
+        "<30": 4,
+        "30-44": 2,
+        "45-59": 0,
+        ">=60": 0
+      }
+    },
+    "test": {
+      "videos": 6,
+      "classes": 6,
+      "short_active": 2,
+      "active_bins": {
+        "<30": 2,
+        "30-44": 0,
+        "45-59": 4,
+        ">=60": 0
+      }
+    }
+  },
+  "sequences_per_config_window_split": {
+    "hands/w30/train": 0,
+    "hands/w30/val": 6,
+    "hands/w30/test": 6,
+    "hands/w45/train": 0,
+    "hands/w45/val": 6,
+    "hands/w45/test": 6,
+    "hands/w60/train": 0,
+    "hands/w60/val": 6,
+    "hands/w60/test": 6,
+    "hands_pose/w30/train": 0,
+    "hands_pose/w30/val": 6,
+    "hands_pose/w30/test": 6,
+    "hands_pose/w45/train": 0,
+    "hands_pose/w45/val": 6,
+    "hands_pose/w45/test": 6,
+    "hands_pose/w60/train": 0,
+    "hands_pose/w60/val": 6,
+    "hands_pose/w60/test": 6,
+    "hands_pose_face/w30/train": 0,
+    "hands_pose_face/w30/val": 6,
+    "hands_pose_face/w30/test": 6,
+    "hands_pose_face/w45/train": 0,
+    "hands_pose_face/w45/val": 6,
+    "hands_pose_face/w45/test": 6,
+    "hands_pose_face/w60/train": 0,
+    "hands_pose_face/w60/val": 6,
+    "hands_pose_face/w60/test": 6
+  },
+  "unable_to_produce_window": 0,
+  "max_stretch": {
+    "30": 1.7647058823529411,
+    "45": 2.6470588235294117,
+    "60": 3.5294117647058822
+  },
+  "checks": {
+    "shape_finite_presence": true,
+    "regeneration_identical": true
+  },
+  "all_checks_pass": true
+}

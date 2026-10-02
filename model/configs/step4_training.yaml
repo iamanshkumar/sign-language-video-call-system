@@ -1,0 +1,53 @@
+# Step 4: model training and evaluation (docs/step4_methodology.md).
+# Sequences, labels and splits come from Steps 1-3 and are not redefined here.
+experiment_matrix:
+  feature_configs: [hands, hands_pose, hands_pose_face]   # configs/step2_landmarks.yaml
+  windows: [30, 45, 60]                                   # configs/step3_sequences.yaml
+  neural_models: [lstm, bilstm]                           # 18 neural experiments
+  rf_baseline: true                                       # one RF per feature config x window (9) - see methodology §2
+
+seed: 42
+
+neural:                         # project-approved defaults; do not change without approval
+  hidden_size: 128
+  num_layers: 2
+  dropout: 0.30                 # between LSTM layers and before the classifier
+  optimizer: adamw
+  learning_rate: 1.0e-3
+  weight_decay: 1.0e-4
+  loss: cross_entropy
+  batch_size: 64
+  fallback_batch_size: 32       # used only if the device runs out of memory (recorded)
+  max_epochs: 50
+  early_stopping_patience: 7    # epochs without validation macro-F1 improvement
+  scheduler:
+    name: reduce_lr_on_plateau
+    monitor: val_macro_f1       # NOT specified by the project; chosen to match model selection (needs approval)
+    mode: max
+    factor: 0.5
+    patience: 3
+  selection_metric: val_macro_f1
+
+random_forest:                  # temporal-statistics baseline (mean, std, min, max over time)
+  n_estimators: 300             # NOT specified by the project (needs approval)
+  max_depth: null
+  min_samples_leaf: 1
+  max_features: sqrt
+  class_weight: null
+  n_jobs: 1                     # deterministic and gentle on the M2
+  random_state: 42
+
+runtime:
+  device: cpu                   # cpu | mps | cuda | auto. CPU on the M2 for determinism and heat
+  cpu_threads: 4                # limits CPU load on the M2
+  deterministic: true
+
+latency:
+  warmup_runs: 20
+  timed_runs: 200
+  batch_sizes: [1, 64]          # single-sample and batched model latency
+  end_to_end_samples: 50        # load .npz + resample + assemble (+ RF statistics) + model, per sample
+
+output:
+  experiments_dir: experiments  # experiments/<store>/<experiment_id>/ (checkpoints are git-ignored)
+  reports_dir: reports/step4

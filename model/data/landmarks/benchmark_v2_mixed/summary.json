@@ -1,0 +1,19 @@
+{
+  "videos": 400,
+  "accepted": 374,
+  "rejection_reasons": {
+    "active_both_hands_missing_fraction": 13,
+    "too_few_decoded_frames": 9,
+    "active_both_hands_missing_run": 3,
+    "no_active_signing_interval": 1
+  },
+  "short_active_interval_accepted": 111,
+  "arrays_bytes": 114237987,
+  "coord_dtype": {
+    "pose": "float32",
+    "face": "float16",
+    "left_hand": "float16",
+    "right_hand": "float16"
+  },
+  "consistency_problems": 0
+}

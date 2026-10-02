@@ -1,0 +1,37 @@
+# Step 1: dataset validation, EDA, and frozen split.
+dataset:
+  repo_id: akasheroor/American-Sign-Language-Dataset
+  # Pinned commit so every run sees exactly the same files.
+  revision: e7979505c0dff7072ef36d45b3cddfffb50ba871
+  csv_filename: "Aslense Dataset.csv"
+  video_dirs: [part_1, part_2, part_3, part_4, part_5, part_6, part_7, part_8, part_9, part_10, part_11]
+
+paths:
+  raw_cache: data/raw                 # temporary per-batch video cache (deleted after probing)
+  metadata: data/metadata
+  splits: data/splits
+  reports: reports/step1
+
+probe:
+  batch_size: 1000
+  download_workers: 32
+  decode_workers: 6
+  min_free_disk_gb: 5                 # refuse to download a batch below this much free space
+  download_retries: 5
+
+validation:
+  min_decoded_frames: 30              # non-landmark rejection rule applied before the split
+
+split:
+  version: v1
+  seed: 42
+  train: 0.70
+  val: 0.15
+  test: 0.15
+
+eda_sample:
+  # Representative Sample EDA: videos are probed only for this sample (not the full 54 GB).
+  seed: 42
+  per_class: 2                        # every class gets this many videos
+  target_total: 5000                  # remaining slots: +1 video for the smallest and largest classes
+  dir: data/metadata/eda_sample

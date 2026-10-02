@@ -1,0 +1,307 @@
+{
+  "store": "benchmark_v2_mixed",
+  "index_sha256": "93de6d6278af987f56d9aae3518a3005e5fac900e8857c6a5718692f0bef289e",
+  "label_mapping": {
+    "num_classes": 2207,
+    "vocabulary_sha256": "4b231655606bcb69d4968b463e7cc355f2383bdb4c57e1b73db233535651be1f",
+    "frozen_split_sha256": "fd3b88f73496659a6d51b9f967edbdc3d1e37cfd85c14aae72b7e8494fba3d9d"
+  },
+  "landmark_videos": 400,
+  "accepted_videos": 374,
+  "excluded_videos": 26,
+  "excluded_by_reason": {
+    "active_both_hands_missing_fraction": 13,
+    "too_few_decoded_frames": 9,
+    "active_both_hands_missing_run": 3,
+    "no_active_signing_interval": 1
+  },
+  "excluded_by_split": {
+    "train": 26
+  },
+  "active_interval_bins": {
+    "<30": 111,
+    "30-44": 162,
+    "45-59": 64,
+    ">=60": 37
+  },
+  "by_split": {
+    "train": {
+      "videos": 374,
+      "classes": 357,
+      "short_active": 111
+    },
+    "val": {
+      "videos": 0,
+      "classes": 0,
+      "short_active": 0
+    },
+    "test": {
+      "videos": 0,
+      "classes": 0,
+      "short_active": 0
+    }
+  },
+  "windows": [
+    30,
+    45,
+    60
+  ],
+  "sequences_per_window": {
+    "30": 374,
+    "45": 374,
+    "60": 374
+  },
+  "unable_to_produce_window": {
+    "30": 0,
+    "45": 0,
+    "60": 0
+  },
+  "resampling": {
+    "30": {
+      "upsampled": 111,
+      "identity": 10,
+      "downsampled": 253,
+      "max_stretch": 10.0,
+      "short_interval_median_stretch": 1.3043478260869565
+    },
+    "45": {
+      "upsampled": 273,
+      "identity": 10,
+      "downsampled": 91,
+      "max_stretch": 15.0,
+      "short_interval_median_stretch": 1.9565217391304348
+    },
+    "60": {
+      "upsampled": 337,
+      "identity": 0,
+      "downsampled": 37,
+      "max_stretch": 20.0,
+      "short_interval_median_stretch": 2.608695652173913
+    }
+  },
+  "labels_with_sequences": 357,
+  "sequences_per_label": {
+    "min": 1,
+    "median": 1.0,
+    "max": 3
+  },
+  "generation": {
+    "hands/30/train": {
+      "sequences": 374,
+      "feature_dim": 128,
+      "shape_ok": true,
+      "presence_flags_binary": true,
+      "regeneration_identical": true,
+      "value_range": [
+        -1.8541218042373657,
+        3.4601967334747314
+      ],
+      "sequence_set_sha256": "a6790b3c216f1cff87d243b94d0efeb6a6ccf16d0cddbef391968faba236043d"
+    },
+    "hands/30/val": {
+      "sequences": 0
+    },
+    "hands/30/test": {
+      "sequences": 0
+    },
+    "hands/45/train": {
+      "sequences": 374,
+      "feature_dim": 128,
+      "shape_ok": true,
+      "presence_flags_binary": true,
+      "regeneration_identical": true,
+      "value_range": [
+        -1.8623046875,
+        3.6350319385528564
+      ],
+      "sequence_set_sha256": "14baf8d024df1ddab18f23089adff62c45fbfbb9c1083c0ba676f139eb647b93"
+    },
+    "hands/45/val": {
+      "sequences": 0
+    },
+    "hands/45/test": {
+      "sequences": 0
+    },
+    "hands/60/train": {
+      "sequences": 374,
+      "feature_dim": 128,
+      "shape_ok": true,
+      "presence_flags_binary": true,
+      "regeneration_identical": true,
+      "value_range": [
+        -1.9177038669586182,
+        3.541975736618042
+      ],
+      "sequence_set_sha256": "2ddd8377e95b10fca344365c382df362a63305a43109f380418800c2a5b1b9b8"
+    },
+    "hands/60/val": {
+      "sequences": 0
+    },
+    "hands/60/test": {
+      "sequences": 0
+    },
+    "hands_pose/30/train": {
+      "sequences": 374,
+      "feature_dim": 261,
+      "shape_ok": true,
+      "presence_flags_binary": true,
+      "regeneration_identical": true,
+      "value_range": [
+        -6.928816795349121,
+        6.635287761688232
+      ],
+      "sequence_set_sha256": "954f229e628542a1c323c752e70cec93b7f9e8a48a23afd9b16f669081dc2ed3"
+    },
+    "hands_pose/30/val": {
+      "sequences": 0
+    },
+    "hands_pose/30/test": {
+      "sequences": 0
+    },
+    "hands_pose/45/train": {
+      "sequences": 374,
+      "feature_dim": 261,
+      "shape_ok": true,
+      "presence_flags_binary": true,
+      "regeneration_identical": true,
+      "value_range": [
+        -6.668671607971191,
+        6.635287761688232
+      ],
+      "sequence_set_sha256": "fa52b4c2e7bf5a2cc743b3622ee68a0b1ead88721925ec08e83aad23f44eb5e6"
+    },
+    "hands_pose/45/val": {
+      "sequences": 0
+    },
+    "hands_pose/45/test": {
+      "sequences": 0
+    },
+    "hands_pose/60/train": {
+      "sequences": 374,
+      "feature_dim": 261,
+      "shape_ok": true,
+      "presence_flags_binary": true,
+      "regeneration_identical": true,
+      "value_range": [
+        -6.927572727203369,
+        6.635287761688232
+      ],
+      "sequence_set_sha256": "ce1e70af3028907d86ce62ec3990483e052fb6575c50832e81c8d8034b3fef47"
+    },
+    "hands_pose/60/val": {
+      "sequences": 0
+    },
+    "hands_pose/60/test": {
+      "sequences": 0
+    },
+    "hands_pose_face/30/train": {
+      "sequences": 374,
+      "feature_dim": 1666,
+      "shape_ok": true,
+      "presence_flags_binary": true,
+      "regeneration_identical": true,
+      "value_range": [
+        -6.928816795349121,
+        6.635287761688232
+      ],
+      "sequence_set_sha256": "7b67d61234d295f66eff15a55ddb1fa979cd5d387ea275d967210df43f94e3cd"
+    },
+    "hands_pose_face/30/val": {
+      "sequences": 0
+    },
+    "hands_pose_face/30/test": {
+      "sequences": 0
+    },
+    "hands_pose_face/45/train": {
+      "sequences": 374,
+      "feature_dim": 1666,
+      "shape_ok": true,
+      "presence_flags_binary": true,
+      "regeneration_identical": true,
+      "value_range": [
+        -6.668671607971191,
+        6.635287761688232
+      ],
+      "sequence_set_sha256": "2c6f19046b41aaa500e3d3f9eaa87d63632ec5a2ce25dd9886140241edc1bf26"
+    },
+    "hands_pose_face/45/val": {
+      "sequences": 0
+    },
+    "hands_pose_face/45/test": {
+      "sequences": 0
+    },
+    "hands_pose_face/60/train": {
+      "sequences": 374,
+      "feature_dim": 1666,
+      "shape_ok": true,
+      "presence_flags_binary": true,
+      "regeneration_identical": true,
+      "value_range": [
+        -6.927572727203369,
+        6.635287761688232
+      ],
+      "sequence_set_sha256": "5050e9c44b7a0ef21ce2d114c0ccef8650a13f49ff0279e28ddcc24d9f3fe0d5"
+    },
+    "hands_pose_face/60/val": {
+      "sequences": 0
+    },
+    "hands_pose_face/60/test": {
+      "sequences": 0
+    }
+  },
+  "generation_seconds": 4.940174082992598,
+  "dataloaders": {
+    "30": {
+      "train_batches": 6,
+      "first_batch_x": [
+        64,
+        30,
+        1666
+      ],
+      "first_batch_y": [
+        64
+      ],
+      "x_dtype": "torch.float32",
+      "y_dtype": "torch.int64",
+      "seeded_shuffle_reproducible": true
+    },
+    "45": {
+      "train_batches": 6,
+      "first_batch_x": [
+        64,
+        45,
+        1666
+      ],
+      "first_batch_y": [
+        64
+      ],
+      "x_dtype": "torch.float32",
+      "y_dtype": "torch.int64",
+      "seeded_shuffle_reproducible": true
+    },
+    "60": {
+      "train_batches": 6,
+      "first_batch_x": [
+        64,
+        60,
+        1666
+      ],
+      "first_batch_y": [
+        64
+      ],
+      "x_dtype": "torch.float32",
+      "y_dtype": "torch.int64",
+      "seeded_shuffle_reproducible": true
+    }
+  },
+  "checks": {
+    "index_leakage_free": true,
+    "all_shapes_ok": true,
+    "presence_flags_binary": true,
+    "regeneration_identical": true,
+    "no_identical_sequence_across_splits": true,
+    "dataloader_shuffle_reproducible": true,
+    "batch_size_from_config": true
+  },
+  "all_checks_pass": true
+}
