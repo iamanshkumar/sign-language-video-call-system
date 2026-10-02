@@ -1,0 +1,37 @@
+{
+  "seed": 42,
+  "videos": 500,
+  "classes": 465,
+  "split": "train",
+  "by_reason": {
+    "frame_count_quintile_1": 87,
+    "frame_count_quintile_3": 87,
+    "frame_count_quintile_5": 87,
+    "frame_count_quintile_2": 87,
+    "frame_count_quintile_4": 87,
+    "duplicate_group": 25,
+    "non_default_resolution": 15,
+    "augmented": 15,
+    "short_clip": 10
+  },
+  "decoded_frames_known": 460,
+  "decoded_frames": {
+    "count": 460.0,
+    "mean": 84.3,
+    "std": 48.0,
+    "min": 19.0,
+    "25%": 56.8,
+    "50%": 74.5,
+    "75%": 97.2,
+    "max": 585.0
+  },
+  "resolutions": {
+    "640x480": 439,
+    "288x192": 13,
+    "512x384": 6,
+    "480x640": 1,
+    "192x288": 1
+  },
+  "in_duplicate_groups": 62,
+  "augmented": 19
+}

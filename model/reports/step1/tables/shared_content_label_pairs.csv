@@ -1,0 +1,1416 @@
+label_a,label_b,shared_videos
+animate being,beast,58
+animate being,brute,58
+animate being,creature,58
+beast,brute,58
+beast,creature,58
+brute,creature,58
+animal,animate being,54
+animal,beast,54
+animal,brute,54
+animal,creature,54
+batch,deal,51
+batch,good deal,51
+batch,great deal,51
+batch,hatful,51
+batch,lot,51
+batch,mickle,51
+batch,mint,51
+batch,muckle,51
+batch,peck,51
+batch,quite a little,51
+batch,raft,51
+batch,slew,51
+batch,spate,51
+batch,tidy sum,51
+batch,wad,51
+batch,whole lot,51
+batch,whole slew,51
+deal,good deal,51
+deal,great deal,51
+deal,hatful,51
+deal,lot,51
+deal,mickle,51
+deal,mint,51
+deal,muckle,51
+deal,peck,51
+deal,quite a little,51
+deal,raft,51
+deal,slew,51
+deal,spate,51
+deal,tidy sum,51
+deal,wad,51
+deal,whole lot,51
+deal,whole slew,51
+good deal,great deal,51
+good deal,hatful,51
+good deal,lot,51
+good deal,mickle,51
+good deal,mint,51
+good deal,muckle,51
+good deal,peck,51
+good deal,quite a little,51
+good deal,raft,51
+good deal,slew,51
+good deal,spate,51
+good deal,tidy sum,51
+good deal,wad,51
+good deal,whole lot,51
+good deal,whole slew,51
+great deal,hatful,51
+great deal,lot,51
+great deal,mickle,51
+great deal,mint,51
+great deal,muckle,51
+great deal,peck,51
+great deal,quite a little,51
+great deal,raft,51
+great deal,slew,51
+great deal,spate,51
+great deal,tidy sum,51
+great deal,wad,51
+great deal,whole lot,51
+great deal,whole slew,51
+hatful,lot,51
+hatful,mickle,51
+hatful,mint,51
+hatful,muckle,51
+hatful,peck,51
+hatful,quite a little,51
+hatful,raft,51
+hatful,slew,51
+hatful,spate,51
+hatful,tidy sum,51
+hatful,wad,51
+hatful,whole lot,51
+hatful,whole slew,51
+lot,mickle,51
+lot,mint,51
+lot,muckle,51
+lot,peck,51
+lot,quite a little,51
+lot,raft,51
+lot,slew,51
+lot,spate,51
+lot,tidy sum,51
+lot,wad,51
+lot,whole lot,51
+lot,whole slew,51
+mickle,mint,51
+mickle,muckle,51
+mickle,peck,51
+mickle,quite a little,51
+mickle,raft,51
+mickle,slew,51
+mickle,spate,51
+mickle,tidy sum,51
+mickle,wad,51
+mickle,whole lot,51
+mickle,whole slew,51
+mint,muckle,51
+mint,peck,51
+mint,quite a little,51
+mint,raft,51
+mint,slew,51
+mint,spate,51
+mint,tidy sum,51
+mint,wad,51
+mint,whole lot,51
+mint,whole slew,51
+muckle,peck,51
+muckle,quite a little,51
+muckle,raft,51
+muckle,slew,51
+muckle,spate,51
+muckle,tidy sum,51
+muckle,wad,51
+muckle,whole lot,51
+muckle,whole slew,51
+peck,quite a little,51
+peck,raft,51
+peck,slew,51
+peck,spate,51
+peck,tidy sum,51
+peck,wad,51
+peck,whole lot,51
+peck,whole slew,51
+quite a little,raft,51
+quite a little,slew,51
+quite a little,spate,51
+quite a little,tidy sum,51
+quite a little,wad,51
+quite a little,whole lot,51
+quite a little,whole slew,51
+raft,slew,51
+raft,spate,51
+raft,tidy sum,51
+raft,wad,51
+raft,whole lot,51
+raft,whole slew,51
+slew,spate,51
+slew,tidy sum,51
+slew,wad,51
+slew,whole lot,51
+slew,whole slew,51
+spate,tidy sum,51
+spate,wad,51
+spate,whole lot,51
+spate,whole slew,51
+tidy sum,wad,51
+tidy sum,whole lot,51
+tidy sum,whole slew,51
+wad,whole lot,51
+wad,whole slew,51
+whole lot,whole slew,51
+batch,heap,47
+batch,plenty,47
+deal,heap,47
+deal,plenty,47
+good deal,heap,47
+good deal,plenty,47
+great deal,heap,47
+great deal,plenty,47
+hatful,heap,47
+hatful,plenty,47
+heap,lot,47
+heap,mickle,47
+heap,mint,47
+heap,muckle,47
+heap,peck,47
+heap,plenty,47
+heap,quite a little,47
+heap,raft,47
+heap,slew,47
+heap,spate,47
+heap,tidy sum,47
+heap,wad,47
+heap,whole lot,47
+heap,whole slew,47
+lot,plenty,47
+mickle,plenty,47
+mint,plenty,47
+muckle,plenty,47
+peck,plenty,47
+plenty,quite a little,47
+plenty,raft,47
+plenty,slew,47
+plenty,spate,47
+plenty,tidy sum,47
+plenty,wad,47
+plenty,whole lot,47
+plenty,whole slew,47
+all but,just about,36
+all but,nearly,36
+all but,nigh,36
+all but,virtually,36
+all but,well-nigh,36
+just about,nearly,36
+just about,nigh,36
+just about,virtually,36
+just about,well-nigh,36
+nearly,nigh,36
+nearly,virtually,36
+nearly,well-nigh,36
+nigh,virtually,36
+nigh,well-nigh,36
+virtually,well-nigh,36
+almost,near,35
+bound,spring,35
+almost,most,33
+all but,almost,33
+almost,just about,33
+almost,nearly,33
+almost,nigh,33
+almost,virtually,33
+almost,well-nigh,33
+most,near,32
+bring down,cut back,32
+bring down,cut down,32
+bring down,trim back,32
+bring down,trim down,32
+cut back,cut down,32
+cut back,trim,32
+cut back,trim back,32
+cut back,trim down,32
+cut down,trim back,32
+cut down,trim down,32
+trim back,trim down,32
+all but,most,32
+all but,near,32
+just about,most,32
+just about,near,32
+most,nearly,32
+most,nigh,32
+most,virtually,32
+most,well-nigh,32
+near,nearly,32
+near,nigh,32
+near,virtually,32
+near,well-nigh,32
+adjust,correct,32
+adjust,set,32
+bring down,trim,31
+cut,reduce,31
+cut down,trim,31
+trim,trim back,31
+trim,trim down,31
+correct,set,31
+cut,trim,30
+apparel,dress,30
+bring down,cut,29
+cut,cut back,29
+cut,cut down,29
+cut,trim back,29
+cut,trim down,29
+reduce,trim,29
+bring down,reduce,28
+cut back,reduce,28
+cut down,reduce,28
+reduce,trim back,28
+reduce,trim down,28
+cycle,wheel,28
+catch,grab,27
+bicycle,bike,27
+bicycle,cycle,27
+go,move,26
+apparel,clothes,26
+clothes,dress,26
+bicycle,wheel,26
+back,backbone,25
+clip,time,25
+big,large,25
+go,travel,25
+move,travel,25
+bike,cycle,24
+bike,wheel,24
+assist,help,23
+bother,devil,23
+job,line,23
+devil,rag,22
+business,job,22
+business,line,22
+area,country,22
+brain,mind,22
+bother,rag,21
+add,bring,21
+add,contribute,21
+add,lend,21
+bring,contribute,21
+bring,lend,21
+contribute,lend,21
+finish,stop,21
+away,off,21
+brain,head,21
+head,mind,21
+joke,laugh,20
+earth,world,20
+end,finish,20
+end,stop,20
+dark,night,20
+bounce,bound,20
+get down,start,20
+movie,picture,20
+give,laugh,19
+fourth,quarter,19
+just about,some,19
+car,machine,19
+give,joke,18
+backup,relief,18
+bound,jump,18
+bathroom,toilet,18
+film,movie,18
+bounce,spring,17
+jump,spring,17
+drill,exercise,17
+all,whole,17
+blow,float,17
+get,get down,17
+get,start,17
+film,picture,17
+cause,suit,16
+drop,sink,16
+lot,set,16
+home,place,16
+hug,squeeze,16
+exercise,practice,16
+lose,miss,16
+place,put,15
+circle,lot,15
+circle,set,15
+earth,ground,15
+peach,sweetheart,15
+create,make,15
+after,later,15
+drill,practice,15
+pen,write,14
+eyeglasses,glasses,14
+achromatic,black,13
+divide,separate,13
+present,show,13
+humble,small,13
+disappear,vanish,12
+america,us,12
+center,middle,12
+comfortable,easy,12
+experience,feel,12
+polish,smooth,12
+decline,refuse,12
+achromatic,white,12
+chew,wad,11
+blow,brag,11
+die,go,11
+award,honor,11
+ponder,reflect,11
+hurry,rush,11
+boy,son,11
+center,heart,10
+effect,event,10
+event,result,10
+class,form,10
+good,well,10
+meditate,ponder,10
+meditate,reflect,10
+earth,land,10
+ground,land,10
+behind,bottom,10
+behind,tail,10
+analyze,study,10
+lecture,scold,10
+lecture,rag,10
+rag,scold,10
+duck,skirt,10
+invest,place,10
+girl,miss,10
+cry,shout,10
+cream,pick,10
+blink,wink,9
+pack,wad,9
+effect,result,9
+class,grade,9
+form,grade,9
+immature,young,9
+couch,sofa,9
+behind,weird,9
+bottom,tail,9
+average,mean,9
+invest,put,9
+alright,fine,9
+form,shape,9
+blame,fault,8
+heart,middle,8
+ghost,obsess,8
+mine,my,8
+bottom,weird,8
+tail,weird,8
+expert,good,8
+barely,scarcely,8
+lot,luck,8
+ask,demand,8
+remember,think,8
+glove,gloves,8
+correct,right,8
+cost,price,7
+catch,get,7
+measure,value,7
+break,die,7
+break,go,7
+dessert,sweet,7
+crown,top,7
+pill,tablet,7
+nothing,zero,7
+fence,fencing,7
+better,improve,7
+ask,need,7
+ask,take,7
+demand,need,7
+demand,take,7
+retrieve,think,7
+guess,judge,7
+guide,lead,7
+head,principal,7
+class,family,7
+balance,rest,6
+evaluate,measure,6
+evaluate,value,6
+break,fail,6
+die,fail,6
+fail,go,6
+daughter,girl,6
+deal,manage,6
+state,tell,6
+check,match,6
+need,take,6
+smoke,smoking,6
+call,promise,6
+class,separate,6
+remember,retrieve,6
+bath,bathroom,6
+draw,pull,6
+conduct,lead,6
+pop,soda,6
+newspaper,paper,6
+closet,press,6
+category,class,6
+category,family,6
+before,past,5
+bear,carry,5
+behavior,conduct,5
+peel,skin,5
+box,room,5
+grass,skunk,5
+grass,smoke,5
+skunk,smoke,5
+alone,unique,5
+lecture,talk,5
+hard,heavy,5
+go,pass,5
+chase,tail,5
+elevator,lift,5
+call,phone,5
+call,ring,5
+phone,ring,5
+blue,down,5
+because,for,5
+honest,truth,5
+universe,world,5
+bear,stomach,5
+compass,dig,5
+compass,grasp,5
+dig,grasp,5
+forest,wood,5
+grasp,hold,5
+call,predict,5
+predict,promise,5
+half,six,5
+blow,waste,5
+press,squeeze,5
+conduct,guide,5
+conduct,take,5
+guide,take,5
+lead,take,5
+big,handsome,5
+bloom,flower,5
+net,network,5
+job,problem,5
+function,office,5
+fox,throw,5
+breathe,rest,5
+edge,march,5
+set,set up,5
+reduce,thin,5
+place,set,4
+put,set,4
+date,engagement,4
+arrive,get,4
+acquire,get,4
+pack,ring,4
+design,plan,4
+design,project,4
+plan,project,4
+pass,reach,4
+watch,wristwatch,4
+backup,choke,4
+backup,foul,4
+choke,foul,4
+music,sing,4
+check,fit,4
+fit,match,4
+expect,wait,4
+horrible,ugly,4
+deal,take,4
+duty,responsibility,4
+assistant,help,4
+clear,make,4
+land,state,4
+baby,bowl,4
+deal,plow,4
+bear,stand,4
+bear,support,4
+stand,stomach,4
+stomach,support,4
+plow,turn,4
+chance,opportunity,4
+die,pass,4
+play,turn,4
+refuse,resist,4
+confused,lost,4
+address,deal,4
+champ,champion,4
+bomb,fail,4
+bring down,get down,4
+gift,invest,4
+price,value,4
+act,play,4
+mention,name,4
+gift,present,4
+break,separate,4
+function,role,4
+office,role,4
+dumb,slow,4
+run,test,4
+journey,travel,4
+sing,talk,4
+accomplish,reach,4
+crazy,mad,4
+consume,eat,4
+call,cry,4
+call,shout,4
+arrest,nail,4
+perspective,view,4
+diaper,napkin,4
+bear,conduct,3
+carry,conduct,3
+down,polish,3
+brave,health,3
+before,last,3
+last,past,3
+quit,stop,3
+appear,seem,3
+full,total,3
+postpone,table,3
+march,parade,3
+ask,expect,3
+joke,tease,3
+drag,pull,3
+flip,pass,3
+pass,toss,3
+consume,devour,3
+cute,precious,3
+expect,hope,3
+hit,score,3
+reach,strain,3
+assist,serve,3
+wander,weave,3
+wander,wind,3
+weave,wind,3
+guess,imagine,3
+guess,think,3
+imagine,think,3
+accept,adopt,3
+bath,bathtub,3
+pity,sympathy,3
+get down,swallow,3
+disconnect,release,3
+carry,persuade,3
+clear,pass,3
+country,land,3
+country,state,3
+mouth,talk,3
+d,o,3
+stand,support,3
+hop,jump,3
+rule,ruler,3
+favorite,pet,3
+impress,move,3
+compass,reach,3
+address,plow,3
+any,whatever,3
+form,make,3
+rest,stay,3
+consume,down,3
+see,understand,3
+foul,yucky,3
+awkward,inept,3
+harmonica,harp,3
+bike,motorcycle,3
+figure,form,3
+figure,shape,3
+i,v,3
+introduce,present,3
+bull,bullshit,3
+internet,net,3
+due,owe,3
+problem,trouble,3
+adult,tall,3
+bar,cake,3
+shooting,shot,3
+peck,pick,3
+travel,trip,3
+book,hold,3
+dizzy,silly,3
+peach,sing,3
+peach,talk,3
+complain,plain,3
+dormitory,hall,3
+happen,pass,3
+become,get,3
+become,go,3
+get,go,3
+fix,set,3
+fix,set up,3
+king,power,3
+green,gullible,3
+opinion,view,3
+quit,resign,3
+need,should,3
+infection,insurance,3
+champion,star,3
+enough,plenty,3
+add,total,3
+listen,mind,3
+awkward,sticky,2
+now,today,2
+head,point,2
+get,mother,2
+conflict,struggle,2
+finally,future,2
+flip,toss,2
+really,very,2
+cheat,wander,2
+go,live,2
+inhale,inspire,2
+animal,cat,2
+animate being,cat,2
+beast,cat,2
+brute,cat,2
+cat,creature,2
+addict,nut,2
+weigh,weight,2
+favorite,prefer,2
+borrow,lend,2
+figure,picture,2
+figure,project,2
+figure,see,2
+figure,visualize,2
+picture,project,2
+picture,see,2
+picture,visualize,2
+project,see,2
+project,visualize,2
+see,visualize,2
+fashion,way,2
+filter,meet,2
+road,way,2
+keyboard,type,2
+clear,earn,2
+earn,make,2
+inject,shoot,2
+d,n,2
+n,o,2
+art,draw,2
+express,show,2
+hearing,public,2
+accept,take,2
+adopt,take,2
+cut,saw,2
+cut,wood,2
+adjust,align,2
+lift,wind,2
+create,form,2
+careful,deliberate,2
+deal,share,2
+devour,down,2
+ground,reason,2
+reach,stretch,2
+worm,wrestle,2
+break,check,2
+baby,birth,2
+go,leave,2
+develop,grow,2
+high,highschool,2
+order,sequence,2
+adjust,change,2
+cut,scissors,2
+fine,price,2
+chair,president,2
+morning,sunrise,2
+france,french,2
+plus,positive,2
+special,unique,2
+bull,pig,2
+cancel,correct,2
+clip,year,2
+time,year,2
+hit,reach,2
+face,side,2
+back,support,2
+cross,frustrate,2
+celebrate,keep,2
+chance,happen,2
+end,last,2
+guess,shot,2
+backup,support,2
+dark,sour,2
+evidence,proof,2
+spill,spread,2
+strange,weird,2
+bring down,land,2
+hard,tough,2
+jewelry,necklace,2
+keep,support,2
+curious,funny,2
+contribute,feed,2
+contribute,give,2
+contribute,provide,2
+feed,give,2
+feed,provide,2
+give,provide,2
+interest,island,2
+bright,clear,2
+interpret,see,2
+find,pick,2
+break,demote,2
+impact,touch,2
+find,retrieve,2
+separate,tell,2
+hurt,pain,2
+smell,stink,2
+dig,shovel,2
+rat,skunk,2
+away,gone,2
+TRUE,sure,2
+journey,trip,2
+favorite,taste,2
+scream,shout,2
+so,then,2
+catapult,slingshot,2
+clip,weekend,2
+time,weekend,2
+cycle,motorcycle,2
+drop,swing,2
+live,people,2
+k,w,2
+less,reduce,2
+to,until,2
+dribble,drip,2
+appear,face,2
+face,seem,2
+free,release,2
+free,resign,2
+release,resign,2
+grade,score,2
+bring,get,2
+about,all but,2
+about,almost,2
+about,just about,2
+about,most,2
+about,near,2
+about,nearly,2
+about,nigh,2
+about,virtually,2
+about,well-nigh,2
+document,paper,2
+like,same,2
+fix,ready,2
+ready,set,2
+ready,set up,2
+bug,tease,2
+baseball,glove,2
+period,point,2
+period,stop,2
+point,stop,2
+practice,train,2
+flip,somersault,2
+feed,run,2
+accent,stress,2
+once,when,2
+take,train,2
+hear,listen,2
+hot,spicy,2
+scold,tell,2
+blame,damn,2
+really,sure,2
+slew,slip,2
+meditate,study,2
+internet,network,2
+animal,duck,1
+animate being,duck,1
+beast,duck,1
+brute,duck,1
+creature,duck,1
+argue,fence,1
+guide,head,1
+guide,point,1
+independent,rescue,1
+independent,safe,1
+independent,save,1
+rescue,safe,1
+rescue,save,1
+safe,save,1
+perspective,point,1
+breakfast,cereal,1
+animal,kangaroo,1
+animate being,kangaroo,1
+beast,kangaroo,1
+brute,kangaroo,1
+creature,kangaroo,1
+burp,spread,1
+room,way,1
+get,grab,1
+mention,one,1
+erase,eraser,1
+action,process,1
+slip,trip,1
+read,ready,1
+football,soccer,1
+effect,pass,1
+event,pass,1
+pass,result,1
+kill,murder,1
+alarm,arm,1
+signature,touch,1
+none,nothing,1
+fool,shoot,1
+hope,wait,1
+chase,follow,1
+cabinet,locker,1
+use,wear,1
+l,y,1
+choke,stuck,1
+beat,jacket,1
+road,street,1
+street,way,1
+honey,love,1
+blanket,enter,1
+head,rule,1
+sculpture,shape,1
+accident,wrong,1
+fool,sting,1
+apparel,fold,1
+clothes,fold,1
+dress,fold,1
+select,take,1
+shoes,string,1
+boyfriend,friend,1
+dictionary,vocabulary,1
+draw,tie,1
+punish,sentence,1
+airplane,plan,1
+fire,hit,1
+fire,shoot,1
+hit,shoot,1
+boil,oil,1
+all but,when,1
+almost,when,1
+just about,when,1
+most,when,1
+near,when,1
+nearly,when,1
+nigh,when,1
+virtually,when,1
+well-nigh,when,1
+cut,slew,1
+grass,rat,1
+grass,shop,1
+rat,shop,1
+fall,spill,1
+saw,wood,1
+accident,crash,1
+animal,owl,1
+animate being,owl,1
+beast,owl,1
+brute,owl,1
+creature,owl,1
+from,scratch,1
+clip,week,1
+time,week,1
+important,value,1
+forest,tree,1
+tree,wood,1
+heavy,pregnant,1
+explanation,philosophy,1
+bracelet,circle,1
+bracelet,lot,1
+bracelet,set,1
+fence,fight,1
+fine,good,1
+order,society,1
+mouse,steal,1
+above,high,1
+tent,us,1
+animal,spider,1
+animate being,spider,1
+beast,spider,1
+brute,spider,1
+creature,spider,1
+dice,die,1
+belt,knock,1
+cut,edit,1
+big,great,1
+great,large,1
+basic,bottom,1
+add,plus,1
+stir,touch,1
+arrest,hold,1
+green,immature,1
+college,university,1
+heavy,rock,1
+present,today,1
+struggle,war,1
+cancel,off,1
+sweat,work,1
+design,figure,1
+early,year,1
+average,fair,1
+event,happen,1
+break,erupt,1
+reduce,scissors,1
+scissors,trim,1
+cost,fine,1
+business,busy,1
+busy,job,1
+busy,line,1
+end,over,1
+cheer,inspire,1
+get,take,1
+beat,measure,1
+bug,worm,1
+appointment,point,1
+trouble,upset,1
+rob,steal,1
+drop,throw,1
+blood,line,1
+relax,rest,1
+cake,hide,1
+check,train,1
+hippo,pop,1
+should,shoulder,1
+escape,run,1
+misunderstand,understand,1
+carve,slice,1
+peach,plate,1
+plate,sweetheart,1
+hearing,tell,1
+public,tell,1
+muscle,power,1
+open,spread,1
+because,why,1
+roar,thunder,1
+idea,philosophy,1
+idea,theory,1
+philosophy,theory,1
+ball,catch,1
+promote,push,1
+plan,set up,1
+bomb,turkey,1
+curious,strange,1
+funny,strange,1
+floor,story,1
+drag,rag,1
+meet,see,1
+call,guess,1
+guess,predict,1
+guess,promise,1
+jump,turn,1
+shop,workshop,1
+document,slip,1
+respect,value,1
+one,single,1
+frame,set up,1
+test,try,1
+check,proof,1
+axe,hat,1
+senate,staff,1
+category,group,1
+dice,gamble,1
+abbreviate,i,1
+abbreviate,r,1
+abbreviate,v,1
+i,r,1
+r,v,1
+scout,watch,1
+benefit,fit,1
+act,actor,1
+edge,know,1
+edge,now,1
+edge,owl,1
+know,now,1
+know,owl,1
+now,owl,1
+get,together,1
+arrest,catch,1
+lamp,light,1
+building,make,1
+ball,golf,1
+dance,dancer,1
+cut down,drop,1
+call,rule,1
+bother,can,1
+can,devil,1
+can,rag,1
+design,goal,1
+average,between,1
+between,mean,1
+back,game,1
+now,present,1
+guide,scout,1
+grow,plant,1
+bring down,wood,1
+cut back,wood,1
+cut down,wood,1
+reduce,wood,1
+trim,wood,1
+trim back,wood,1
+trim down,wood,1
+close,finish,1
+close,net,1
+finish,net,1
+award,trophy,1
+cut,cute,1
+animal,bird,1
+animate being,bird,1
+beast,bird,1
+bird,brute,1
+bird,creature,1
+melon,pumpkin,1
+amazing,wow,1
+move,poop,1
+breakfast,fast,1
+equal,match,1
+bet,dice,1
+break,ruin,1
+resist,stand,1
+adjust,parallel,1
+backbone,bone,1
+drop,spend,1
+city,community,1
+agency,office,1
+apparel,underwear,1
+clothes,underwear,1
+change,transfer,1
+alarm,surprise,1
+you,your,1
+you,yourself,1
+your,yourself,1
+excuse,ignore,1
+experience,get,1
+access,meet,1
+divide,vision,1
+make,pretend,1
+golf,shoot,1
+color,purple,1
+gay,lesbian,1
+basic,ground,1
+clock,lock,1
+nice,spoon,1
+book,script,1
+dissolve,melt,1
+plant,set,1
+champion,mushroom,1
+hear,sound,1
+check,see,1
+check,watch,1
+see,watch,1
+animal,bear,1
+animate being,bear,1
+bear,beast,1
+bear,brute,1
+bear,creature,1
+function,go,1
+function,run,1
+go,run,1
+answer,serve,1
+influence,shape,1
+equal,like,1
+equal,same,1
+form,strain,1
+experience,see,1
+roar,scream,1
+roar,shout,1
+leave,will,1
+contribute,gift,1
+contribute,present,1
+pass,walk,1
+animal,fox,1
+animate being,fox,1
+beast,fox,1
+brute,fox,1
+creature,fox,1
+clean,erase,1
+between,share,1
+man,world,1
+invite,welcome,1
+cook,kitchen,1
+bone,drum,1
+about,out,1
+accept,follow,1
+accept,hug,1
+accept,squeeze,1
+adopt,follow,1
+adopt,hug,1
+adopt,squeeze,1
+follow,hug,1
+follow,squeeze,1
+headache,hurt,1
+closet,push,1
+animal,eagle,1
+animate being,eagle,1
+beast,eagle,1
+brute,eagle,1
+creature,eagle,1
+bind,tie,1
+bright,shiny,1
+car,drive,1
+drive,machine,1
+remove,transfer,1
+faculty,staff,1
+edge,wall,1
+alarm,attention,1
+example,present,1
+art,design,1
+design,draw,1
+figure,frame,1
+form,frame,1
+frame,shape,1
+child,kid,1
+machine,saw,1
+move,put,1
+choke,strangle,1
+cause,reason,1
+chance,gamble,1
+chance,risk,1
+gamble,risk,1
+e,s,1
+law,lawyer,1
+four,fourth,1
+address,live,1
+duty,job,1
+apart,separate,1
+boss,coach,1
+office,place,1
+office,situation,1
+place,situation,1
+bored,ring,1
+match,mix,1
+close,near,1
+boss,stamp,1
+continue,keep,1
+abbreviate,cut,1
+abbreviate,reduce,1
+clear,obvious,1
+proof,roof,1
+arm,batch,1
+arm,battery,1
+arm,deal,1
+arm,good deal,1
+arm,great deal,1
+arm,hatful,1
+arm,heap,1
+arm,lot,1
+arm,mickle,1
+arm,mint,1
+arm,muckle,1
+arm,peck,1
+arm,plenty,1
+arm,quite a little,1
+arm,raft,1
+arm,slew,1
+arm,spate,1
+arm,tidy sum,1
+arm,wad,1
+arm,whole lot,1
+arm,whole slew,1
+batch,battery,1
+battery,deal,1
+battery,good deal,1
+battery,great deal,1
+battery,hatful,1
+battery,heap,1
+battery,lot,1
+battery,mickle,1
+battery,mint,1
+battery,muckle,1
+battery,peck,1
+battery,plenty,1
+battery,quite a little,1
+battery,raft,1
+battery,slew,1
+battery,spate,1
+battery,tidy sum,1
+battery,wad,1
+battery,whole lot,1
+battery,whole slew,1
+hit,impact,1
+curious,weird,1
+funny,weird,1
+bear,expect,1
+carry,expect,1
+admire,respect,1
+get down,light,1
+break,breakdown,1
+champion,relief,1
+relief,star,1
+one,twirl,1
+bored,drill,1
+baby,daughter,1
+blue,dark,1
+amazing,cool,1
+make,poop,1
+animal,pet,1
+animate being,pet,1
+beast,pet,1
+brute,pet,1
+creature,pet,1
+program,project,1
+energy,power,1
+prefer,taste,1
+fit,go,1
+pack,set up,1
+fine,ticket,1
+bear,hold,1
+carry,hold,1
+dirty,foul,1
+soup,spoon,1
+drag,sweep,1
+child,support,1
+glow,light,1
+pass,passport,1
+play,up,1
+turn,up,1
+deny,refuse,1
+dispatch,hit,1
+dispatch,murder,1
+dispatch,remove,1
+hit,murder,1
+hit,remove,1
+murder,remove,1
+bite,lift,1
+bite,pinch,1
+lift,pinch,1
+finance,money,1
+apparel,sweater,1
+clothes,sweater,1
+dress,sweater,1
+enter,retire,1
+can,fire,1
+and,on,1
+animate being,giraffe,1
+beast,giraffe,1
+brute,giraffe,1
+creature,giraffe,1
+again,over,1
+animal,turkey,1
+animate being,turkey,1
+beast,turkey,1
+brute,turkey,1
+creature,turkey,1
+think,wonder,1
+order,plan,1
+pinch,squeeze,1
+vocabulary,word,1
+faint,light,1
+animal,tiger,1
+animate being,tiger,1
+beast,tiger,1
+brute,tiger,1
+creature,tiger,1
+effect,set up,1
+dart,shoot,1
+beak,peck,1
+beak,pick,1
+bright,smart,1
+color,yellow,1
+present,resent,1
+future,will,1
+rough,rude,1
+break,offend,1
+blue,spicy,1
+batch,group,1
+cut,thin,1
+clean,nice,1
+appointment,engagement,1
+animate being,dinosaur,1
+beast,dinosaur,1
+brute,dinosaur,1
+creature,dinosaur,1
+brush,clash,1
+action,behavior,1
+death,die,1
+normal,rule,1
+color,orange,1
+close,fold,1
+animal,elephant,1
+animate being,elephant,1
+beast,elephant,1
+brute,elephant,1
+creature,elephant,1
+equal,tie,1
+act,action,1
+member,penis,1
+read,study,1
+read,take,1
+study,take,1
+bye,pass,1
+animal,wolf,1
+animate being,wolf,1
+beast,wolf,1
+brute,wolf,1
+creature,wolf,1
+continue,still,1
+model,sit,1
+bring,take,1
+america,can,1
+TRUE,really,1
+explanation,reason,1
+click,lick,1
+bread,toast,1
+bring down,visit,1
+draw,suck,1
+character,role,1
+compass,understand,1
+dig,understand,1
+grasp,understand,1
+father,get,1
+father,mother,1
+caption,grammar,1
+caption,sentence,1
+grammar,sentence,1
+ask,king,1
+ask,ski,1
+ask,tape,1
+king,ski,1
+king,tape,1
+ski,tape,1
+steam,team,1
+big,wide,1
+large,wide,1
+not,other,1
+buckle,crumple,1
+in,inside,1
+figure,name,1
+experiment,measure,1
+experiment,value,1
+bug,butterfly,1
+accomplish,action,1
+bear,patient,1
+patient,stand,1
+patient,stomach,1
+patient,support,1
+angry,negative,1
+age,old,1
+animal,monkey,1
+animate being,monkey,1
+beast,monkey,1
+brute,monkey,1
+creature,monkey,1
+oral,voice,1
+fence,wall,1
+key,turkey,1
+audience,die,1
+change,translate,1
+date,see,1
+clip,cut back,1
+clip,dress,1
+clip,trim,1
+cut back,dress,1
+dress,trim,1
+his,your,1
+habit,tradition,1
+count,score,1
+answer,result,1
+event,situation,1
+brush,toothbrush,1
+devil,monster,1
+brush,rush,1
+change,replace,1
+ear,sound,1
+color,pink,1
+slew,slide,1
+slide,slip,1
+address,dress,1
+bring,play,1
+bird,doll,1
+bird,skirt,1
+doll,skirt,1
+quiet,still,1
+burn,tan,1

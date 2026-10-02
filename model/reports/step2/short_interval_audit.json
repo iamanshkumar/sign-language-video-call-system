@@ -1,0 +1,208 @@
+{
+  "threshold_frames": 30,
+  "accepted_clips": 374,
+  "short_clips": 111,
+  "short_pct": 29.67914438502674,
+  "short_active_frames": {
+    "count": 111.0,
+    "mean": 21.5,
+    "std": 6.41,
+    "min": 3.0,
+    "25%": 18.0,
+    "50%": 23.0,
+    "75%": 26.5,
+    "max": 29.0
+  },
+  "short_active_seconds_median": 0.7666666666666667,
+  "short_under_10_frames": 7,
+  "classes_with_accepted_clips": 357,
+  "classes_with_any_short": 110,
+  "classes_all_accepted_clips_short": 107,
+  "classes_with_2plus_accepted": 15,
+  "classes_2plus_with_any_short": 4,
+  "classes_2plus_all_short": 1,
+  "spearman_clip_length_vs_active_frames": {
+    "rho": 0.7202141821265874,
+    "p_value": 4.8503511553928614e-61
+  },
+  "active_share_of_clip_pct": {
+    "short": {
+      "count": 111.0,
+      "mean": 38.7,
+      "std": 12.7,
+      "min": 4.5,
+      "25%": 30.7,
+      "50%": 38.7,
+      "75%": 47.7,
+      "max": 67.5
+    },
+    "not_short": {
+      "count": 263.0,
+      "mean": 52.6,
+      "std": 16.4,
+      "min": 20.7,
+      "25%": 42.4,
+      "50%": 49.2,
+      "75%": 57.5,
+      "max": 100.0
+    }
+  },
+  "chi2": {
+    "label_type": {
+      "chi2": 3.5528388686005634,
+      "dof": 2,
+      "p_value": 0.16924304953426167,
+      "min_expected_count": 2.0775401069518717,
+      "note": "approximate: expected counts < 5"
+    },
+    "source_proxy": {
+      "chi2": 13.083363763057195,
+      "dof": 4,
+      "p_value": 0.010875565937054684,
+      "min_expected_count": 0.5935828877005348,
+      "note": "approximate: expected counts < 5"
+    },
+    "clip_frames_30fps": {
+      "chi2": 147.29741650859123,
+      "dof": 3,
+      "p_value": 1.0086233019078213e-31,
+      "min_expected_count": 8.606951871657754,
+      "note": ""
+    },
+    "fps_band": {
+      "chi2": 0.6097935500150744,
+      "dof": 2,
+      "p_value": 0.7371994678737004,
+      "min_expected_count": 5.935828877005347,
+      "note": ""
+    }
+  },
+  "rates": {
+    "label_type": [
+      {
+        "label_type": "single_word",
+        "accepted": 353,
+        "short": 108,
+        "short_pct": 30.594900849858355
+      },
+      {
+        "label_type": "fingerspelled_letter",
+        "accepted": 14,
+        "short": 3,
+        "short_pct": 21.428571428571427
+      },
+      {
+        "label_type": "multi_word",
+        "accepted": 7,
+        "short": 0,
+        "short_pct": 0.0
+      }
+    ],
+    "source_proxy": [
+      {
+        "source_proxy": "numericid-WORD",
+        "accepted": 265,
+        "short": 89,
+        "short_pct": 33.58490566037736
+      },
+      {
+        "source_proxy": "word_video_n",
+        "accepted": 47,
+        "short": 4,
+        "short_pct": 8.51063829787234
+      },
+      {
+        "source_proxy": "word_timestamp_n",
+        "accepted": 34,
+        "short": 11,
+        "short_pct": 32.35294117647059
+      },
+      {
+        "source_proxy": "word_n",
+        "accepted": 26,
+        "short": 7,
+        "short_pct": 26.923076923076923
+      },
+      {
+        "source_proxy": "word_only",
+        "accepted": 2,
+        "short": 0,
+        "short_pct": 0.0
+      }
+    ],
+    "clip_frames_30fps": [
+      {
+        "clip_frames_30fps": "60-89",
+        "accepted": 169,
+        "short": 40,
+        "short_pct": 23.668639053254438
+      },
+      {
+        "clip_frames_30fps": ">=90",
+        "accepted": 117,
+        "short": 2,
+        "short_pct": 1.7094017094017093
+      },
+      {
+        "clip_frames_30fps": "45-59",
+        "accepted": 59,
+        "short": 45,
+        "short_pct": 76.27118644067797
+      },
+      {
+        "clip_frames_30fps": "<45",
+        "accepted": 29,
+        "short": 24,
+        "short_pct": 82.75862068965517
+      }
+    ],
+    "fps_band": [
+      {
+        "fps_band": "~30",
+        "accepted": 322,
+        "short": 96,
+        "short_pct": 29.81366459627329
+      },
+      {
+        "fps_band": "<29.5",
+        "accepted": 32,
+        "short": 8,
+        "short_pct": 25.0
+      },
+      {
+        "fps_band": ">30.5",
+        "accepted": 20,
+        "short": 7,
+        "short_pct": 35.0
+      }
+    ],
+    "augmented": [
+      {
+        "augmented": "False",
+        "accepted": 362,
+        "short": 108,
+        "short_pct": 29.834254143646408
+      },
+      {
+        "augmented": "True",
+        "accepted": 12,
+        "short": 3,
+        "short_pct": 25.0
+      }
+    ],
+    "in_duplicate_group": [
+      {
+        "in_duplicate_group": "False",
+        "accepted": 342,
+        "short": 107,
+        "short_pct": 31.28654970760234
+      },
+      {
+        "in_duplicate_group": "True",
+        "accepted": 32,
+        "short": 4,
+        "short_pct": 12.5
+      }
+    ]
+  }
+}

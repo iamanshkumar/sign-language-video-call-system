@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/raw/
+data/metadata/probe_parts/*.tmp
+.DS_Store
+data/landmarks/**/arrays/
+models/
+experiments/**/*.pt
+experiments/**/*.joblib
+experiments/_stores/
+dist/

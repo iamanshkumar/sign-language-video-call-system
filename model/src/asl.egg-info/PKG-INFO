@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: asl
+Version: 0.1.0
+Summary: Sign Language Translator Video Calling System - ML pipeline
+Requires-Python: <3.13,>=3.12

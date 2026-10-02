@@ -1,0 +1,188 @@
+label,n_samples,anomaly,detail
+walk-tightrope-cl,31,classifier_suffix,ends with '-cl' (likely ASL classifier gloss)
+actor,46,concatenation_of_labels,act + or
+afternoon,49,concatenation_of_labels,after + noon
+all but,37,concatenation_of_labels,all + but
+allgone,31,concatenation_of_labels,all + gone
+allover,31,concatenation_of_labels,all + over
+allway,31,concatenation_of_labels,all + way
+anyone,36,concatenation_of_labels,any + one
+backbone,35,concatenation_of_labels,back + bone
+backout,32,concatenation_of_labels,back + out
+backpack,78,concatenation_of_labels,back + pack
+backup,58,concatenation_of_labels,back + up
+basketball,114,concatenation_of_labels,basket + ball
+bathroom,63,concatenation_of_labels,bath + room
+bedroom,47,concatenation_of_labels,bed + room
+birthday,47,concatenation_of_labels,birth + day
+blowcandle,58,concatenation_of_labels,blow + candle
+blowmind,31,concatenation_of_labels,blow + mind
+bowtie,31,concatenation_of_labels,bow + tie
+boyfriend,43,concatenation_of_labels,boy + friend
+brain,31,concatenation_of_labels,bra + in
+brainwash,34,concatenation_of_labels,brain + wash
+breakdown,64,concatenation_of_labels,break + down
+breakfast,80,concatenation_of_labels,break + fast
+breaktime,31,concatenation_of_labels,break + time
+bring down,39,concatenation_of_labels,bring + down
+butterfly,44,concatenation_of_labels,butter + fly
+callattention,31,concatenation_of_labels,call + attention
+calltty,32,concatenation_of_labels,call + tty
+cannot,43,concatenation_of_labels,can + not
+carbattery,31,concatenation_of_labels,car + battery
+closeeyes,31,concatenation_of_labels,close + eyes
+comehere,31,concatenation_of_labels,come + here
+comeout,31,concatenation_of_labels,come + out
+cowboy,32,concatenation_of_labels,cow + boy
+crossheart,31,concatenation_of_labels,cross + heart
+cut back,33,concatenation_of_labels,cut + back
+cut down,36,concatenation_of_labels,cut + down
+deafschool,31,concatenation_of_labels,deaf + school
+differentsituation,31,concatenation_of_labels,different + situation
+digup,31,concatenation_of_labels,dig + up
+download,38,concatenation_of_labels,down + load
+dragon,37,concatenation_of_labels,drag + on
+dressup,31,concatenation_of_labels,dress + up
+earring,42,concatenation_of_labels,ear + ring
+eyesawake,31,concatenation_of_labels,eyes + awake
+feedback,44,concatenation_of_labels,feed + back
+fireman,67,concatenation_of_labels,fire + man
+freeway,39,concatenation_of_labels,free + way
+get down,36,concatenation_of_labels,get + down
+gettogether,31,concatenation_of_labels,get + together
+giveup,31,concatenation_of_labels,give + up
+goat,45,concatenation_of_labels,go + at
+good deal,51,concatenation_of_labels,good + deal
+great deal,51,concatenation_of_labels,great + deal
+haircut,37,concatenation_of_labels,hair + cut
+hairdresser,32,concatenation_of_labels,hair + dresser
+hairdryer,87,concatenation_of_labels,hair + dryer
+headcold,31,concatenation_of_labels,head + cold
+headgrind,31,concatenation_of_labels,head + grind
+heart,66,concatenation_of_labels,he + art
+heartbody,31,concatenation_of_labels,heart + body
+highlighter,31,concatenation_of_labels,high + lighter
+highschool,35,concatenation_of_labels,high + school
+holdhands,31,concatenation_of_labels,hold + hands
+holdtogether,31,concatenation_of_labels,hold + together
+homework,41,concatenation_of_labels,home + work
+hotdog,42,concatenation_of_labels,hot + dog
+icecream,31,concatenation_of_labels,ice + cream
+inside,47,concatenation_of_labels,in + side
+invest,59,concatenation_of_labels,in + vest
+jellyfish,35,concatenation_of_labels,jelly + fish
+keyboard,43,concatenation_of_labels,key + board
+learnlesson,31,concatenation_of_labels,learn + lesson
+leavealone,31,concatenation_of_labels,leave + alone
+lesson,40,concatenation_of_labels,less + on
+lickenvelope,60,concatenation_of_labels,lick + envelope
+longline,31,concatenation_of_labels,long + line
+longword,31,concatenation_of_labels,long + word
+losegame,31,concatenation_of_labels,lose + game
+mailman,39,concatenation_of_labels,mail + man
+manage,44,concatenation_of_labels,man + age
+meat,71,concatenation_of_labels,me + at
+memorizememorize,31,concatenation_of_labels,memorize + memorize
+movedown,31,concatenation_of_labels,move + down
+myself,41,concatenation_of_labels,my + self
+network,48,concatenation_of_labels,net + work
+noon,76,concatenation_of_labels,no + on
+nosebleed,34,concatenation_of_labels,nose + bleed
+notinterested,31,concatenation_of_labels,not + interested
+offend,35,concatenation_of_labels,off + end
+office,55,concatenation_of_labels,off + ice
+onemore,59,concatenation_of_labels,one + more
+orangeeyes,31,concatenation_of_labels,orange + eyes
+outside,51,concatenation_of_labels,out + side
+overnight,33,concatenation_of_labels,over + night
+overtake,31,concatenation_of_labels,over + take
+paintbrush,34,concatenation_of_labels,paint + brush
+passout,31,concatenation_of_labels,pass + out
+playground,39,concatenation_of_labels,play + ground
+popcorn,41,concatenation_of_labels,pop + corn
+pullconvince,32,concatenation_of_labels,pull + convince
+rainbow,42,concatenation_of_labels,rain + bow
+restless,35,concatenation_of_labels,rest + less
+sailboat,33,concatenation_of_labels,sail + boat
+samesame,31,concatenation_of_labels,same + same
+sametime,31,concatenation_of_labels,same + time
+seesee,31,concatenation_of_labels,see + see
+set up,40,concatenation_of_labels,set + up
+setup,31,concatenation_of_labels,set + up
+smellmoney,31,concatenation_of_labels,smell + money
+snowboard,35,concatenation_of_labels,snow + board
+snowman,41,concatenation_of_labels,snow + man
+snowsuit,31,concatenation_of_labels,snow + suit
+softball,34,concatenation_of_labels,soft + ball
+some,58,concatenation_of_labels,so + me
+soon,82,concatenation_of_labels,so + on
+soup,39,concatenation_of_labels,so + up
+stand-up,31,concatenation_of_labels,stand + up
+stopwatch,33,concatenation_of_labels,stop + watch
+strawberry,135,concatenation_of_labels,straw + berry
+sunday,53,concatenation_of_labels,sun + day
+sunset,43,concatenation_of_labels,sun + set
+sweatpants,31,concatenation_of_labels,sweat + pants
+sweetheart,56,concatenation_of_labels,sweet + heart
+takeoff,57,concatenation_of_labels,take + off
+thinkchin,31,concatenation_of_labels,think + chin
+thinkover,31,concatenation_of_labels,think + over
+thinkponder,31,concatenation_of_labels,think + ponder
+tieup,59,concatenation_of_labels,tie + up
+today,48,concatenation_of_labels,to + day
+trim back,32,concatenation_of_labels,trim + back
+trim down,32,concatenation_of_labels,trim + down
+turnkey,32,concatenation_of_labels,turn + key
+twomore,31,concatenation_of_labels,two + more
+undergraduate,34,concatenation_of_labels,under + graduate
+understand,47,concatenation_of_labels,under + stand
+underwear,79,concatenation_of_labels,under + wear
+upload,35,concatenation_of_labels,up + load
+upset,83,concatenation_of_labels,up + set
+veryinterested,32,concatenation_of_labels,very + interested
+visitor,38,concatenation_of_labels,visit + or
+washface,58,concatenation_of_labels,wash + face
+washhands,31,concatenation_of_labels,wash + hands
+washmachine,31,concatenation_of_labels,wash + machine
+waterdrop,31,concatenation_of_labels,water + drop
+waterski,31,concatenation_of_labels,water + ski
+weekend,45,concatenation_of_labels,week + end
+well-nigh,37,concatenation_of_labels,well + nigh
+whatfor,85,concatenation_of_labels,what + for
+wheelchair,37,concatenation_of_labels,wheel + chair
+whiteperson,31,concatenation_of_labels,white + person
+whole lot,51,concatenation_of_labels,whole + lot
+whole slew,51,concatenation_of_labels,whole + slew
+willgo,31,concatenation_of_labels,will + go
+without,44,concatenation_of_labels,with + out
+workout,32,concatenation_of_labels,work + out
+workshop,41,concatenation_of_labels,work + shop
+wrapup,58,concatenation_of_labels,wrap + up
+yourself,40,concatenation_of_labels,your + self
+1dollar,31,contains_digit,
+5dollars,32,contains_digit,
+8hour,31,contains_digit,
+9oclock,31,contains_digit,
+stayawake24hrs,31,contains_digit,
+absolutelynothing,31,long_unseparated,17 chars without separators
+congratulations,42,long_unseparated,15 chars without separators
+differentsituation,31,long_unseparated,18 chars without separators
+fingerspelling,37,long_unseparated,14 chars without separators
+gobackandforth,31,long_unseparated,14 chars without separators
+goingthroughahardtime,31,long_unseparated,21 chars without separators
+holdaccountable,31,long_unseparated,15 chars without separators
+lookappearance,32,long_unseparated,14 chars without separators
+memorizememorize,31,long_unseparated,16 chars without separators
+responsibility,43,long_unseparated,14 chars without separators
+sneakadventure,31,long_unseparated,14 chars without separators
+stayawake24hrs,31,long_unseparated,14 chars without separators
+veryinterested,32,long_unseparated,14 chars without separators
+set up,40,near_duplicate_label,same after removing case/space/-/_: set up | setup
+setup,31,near_duplicate_label,same after removing case/space/-/_: set up | setup
+dodo,32,repeated_word,'do' repeated
+goodygoody,31,repeated_word,'goody' repeated
+memorizememorize,31,repeated_word,'memorize' repeated
+samesame,31,repeated_word,'same' repeated
+seesee,31,repeated_word,'see' repeated
+yoyo,31,repeated_word,'yo' repeated
+TRUE,42,uppercase,contains uppercase characters

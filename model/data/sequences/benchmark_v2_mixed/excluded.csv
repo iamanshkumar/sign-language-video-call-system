@@ -1,0 +1,27 @@
+sample_id,word,split,rejection_reason
+part_1/06117592760150714-FACE.mp4,face,train,active_both_hands_missing_fraction
+part_1/062188296039833-LET ME_SEE.mp4,letmesee,train,too_few_decoded_frames
+part_1/08449266343815642-HELL.mp4,hell,train,active_both_hands_missing_fraction
+part_1/130187777265373-HARD OF_HEARING.mp4,hardofhearing,train,too_few_decoded_frames
+part_1/1728288380590255-ZOO.mp4,zoo,train,active_both_hands_missing_run
+part_10/place_video_23.mp4,place,train,too_few_decoded_frames
+part_10/ruin_video_2.mp4,ruin,train,too_few_decoded_frames
+part_10/shout_20241119_172654_10.mp4,shout,train,too_few_decoded_frames
+part_10/siren_video_2.mp4,siren,train,active_both_hands_missing_run
+part_10/smoking_0.mp4,smoking,train,active_both_hands_missing_fraction
+part_2/19894739757704438-LONG LINE.mp4,longline,train,active_both_hands_missing_fraction
+part_2/25547357047109687-GIRL.mp4,girl,train,active_both_hands_missing_fraction
+part_2/3033680920399553-ASIA.mp4,asia,train,active_both_hands_missing_fraction
+part_2/3186754883180434-LIVING ROOM.mp4,livingroom,train,active_both_hands_missing_fraction
+part_2/3520246184230904-JUGGLE.mp4,juggle,train,active_both_hands_missing_fraction
+part_2/35359931273860434-ARIZONA.mp4,arizona,train,too_few_decoded_frames
+part_3/408010215031793-VOICE.mp4,voice,train,active_both_hands_missing_fraction
+part_4/5708154987302507-MASSAGE.mp4,massage,train,active_both_hands_missing_fraction
+part_4/5719477017744072-SSHH.mp4,sshh,train,too_few_decoded_frames
+part_5/7642293204520254-BOILING MAD.mp4,boilingmad,train,active_both_hands_missing_fraction
+part_5/7798893370763214-ESCAPE.mp4,escape,train,active_both_hands_missing_run
+part_5/811396261446274-FAINT.mp4,faint,train,active_both_hands_missing_fraction
+part_6/929892595638057-PUZZLED.mp4,puzzled,train,too_few_decoded_frames
+part_6/9845660015904845-TURBAN.mp4,turban,train,active_both_hands_missing_fraction
+part_6/backup_video_6.mp4,backup,train,too_few_decoded_frames
+part_7/bow_20241119_172635_67.mp4,bow,train,no_active_signing_interval

@@ -1,0 +1,75 @@
+{
+  "spec": {
+    "model": "bilstm",
+    "feature_config": "hands_pose",
+    "window": 45
+  },
+  "step4": {
+    "experiment_matrix": {
+      "feature_configs": [
+        "hands",
+        "hands_pose",
+        "hands_pose_face"
+      ],
+      "windows": [
+        30,
+        45,
+        60
+      ],
+      "neural_models": [
+        "lstm",
+        "bilstm"
+      ],
+      "rf_baseline": true
+    },
+    "seed": 42,
+    "neural": {
+      "hidden_size": 128,
+      "num_layers": 2,
+      "dropout": 0.3,
+      "optimizer": "adamw",
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "loss": "cross_entropy",
+      "batch_size": 64,
+      "fallback_batch_size": 32,
+      "max_epochs": 50,
+      "early_stopping_patience": 7,
+      "scheduler": {
+        "name": "reduce_lr_on_plateau",
+        "monitor": "val_macro_f1",
+        "mode": "max",
+        "factor": 0.5,
+        "patience": 3
+      },
+      "selection_metric": "val_macro_f1"
+    },
+    "random_forest": {
+      "n_estimators": 300,
+      "max_depth": null,
+      "min_samples_leaf": 1,
+      "max_features": "sqrt",
+      "class_weight": null,
+      "n_jobs": 1,
+      "random_state": 42
+    },
+    "runtime": {
+      "device": "cpu",
+      "cpu_threads": 4,
+      "deterministic": true
+    },
+    "latency": {
+      "warmup_runs": 20,
+      "timed_runs": 200,
+      "batch_sizes": [
+        1,
+        64
+      ],
+      "end_to_end_samples": 50
+    },
+    "output": {
+      "experiments_dir": "experiments",
+      "reports_dir": "reports/step4"
+    }
+  }
+}

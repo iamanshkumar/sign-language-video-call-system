@@ -1,0 +1,22 @@
+{
+  "store": "benchmark_v2_mixed",
+  "landmark_videos": 400,
+  "accepted_indexed": 374,
+  "excluded": 26,
+  "excluded_by_reason": {
+    "active_both_hands_missing_fraction": 13,
+    "too_few_decoded_frames": 9,
+    "active_both_hands_missing_run": 3,
+    "no_active_signing_interval": 1
+  },
+  "excluded_by_split": {
+    "train": 26
+  },
+  "index_sha256": "93de6d6278af987f56d9aae3518a3005e5fac900e8857c6a5718692f0bef289e",
+  "label_mapping_vocabulary_sha256": "4b231655606bcb69d4968b463e7cc355f2383bdb4c57e1b73db233535651be1f",
+  "windows": [
+    30,
+    45,
+    60
+  ]
+}

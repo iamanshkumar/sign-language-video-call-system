@@ -1,0 +1,63 @@
+word,repo_path,exclusion_reason,decode_error,decoded_frames,avg_fps
+g,part_8/g_2_g_aug_38.mp4,fewer_than_min_decoded_frames,,29.0,29.97
+go,part_8/go_video_30.mp4,fewer_than_min_decoded_frames,,29.0,23.976
+my,part_9/my_8.mp4,fewer_than_min_decoded_frames,,28.0,29.97
+up,part_2/18207981361044623-UP.mp4,fewer_than_min_decoded_frames,,28.0,14.997321906802357
+any,part_1/11842735888140044-ANY.mp4,fewer_than_min_decoded_frames,,21.0,15.0
+bus,part_5/8825809251775667-BUS.mp4,fewer_than_min_decoded_frames,,29.0,15.010351966873706
+cut,part_7/cut_2.mp4,fewer_than_min_decoded_frames,,22.0,23.976
+one,part_9/one_8.mp4,fewer_than_min_decoded_frames,,28.0,29.97
+out,part_9/out_6.mp4,fewer_than_min_decoded_frames,,27.0,29.97
+try,part_4/6262923592222667-TRY.mp4,fewer_than_min_decoded_frames,,29.0,29.98965873836608
+why,part_11/why_video_7.mp4,fewer_than_min_decoded_frames,,26.0,15.358
+back,part_6/back_video_8.mp4,fewer_than_min_decoded_frames,,26.0,23.976
+blue,part_4/5646306760457318-BLUE.mp4,fewer_than_min_decoded_frames,,19.0,14.99605367008682
+cake,part_7/cake_video_10.mp4,fewer_than_min_decoded_frames,,26.0,23.976
+comb,part_7/comb_20241119_172637_42.mp4,fewer_than_min_decoded_frames,,26.0,14.91681009753299
+come,part_5/7634160961141707-COME.mp4,fewer_than_min_decoded_frames,,18.0,30.0
+cool,part_7/cool_20241119_172638_46.mp4,fewer_than_min_decoded_frames,,19.0,14.913657770800627
+farm,part_8/farm_5.mp4,fewer_than_min_decoded_frames,,28.0,29.97
+line,part_9/line_video_37.mp4,fewer_than_min_decoded_frames,,24.0,15.867
+more,part_9/more_5.mp4,fewer_than_min_decoded_frames,,22.0,29.97
+next,part_4/5736958277048834-NEXT.mp4,fewer_than_min_decoded_frames,,27.0,30.0
+ruin,part_10/ruin_video_2.mp4,fewer_than_min_decoded_frames,,24.0,23.976
+sshh,part_4/5719477017744072-SSHH.mp4,fewer_than_min_decoded_frames,,19.0,14.83216237314598
+want,part_11/want_20241119_172657_6.mp4,fewer_than_min_decoded_frames,,27.0,29.97
+adopt,part_6/adopt_6.mp4,fewer_than_min_decoded_frames,,29.0,29.97
+break,part_7/break_video_3.mp4,fewer_than_min_decoded_frames,,29.0,23.976
+fired,part_8/fired_video_4.mp4,fewer_than_min_decoded_frames,,26.0,23.976
+floor,part_8/floor_11.mp4,fewer_than_min_decoded_frames,,28.0,29.97
+match,part_9/match_video_8.mp4,fewer_than_min_decoded_frames,,28.0,23.976
+place,part_10/place_video_23.mp4,fewer_than_min_decoded_frames,,27.0,23.976
+seven,part_10/seven_5.mp4,fewer_than_min_decoded_frames,,28.0,29.97
+skill,part_4/6610582264477418-SKILL.mp4,fewer_than_min_decoded_frames,,26.0,29.988465974625143
+skirt,part_10/skirt_video_18.mp4,fewer_than_min_decoded_frames,,29.0,23.976
+vomit,part_11/vomit_7.mp4,fewer_than_min_decoded_frames,,29.0,29.97
+backup,part_6/backup_video_6.mp4,fewer_than_min_decoded_frames,,28.0,23.976
+before,part_7/before_26.mp4,fewer_than_min_decoded_frames,,28.0,29.97
+decide,part_7/decide_20241119_172639_11.mp4,fewer_than_min_decoded_frames,,29.0,23.976
+laptop,part_1/12668711408656264-LAPTOP.mp4,fewer_than_min_decoded_frames,,4.0,30.612
+seesee,part_2/24918317051208416-SEE SEE.mp4,fewer_than_min_decoded_frames,,21.0,30.0
+shrimp,part_6/9260383471979989-SHRIMP.mp4,fewer_than_min_decoded_frames,,26.0,29.919447640966627
+vanish,part_11/vanish.mp4,fewer_than_min_decoded_frames,,22.0,29.97
+willgo,part_5/7964077639125973-WILL GO.mp4,fewer_than_min_decoded_frames,,24.0,15.0093808630394
+arizona,part_2/35359931273860434-ARIZONA.mp4,fewer_than_min_decoded_frames,,24.0,30.0
+coconut,part_2/2700670818989992-COCONUT.mp4,fewer_than_min_decoded_frames,,26.0,29.919447640966627
+contact,part_7/contact_video_4.mp4,fewer_than_min_decoded_frames,,21.0,23.976
+curious,part_6/9061752761485327-CURIOUS.mp4,fewer_than_min_decoded_frames,,23.0,29.90897269180754
+grenade,part_6/9376363226153179-GRENADE.mp4,fewer_than_min_decoded_frames,,3.0,42.253
+lettuce,part_9/lettuce_20241119_172646_67.mp4,fewer_than_min_decoded_frames,,29.0,14.99482936918304
+problem,part_10/problem_20241119_172651_18.mp4,fewer_than_min_decoded_frames,,29.0,23.976
+puzzled,part_6/929892595638057-PUZZLED.mp4,fewer_than_min_decoded_frames,,23.0,14.915693904020753
+suspect,part_3/3971637067514109-SUSPECT.mp4,fewer_than_min_decoded_frames,,21.0,15.0
+tiredof,part_1/03433722050776988-TIRED OF.mp4,fewer_than_min_decoded_frames,,21.0,15.086206896551724
+whistle,part_11/whistle_20241119_172658_31.mp4,fewer_than_min_decoded_frames,,23.0,15.013054830287206
+5dollars,part_5/8227831990208962-5 DOLLARS.mp4,fewer_than_min_decoded_frames,,3.0,46.874
+continue,part_7/continue_video_6.mp4,fewer_than_min_decoded_frames,,29.0,15.284
+function,part_8/function_5.mp4,fewer_than_min_decoded_frames,,28.0,23.976
+letmesee,part_1/062188296039833-LET ME_SEE.mp4,fewer_than_min_decoded_frames,,27.0,14.991671293725707
+register,part_10/register_video_6.mp4,fewer_than_min_decoded_frames,,28.0,23.976
+dormitory,part_2/3015034607163163-DORMITORY.mp4,fewer_than_min_decoded_frames,,29.0,14.99482936918304
+spaghetti,part_10/spaghetti_video_1.mp4,fewer_than_min_decoded_frames,,29.0,15.286
+fascinated,part_1/15653902435798894-FASCINATED.mp4,fewer_than_min_decoded_frames,,27.0,30.0
+hardofhearing,part_1/130187777265373-HARD OF_HEARING.mp4,fewer_than_min_decoded_frames,,22.0,14.996591683708248

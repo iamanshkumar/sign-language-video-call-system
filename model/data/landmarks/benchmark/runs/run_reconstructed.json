@@ -1,0 +1,9 @@
+{
+  "started_utc": null,
+  "videos_attempted": 400,
+  "wall_s": 597.666,
+  "workers": 4,
+  "download_workers": 8,
+  "batch_size": 50,
+  "source": "reconstructed from run.log timestamps (run stopped at user request; resource monitor summary lost)"
+}

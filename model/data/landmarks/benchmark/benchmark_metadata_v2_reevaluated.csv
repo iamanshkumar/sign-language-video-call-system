@@ -1,0 +1,401 @@
+sample_id,word,split,original_frame_count,std_frame_count,v1_rejection_reason,v2_rejection_reason,fullclip_rule,active_start_frame,active_end_frame,active_frames,short_active_interval,active_both_hands_missing_pct,active_longest_both_hands_missing_run,rest_frames_before,rest_frames_after
+part_1/001562079489014323-REPLACE.mp4,replace,train,35,35,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,24.0,17.0,True,0.0,0.0,8.0,10.0
+part_1/0070019227198838685-MOSQUITO.mp4,mosquito,train,54,54,both_hands_missing_fraction,,both_hands_missing_fraction,4.0,32.0,29.0,True,0.0,0.0,4.0,21.0
+part_1/016320392648127235-AIRPLANE.mp4,airplane,train,77,77,both_hands_missing_fraction,,both_hands_missing_fraction,16.0,52.0,37.0,False,0.0,0.0,16.0,24.0
+part_1/01736975825947895-DRIP.mp4,drip,train,80,80,both_hands_missing_fraction,,both_hands_missing_fraction,29.0,65.0,37.0,False,0.0,0.0,29.0,14.0
+part_1/02185976473813267-SCHOOL.mp4,school,train,77,76,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,45.0,39.0,False,5.128205128205128,1.0,7.0,30.0
+part_1/026478949400837504-STING.mp4,sting,train,43,43,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,23.0,16.0,True,0.0,0.0,8.0,19.0
+part_1/02849647094172214-MELT.mp4,melt,train,144,144,both_hands_missing_fraction,,both_hands_missing_fraction,59.0,111.0,53.0,False,0.0,0.0,59.0,32.0
+part_1/03150905619350208-SELECT.mp4,select,train,58,57,both_hands_missing_fraction,,both_hands_missing_fraction,21.0,42.0,22.0,True,0.0,0.0,21.0,14.0
+part_1/03162833308491719-seedSTRANGLE.mp4,strangle,train,103,102,both_hands_missing_fraction,,both_hands_missing_fraction,24.0,66.0,43.0,False,0.0,0.0,24.0,35.0
+part_1/037495253259864025-COMMITTEE.mp4,committee,train,53,52,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,26.0,20.0,True,0.0,0.0,7.0,25.0
+part_1/0383508135640489-WILL.mp4,will,train,41,41,both_hands_missing_fraction,,both_hands_missing_fraction,16.0,35.0,20.0,True,5.0,1.0,16.0,5.0
+part_1/04690553070267223-DRIBBLE.mp4,dribble,train,50,50,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,32.0,26.0,True,0.0,0.0,7.0,17.0
+part_1/05219141482368883-VEST.mp4,vest,train,73,72,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,22.0,15.0,True,0.0,0.0,8.0,49.0
+part_1/05529229163365468-LEATHER.mp4,leather,train,66,66,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,44.0,38.0,False,0.0,0.0,7.0,21.0
+part_1/057961626489608786-DISNEY.mp4,disney,train,35,35,both_hands_missing_fraction,,both_hands_missing_fraction,4.0,21.0,18.0,True,0.0,0.0,4.0,13.0
+part_1/05960401252194858-BRAINSTORM.mp4,brainstorm,train,55,55,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,43.0,31.0,False,0.0,0.0,13.0,11.0
+part_1/06117592760150714-FACE.mp4,face,train,37,37,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,8.0,30.0,23.0,True,30.434782608695656,6.0,8.0,6.0
+part_1/062188296039833-LET ME_SEE.mp4,letmesee,train,27,54,too_few_decoded_frames,too_few_decoded_frames,,,,,,,,,
+part_1/06250661500867993-AIRPLANE.mp4,airplane,train,63,61,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,34.0,26.0,True,3.8461538461538463,1.0,9.0,26.0
+part_1/06667344658822971-DEODORANT.mp4,deodorant,train,69,69,both_hands_missing_fraction,,both_hands_missing_fraction,16.0,45.0,30.0,False,0.0,0.0,16.0,23.0
+part_1/06982327750615669-BOARD.mp4,board,train,40,40,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,32.0,24.0,True,12.5,3.0,9.0,7.0
+part_1/07055642168322596-SOCIALIZE.mp4,socialize,train,102,102,both_hands_missing_fraction,,both_hands_missing_fraction,28.0,78.0,51.0,False,0.0,0.0,28.0,23.0
+part_1/07652904644501302-PONDER.mp4,ponder,train,77,77,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,58.0,44.0,False,0.0,0.0,15.0,18.0
+part_1/07964079458380247-DIRECTOR.mp4,director,train,103,103,both_hands_missing_fraction,,both_hands_missing_fraction,34.0,84.0,51.0,False,0.0,0.0,34.0,18.0
+part_1/08167080058381582-DEVOUR.mp4,devour,train,67,67,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,43.0,35.0,False,5.714285714285714,1.0,9.0,23.0
+part_1/08384216500026387-TOOTHBRUSH.mp4,toothbrush,train,40,40,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,24.0,12.0,True,0.0,0.0,13.0,15.0
+part_1/08449266343815642-HELL.mp4,hell,train,129,129,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,54.0,99.0,46.0,False,45.65217391304348,21.0,54.0,29.0
+part_1/08673843529675529-WOLF.mp4,wolf,train,45,45,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,21.0,14.0,True,0.0,0.0,8.0,23.0
+part_1/08990722330487633-SNOB.mp4,snob,train,44,44,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,31.0,25.0,True,0.0,0.0,7.0,12.0
+part_1/09070448909781481-LIE.mp4,lie,train,43,43,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,22.0,17.0,True,17.647058823529413,3.0,6.0,20.0
+part_1/09372531487486135-ORAL.mp4,oral,train,73,73,both_hands_missing_fraction,,both_hands_missing_fraction,10.0,40.0,31.0,False,6.451612903225806,1.0,10.0,32.0
+part_1/09602770669006189-SIGNATURE.mp4,signature,train,33,33,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,21.0,14.0,True,0.0,0.0,8.0,11.0
+part_1/10227148303927724-CLIMB LADDER.mp4,climbladder,train,63,63,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,43.0,37.0,False,0.0,0.0,7.0,19.0
+part_1/10318499069402809-seedWITH.mp4,with,train,112,111,both_hands_missing_fraction,,both_hands_missing_fraction,25.0,61.0,37.0,False,0.0,0.0,25.0,49.0
+part_1/10673600991450427-GET IN_BED.mp4,getinbed,train,67,67,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,47.0,35.0,False,0.0,0.0,13.0,19.0
+part_1/1068161656277502-HOLY.mp4,holy,train,158,158,both_hands_missing_fraction,,both_hands_missing_fraction,20.0,77.0,58.0,False,1.7241379310344827,1.0,20.0,80.0
+part_1/1083098587224911-EACH.mp4,each,train,67,67,both_hands_missing_fraction,,both_hands_missing_fraction,12.0,48.0,37.0,False,0.0,0.0,12.0,18.0
+part_1/11052983155454288-PERCEIVE.mp4,perceive,train,137,137,both_hands_missing_fraction,,both_hands_missing_fraction,28.0,88.0,61.0,False,0.0,0.0,28.0,48.0
+part_1/11091344459201657-ME.mp4,me,train,98,98,both_hands_missing_fraction,,both_hands_missing_fraction,26.0,70.0,45.0,False,11.11111111111111,4.0,26.0,27.0
+part_1/11515947422052664-UDDER.mp4,udder,train,65,65,both_hands_missing_fraction,,both_hands_missing_fraction,10.0,42.0,33.0,False,0.0,0.0,10.0,22.0
+part_1/11783459552698217-EGG BEATER.mp4,eggbeater,train,137,137,both_hands_missing_fraction,,both_hands_missing_fraction,38.0,83.0,46.0,False,0.0,0.0,38.0,53.0
+part_1/11965070615236195-LIGHTNING.mp4,lightning,train,86,85,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,36.0,22.0,True,0.0,0.0,15.0,48.0
+part_1/12124668274226069-PROJECT.mp4,project,train,88,88,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,51.0,38.0,False,0.0,0.0,14.0,36.0
+part_1/12221538032492663-GALLAUDET.mp4,gallaudet,train,52,52,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,26.0,18.0,True,0.0,0.0,9.0,25.0
+part_1/12845941567802943-PARAGRAPH.mp4,paragraph,train,55,55,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,24.0,16.0,True,0.0,0.0,9.0,30.0
+part_1/1293300004047313-BECAUSE.mp4,because,train,88,88,both_hands_missing_fraction,,both_hands_missing_fraction,22.0,56.0,35.0,False,0.0,0.0,22.0,31.0
+part_1/12967813466333067-DEPRESS.mp4,depress,train,166,167,both_hands_missing_fraction,,both_hands_missing_fraction,51.0,129.0,79.0,False,0.0,0.0,51.0,37.0
+part_1/130187777265373-HARD OF_HEARING.mp4,hardofhearing,train,22,44,too_few_decoded_frames,too_few_decoded_frames,,,,,,,,,
+part_1/13099227098135868-MARIONETTE.mp4,marionette,train,55,55,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,41.0,35.0,False,2.857142857142857,1.0,7.0,13.0
+part_1/13406592096695746-FREE.mp4,free,train,63,63,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,36.0,31.0,False,0.0,0.0,6.0,26.0
+part_1/13697993160966937-LIPSTICK.mp4,lipstick,train,85,85,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,61.0,48.0,False,2.083333333333333,1.0,14.0,23.0
+part_1/13739657899319724-CLIMB LADDER.mp4,climbladder,train,288,287,both_hands_missing_run,,both_hands_missing_run,34.0,259.0,226.0,False,7.079646017699115,13.0,34.0,27.0
+part_1/14615094008591-SUN.mp4,sun,train,85,85,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,49.0,41.0,False,0.0,0.0,9.0,35.0
+part_1/15631750362649433-AT.mp4,at,train,92,92,both_hands_missing_fraction,,both_hands_missing_fraction,23.0,64.0,42.0,False,0.0,0.0,23.0,27.0
+part_1/1583359273533682-HOOD.mp4,hood,train,73,73,both_hands_missing_fraction,,both_hands_missing_fraction,4.0,37.0,34.0,False,0.0,0.0,4.0,35.0
+part_1/1590837677039214-BIRTH.mp4,birth,train,92,92,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,51.0,44.0,False,0.0,0.0,8.0,40.0
+part_1/1649337242624458-CAPE.mp4,cape,train,39,78,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,41.0,37.0,False,0.0,0.0,5.0,36.0
+part_1/17168186292515686-NEVER.mp4,never,train,53,52,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,14.0,6.0,True,0.0,0.0,9.0,37.0
+part_1/1728288380590255-ZOO.mp4,zoo,train,169,165,both_hands_missing_fraction,active_both_hands_missing_run,both_hands_missing_fraction,22.0,140.0,119.0,False,20.168067226890756,23.0,22.0,24.0
+part_1/17466826956034764-SPONTANEOUS.mp4,spontaneous,train,91,91,both_hands_missing_fraction,,both_hands_missing_fraction,11.0,41.0,31.0,False,0.0,0.0,11.0,49.0
+part_1/17984011488050022-MORE.mp4,more,train,59,58,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,30.0,24.0,True,0.0,0.0,7.0,27.0
+part_10/phone_video_10.mp4,phone,train,56,70,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,43.0,29.0,True,0.0,0.0,15.0,26.0
+part_10/pitcher_video_6.mp4,pitcher,train,111,111,,,,12.0,103.0,92.0,False,1.0869565217391304,1.0,12.0,7.0
+part_10/place_video_23.mp4,place,train,27,34,too_few_decoded_frames,too_few_decoded_frames,,,,,,,,,
+part_10/play_video_25.mp4,play,train,105,105,both_hands_missing_fraction,,both_hands_missing_fraction,22.0,76.0,55.0,False,0.0,0.0,22.0,28.0
+part_10/point_1.mp4,point,train,68,85,both_hands_missing_fraction,,both_hands_missing_fraction,17.0,56.0,40.0,False,2.5,1.0,17.0,28.0
+part_10/poor_video_10.mp4,poor,train,178,178,both_hands_missing_fraction,,both_hands_missing_fraction,49.0,151.0,103.0,False,0.0,0.0,49.0,26.0
+part_10/pour_20241119_172651_20.mp4,pour,train,100,97,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,58.0,46.0,False,0.0,0.0,13.0,38.0
+part_10/pour_20241119_172651_44.mp4,pour,train,51,51,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,25.0,18.0,True,0.0,0.0,8.0,25.0
+part_10/price_6.mp4,price,train,76,76,,,,12.0,70.0,59.0,False,0.0,0.0,12.0,5.0
+part_10/psychology_video_0.mp4,psychology,train,97,97,both_hands_missing_fraction,,both_hands_missing_fraction,25.0,80.0,56.0,False,12.5,3.0,25.0,16.0
+part_10/quite_a_little_video_35.mp4,quite a little,train,178,178,both_hands_missing_fraction,,both_hands_missing_fraction,39.0,139.0,101.0,False,5.9405940594059405,3.0,39.0,38.0
+part_10/quite_a_little_video_36.mp4,quite a little,train,77,77,,,,5.0,68.0,64.0,False,0.0,0.0,5.0,8.0
+part_10/quite_a_little_video_42.mp4,quite a little,train,60,61,,,,0.0,54.0,55.0,False,0.0,0.0,0.0,6.0
+part_10/r_video_2_r_aug_7.mp4,r,train,140,140,,,,0.0,123.0,124.0,False,0.0,0.0,0.0,16.0
+part_10/razor_20241119_172651_14.mp4,razor,train,36,36,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,28.0,24.0,True,0.0,0.0,5.0,7.0
+part_10/relief_video_0.mp4,relief,train,95,95,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,49.0,41.0,False,0.0,0.0,9.0,45.0
+part_10/resist_video_0.mp4,resist,train,121,121,both_hands_missing_fraction,,both_hands_missing_fraction,32.0,89.0,58.0,False,8.620689655172415,3.0,32.0,31.0
+part_10/restaurant_7.mp4,restaurant,train,53,66,both_hands_missing_fraction,,both_hands_missing_fraction,17.0,43.0,27.0,True,0.0,0.0,17.0,22.0
+part_10/ruin_video_2.mp4,ruin,train,24,30,too_few_decoded_frames,too_few_decoded_frames,,,,,,,,,
+part_10/s_4_s_aug_16.mp4,s,train,30,30,,,,0.0,29.0,30.0,False,0.0,0.0,0.0,0.0
+part_10/s_4_s_aug_20.mp4,s,train,30,30,,,,0.0,29.0,30.0,False,0.0,0.0,0.0,0.0
+part_10/score_video_7.mp4,score,train,96,96,both_hands_missing_fraction,,both_hands_missing_fraction,31.0,75.0,45.0,False,2.2222222222222223,1.0,31.0,20.0
+part_10/screwdriver_20241119_172653_5.mp4,screwdriver,train,49,49,,,,11.0,48.0,38.0,False,0.0,0.0,11.0,0.0
+part_10/set_video_58.mp4,set,train,30,38,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,30.0,25.0,True,4.0,1.0,6.0,7.0
+part_10/shake_20241119_172653_45.mp4,shake,train,108,108,both_hands_missing_fraction,,both_hands_missing_fraction,40.0,71.0,32.0,False,0.0,0.0,40.0,36.0
+part_10/share_video_5.mp4,share,train,94,94,both_hands_missing_fraction,,both_hands_missing_fraction,16.0,80.0,65.0,False,0.0,0.0,16.0,13.0
+part_10/shop_20241119_172653_53.mp4,shop,train,99,99,both_hands_missing_fraction,,both_hands_missing_fraction,12.0,54.0,43.0,False,0.0,0.0,12.0,44.0
+part_10/shop_20241119_172653_63.mp4,shop,train,141,141,both_hands_missing_fraction,,both_hands_missing_fraction,50.0,82.0,33.0,False,0.0,0.0,50.0,58.0
+part_10/shout_20241119_172654_10.mp4,shout,train,28,28,too_few_decoded_frames,too_few_decoded_frames,,,,,,,,,
+part_10/shower_9.mp4,shower,train,86,86,both_hands_missing_fraction,,both_hands_missing_fraction,21.0,64.0,44.0,False,0.0,0.0,21.0,21.0
+part_10/siren_video_2.mp4,siren,train,585,586,both_hands_missing_fraction,active_both_hands_missing_run,both_hands_missing_fraction,16.0,426.0,411.0,False,11.19221411192214,17.0,16.0,159.0
+part_10/slew_video_18.mp4,slew,train,60,60,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,52.0,45.0,False,13.333333333333334,5.0,8.0,7.0
+part_10/smile_20241119_172654_6.mp4,smile,train,66,83,both_hands_missing_fraction,,both_hands_missing_fraction,16.0,59.0,44.0,False,6.8181818181818175,3.0,16.0,23.0
+part_10/smoking_0.mp4,smoking,train,59,59,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,2.0,26.0,25.0,True,32.0,2.0,2.0,32.0
+part_10/sneeze_20241119_172654_49.mp4,sneeze,train,50,50,both_hands_missing_fraction,,both_hands_missing_fraction,4.0,26.0,23.0,True,8.695652173913043,1.0,4.0,23.0
+part_10/snow_20241119_172654_48.mp4,snow,train,97,97,both_hands_missing_fraction,,both_hands_missing_fraction,24.0,82.0,59.0,False,0.0,0.0,24.0,14.0
+part_10/soap_20241119_172654_32.mp4,soap,train,44,44,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,25.0,21.0,True,4.761904761904762,1.0,5.0,18.0
+part_10/something_6.mp4,something,train,88,87,both_hands_missing_fraction,,both_hands_missing_fraction,24.0,49.0,26.0,True,0.0,0.0,24.0,37.0
+part_10/son_video_5.mp4,son,train,46,46,,,,5.0,40.0,36.0,False,0.0,0.0,5.0,5.0
+part_10/spate_video_11.mp4,spate,train,32,40,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,33.0,27.0,True,0.0,0.0,7.0,6.0
+part_10/square_video_7.mp4,square,train,105,105,,,,4.0,101.0,98.0,False,2.0408163265306123,2.0,4.0,3.0
+part_11/story_20241119_172655_31.mp4,story,train,52,52,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,28.0,22.0,True,0.0,0.0,7.0,23.0
+part_11/strawberry_20241119_172655_113.mp4,strawberry,train,61,61,both_hands_missing_fraction,,both_hands_missing_fraction,17.0,31.0,15.0,True,0.0,0.0,17.0,29.0
+part_11/stupid_20241119_172655_5.mp4,stupid,train,214,214,both_hands_missing_run,,both_hands_missing_run,32.0,195.0,164.0,False,0.0,0.0,32.0,18.0
+part_11/support_20241119_172655_89.mp4,support,train,59,59,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,37.0,33.0,False,0.0,0.0,5.0,21.0
+part_11/sweetheart_5.mp4,sweetheart,train,68,82,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,60.0,46.0,False,0.0,0.0,15.0,21.0
+part_11/swing_20241119_172656_3.mp4,swing,train,118,118,both_hands_missing_fraction,,both_hands_missing_fraction,37.0,84.0,48.0,False,0.0,0.0,37.0,33.0
+part_11/talk_20241119_172656_39.mp4,talk,train,68,68,both_hands_missing_fraction,,both_hands_missing_fraction,22.0,41.0,20.0,True,0.0,0.0,22.0,26.0
+part_11/tearrip_20241119_195755_34.mp4,tearrip,train,119,115,both_hands_missing_fraction,,both_hands_missing_fraction,23.0,70.0,48.0,False,0.0,0.0,23.0,44.0
+part_11/test_1.mp4,test,train,81,81,,,,14.0,72.0,59.0,False,0.0,0.0,14.0,8.0
+part_11/tie_20241119_172656_20.mp4,tie,train,52,65,both_hands_missing_fraction,,both_hands_missing_fraction,12.0,53.0,42.0,False,0.0,0.0,12.0,11.0
+part_11/topic_video_1.mp4,topic,train,88,88,both_hands_missing_fraction,,both_hands_missing_fraction,28.0,54.0,27.0,True,0.0,0.0,28.0,33.0
+part_11/toss_video_9.mp4,toss,train,35,68,both_hands_missing_fraction,,both_hands_missing_fraction,0.0,51.0,52.0,False,11.538461538461538,2.0,0.0,16.0
+part_11/tow_20241119_172658_64.mp4,tow,train,61,61,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,36.0,30.0,False,0.0,0.0,7.0,24.0
+part_11/trim_back_video_7.mp4,trim back,train,81,81,both_hands_missing_fraction,,both_hands_missing_fraction,17.0,48.0,32.0,False,0.0,0.0,17.0,32.0
+part_11/trim_down_video_17.mp4,trim down,train,94,94,both_hands_missing_fraction,,both_hands_missing_fraction,43.0,86.0,44.0,False,4.545454545454546,1.0,43.0,7.0
+part_11/trim_down_video_19.mp4,trim down,train,97,97,both_hands_missing_fraction,,both_hands_missing_fraction,27.0,65.0,39.0,False,2.564102564102564,1.0,27.0,31.0
+part_11/triple_video_0.mp4,triple,train,95,95,both_hands_missing_fraction,,both_hands_missing_fraction,21.0,77.0,57.0,False,0.0,0.0,21.0,17.0
+part_11/truck_20241119_172657_23.mp4,truck,train,66,79,both_hands_missing_fraction,,both_hands_missing_fraction,19.0,46.0,28.0,True,0.0,0.0,19.0,32.0
+part_11/turkey_20241119_172657_26.mp4,turkey,train,81,81,both_hands_missing_fraction,,both_hands_missing_fraction,12.0,51.0,40.0,False,25.0,8.0,12.0,29.0
+part_11/turn_video_17.mp4,turn,train,77,77,both_hands_missing_fraction,,both_hands_missing_fraction,22.0,59.0,38.0,False,21.052631578947366,3.0,22.0,17.0
+part_11/universe_video_6.mp4,universe,train,192,192,,,,8.0,184.0,177.0,False,0.0,0.0,8.0,7.0
+part_11/verb_3.mp4,verb,train,103,103,both_hands_missing_fraction,,both_hands_missing_fraction,43.0,69.0,27.0,True,18.51851851851852,3.0,43.0,33.0
+part_11/videocamera_20241119_195755_53.mp4,videocamera,train,53,53,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,30.0,24.0,True,0.0,0.0,7.0,22.0
+part_11/virtually_video_33.mp4,virtually,train,61,61,both_hands_missing_fraction,,both_hands_missing_fraction,17.0,55.0,39.0,False,0.0,0.0,17.0,5.0
+part_11/volleyball_12.mp4,volleyball,train,37,37,,,,0.0,36.0,37.0,False,0.0,0.0,0.0,0.0
+part_11/wad_video_14.mp4,wad,train,139,139,,,,0.0,138.0,139.0,False,2.158273381294964,3.0,0.0,0.0
+part_11/wade_20241119_172657_17.mp4,wade,train,77,76,both_hands_missing_fraction,,both_hands_missing_fraction,17.0,54.0,38.0,False,0.0,0.0,17.0,21.0
+part_11/wash_20241119_172657_43.mp4,wash,train,47,47,both_hands_missing_fraction,,both_hands_missing_fraction,3.0,30.0,28.0,True,0.0,0.0,3.0,16.0
+part_11/whole_video_0.mp4,whole,train,76,76,both_hands_missing_fraction,,both_hands_missing_fraction,16.0,67.0,52.0,False,0.0,0.0,16.0,8.0
+part_11/woman_20241119_172658_17.mp4,woman,train,49,61,both_hands_missing_fraction,,both_hands_missing_fraction,12.0,41.0,30.0,False,13.333333333333334,4.0,12.0,19.0
+part_2/1921109044689493-CHIN 2.mp4,chin,train,67,67,both_hands_missing_fraction,,both_hands_missing_fraction,17.0,20.0,4.0,True,0.0,0.0,17.0,46.0
+part_2/19310281578453936-FLOOR.mp4,floor,train,58,58,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,26.0,21.0,True,4.761904761904762,1.0,6.0,31.0
+part_2/19504771270327392-DOWNHILL.mp4,downhill,train,87,103,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,56.0,44.0,False,0.0,0.0,13.0,46.0
+part_2/19545712784088498-BOYFRIEND.mp4,boyfriend,train,51,51,both_hands_missing_fraction,,both_hands_missing_fraction,4.0,29.0,26.0,True,0.0,0.0,4.0,21.0
+part_2/19555143420060128-DESERT.mp4,desert,train,67,64,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,47.0,40.0,False,2.5,1.0,8.0,16.0
+part_2/19894739757704438-LONG LINE.mp4,longline,train,178,178,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,25.0,129.0,105.0,False,30.476190476190478,27.0,25.0,48.0
+part_2/20185673274367666-BOWL.mp4,bowl,train,95,95,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,50.0,38.0,False,0.0,0.0,13.0,44.0
+part_2/2111386793579384-BUSY.mp4,busy,train,95,95,both_hands_missing_fraction,,both_hands_missing_fraction,36.0,78.0,43.0,False,0.0,0.0,36.0,16.0
+part_2/2166706317765814-seedTHIRSTY.mp4,thirsty,train,124,122,both_hands_missing_fraction,,both_hands_missing_fraction,24.0,60.0,37.0,False,0.0,0.0,24.0,61.0
+part_2/22131493772876776-GRENADE.mp4,grenade,train,77,77,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,56.0,52.0,False,0.0,0.0,5.0,20.0
+part_2/22674341962713362-SCULPT.mp4,sculpt,train,175,175,both_hands_missing_fraction,,both_hands_missing_fraction,35.0,106.0,72.0,False,1.3888888888888888,1.0,35.0,68.0
+part_2/22807837821841792-MICROPHONE.mp4,microphone,train,51,51,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,21.0,14.0,True,0.0,0.0,8.0,29.0
+part_2/22869752585996928-SPOT SOMETHING.mp4,spotsomething,train,56,56,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,35.0,30.0,False,3.3333333333333335,1.0,6.0,20.0
+part_2/23200756464812655-POTATO.mp4,potato,train,107,107,both_hands_missing_fraction,,both_hands_missing_fraction,23.0,70.0,48.0,False,0.0,0.0,23.0,36.0
+part_2/2323645828053269-POSITIVE.mp4,positive,train,72,70,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,39.0,31.0,False,0.0,0.0,9.0,30.0
+part_2/2343216679570781-NORMAL.mp4,normal,train,64,64,both_hands_missing_fraction,,both_hands_missing_fraction,12.0,39.0,28.0,True,0.0,0.0,12.0,24.0
+part_2/2364210157511506-BUTTERFLY.mp4,butterfly,train,62,62,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,37.0,32.0,False,0.0,0.0,6.0,24.0
+part_2/25212848794367093-SECRETARY.mp4,secretary,train,73,73,both_hands_missing_fraction,,both_hands_missing_fraction,25.0,50.0,26.0,True,0.0,0.0,25.0,22.0
+part_2/25547357047109687-GIRL.mp4,girl,train,65,64,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,9.0,29.0,21.0,True,38.095238095238095,8.0,9.0,34.0
+part_2/25893101303507393-RESIGN.mp4,resign,train,66,67,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,38.0,31.0,False,0.0,0.0,8.0,28.0
+part_2/26520120613127607-seedTHREE.mp4,three,train,143,143,both_hands_missing_fraction,,both_hands_missing_fraction,61.0,85.0,25.0,True,0.0,0.0,61.0,57.0
+part_2/2656237341874321-MAKE.mp4,make,train,80,80,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,38.0,31.0,False,12.903225806451612,3.0,8.0,41.0
+part_2/27060204573109714-MIRROR.mp4,mirror,train,84,83,both_hands_missing_fraction,,both_hands_missing_fraction,48.0,69.0,22.0,True,4.545454545454546,1.0,48.0,13.0
+part_2/2722148210073596-UNDER.mp4,under,train,115,115,both_hands_missing_fraction,,both_hands_missing_fraction,38.0,82.0,45.0,False,0.0,0.0,38.0,32.0
+part_2/2769869558821827-GOOSEBUMPS.mp4,goosebumps,train,97,98,both_hands_missing_fraction,,both_hands_missing_fraction,35.0,71.0,37.0,False,0.0,0.0,35.0,26.0
+part_2/28911738205017423-CANCELLATION.mp4,cancellation,train,73,73,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,44.0,31.0,False,0.0,0.0,14.0,28.0
+part_2/2898932154319185-PAPERCUTTER.mp4,papercutter,train,105,106,both_hands_missing_run,,both_hands_missing_run,8.0,89.0,82.0,False,0.0,0.0,8.0,16.0
+part_2/290923566270898-WINDOW.mp4,window,train,43,43,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,22.0,14.0,True,0.0,0.0,9.0,20.0
+part_2/2943130704557879-SIX.mp4,six,train,60,60,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,38.0,33.0,False,0.0,0.0,6.0,21.0
+part_2/295061685532646-CLAUSE.mp4,clause,train,70,70,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,44.0,39.0,False,0.0,0.0,6.0,25.0
+part_2/3033680920399553-ASIA.mp4,asia,train,44,44,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,5.0,32.0,28.0,True,32.142857142857146,9.0,5.0,11.0
+part_2/31836165575164843-BELL.mp4,bell,train,98,98,both_hands_missing_fraction,,both_hands_missing_fraction,28.0,71.0,44.0,False,0.0,0.0,28.0,26.0
+part_2/3186754883180434-LIVING ROOM.mp4,livingroom,train,191,191,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,13.0,142.0,130.0,False,32.30769230769231,22.0,13.0,48.0
+part_2/31925311439909554-WEIGHT.mp4,weight,train,144,142,both_hands_missing_fraction,,both_hands_missing_fraction,40.0,105.0,66.0,False,0.0,0.0,40.0,36.0
+part_2/32842858684612586-BISON.mp4,bison,train,252,251,both_hands_missing_fraction,,both_hands_missing_fraction,177.0,228.0,52.0,False,0.0,0.0,177.0,22.0
+part_2/3312588734862034-PILE.mp4,pile,train,44,44,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,25.0,21.0,True,4.761904761904762,1.0,5.0,18.0
+part_2/3330328541611316-RADIO.mp4,radio,train,54,54,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,39.0,31.0,False,3.225806451612903,1.0,9.0,14.0
+part_2/3361903255004919-RUSH.mp4,rush,train,63,62,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,40.0,34.0,False,8.823529411764707,3.0,7.0,21.0
+part_2/3520246184230904-JUGGLE.mp4,juggle,train,104,104,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,17.0,68.0,52.0,False,32.69230769230769,4.0,17.0,35.0
+part_2/35346895720914806-MAYBE.mp4,maybe,train,157,157,both_hands_missing_fraction,,both_hands_missing_fraction,54.0,114.0,61.0,False,4.918032786885246,2.0,54.0,42.0
+part_2/35359931273860434-ARIZONA.mp4,arizona,train,24,24,too_few_decoded_frames,too_few_decoded_frames,,,,,,,,,
+part_2/3583049668962337-TASTE.mp4,taste,train,40,38,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,22.0,10.0,True,0.0,0.0,13.0,15.0
+part_3/35969967298763006-FREEDOM.mp4,freedom,train,58,57,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,34.0,27.0,True,14.814814814814813,3.0,8.0,22.0
+part_3/36480330348902146-CROCODILE.mp4,crocodile,train,66,68,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,45.0,39.0,False,10.256410256410255,2.0,7.0,22.0
+part_3/368376359924691-REVENGE.mp4,revenge,train,84,84,both_hands_missing_fraction,,both_hands_missing_fraction,12.0,54.0,43.0,False,0.0,0.0,12.0,29.0
+part_3/36949718497211914-PREACHER.mp4,preacher,train,78,78,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,47.0,34.0,False,14.705882352941178,3.0,14.0,30.0
+part_3/38173408331335357-WRITE ON_WALL.mp4,writeonwall,train,64,64,both_hands_missing_fraction,,both_hands_missing_fraction,10.0,41.0,32.0,False,0.0,0.0,10.0,22.0
+part_3/3828391878319799-SUSHI.mp4,sushi,train,50,50,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,34.0,29.0,True,17.24137931034483,3.0,6.0,15.0
+part_3/38374953389283006-WINK.mp4,wink,train,108,108,both_hands_missing_fraction,,both_hands_missing_fraction,39.0,72.0,34.0,False,0.0,0.0,39.0,35.0
+part_3/3973381149037627-DIE.mp4,die,train,90,90,both_hands_missing_fraction,,both_hands_missing_fraction,28.0,62.0,35.0,False,0.0,0.0,28.0,27.0
+part_3/4055061458158007-RUDE.mp4,rude,train,80,80,both_hands_missing_fraction,,both_hands_missing_fraction,11.0,46.0,36.0,False,0.0,0.0,11.0,33.0
+part_3/40599977168714196-MUSTACHE.mp4,mustache,train,60,60,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,39.0,33.0,False,0.0,0.0,7.0,20.0
+part_3/408010215031793-VOICE.mp4,voice,train,52,55,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,15.0,41.0,27.0,True,48.148148148148145,8.0,15.0,13.0
+part_3/4101890148556435-PLATFORM.mp4,platform,train,71,71,both_hands_missing_fraction,,both_hands_missing_fraction,18.0,50.0,33.0,False,3.0303030303030303,1.0,18.0,20.0
+part_3/4117070918339236-NONE.mp4,none,train,74,74,both_hands_missing_fraction,,both_hands_missing_fraction,10.0,38.0,29.0,True,0.0,0.0,10.0,35.0
+part_3/41939881353624053-RACE.mp4,race,train,73,73,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,47.0,40.0,False,0.0,0.0,8.0,25.0
+part_3/4200856674768396-SEVERAL.mp4,several,train,63,63,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,48.0,43.0,False,0.0,0.0,6.0,14.0
+part_3/4272254527792845-PERSISTENT.mp4,persistent,train,73,73,both_hands_missing_fraction,,both_hands_missing_fraction,19.0,54.0,36.0,False,0.0,0.0,19.0,18.0
+part_3/4285498435513857-OFF THE_POINT.mp4,offthepoint,train,59,59,both_hands_missing_fraction,,both_hands_missing_fraction,10.0,36.0,27.0,True,0.0,0.0,10.0,22.0
+part_3/4342737241901915-SEE.mp4,see,train,78,77,both_hands_missing_fraction,,both_hands_missing_fraction,30.0,68.0,39.0,False,0.0,0.0,30.0,8.0
+part_3/4427416254508614-EMAIL.mp4,email,train,72,72,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,49.0,41.0,False,0.0,0.0,9.0,22.0
+part_3/44398695037707947-ROOM.mp4,room,train,89,88,both_hands_missing_fraction,,both_hands_missing_fraction,40.0,67.0,28.0,True,0.0,0.0,40.0,20.0
+part_3/45512324653855574-CHOPSTICKS.mp4,chopsticks,train,54,54,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,34.0,28.0,True,0.0,0.0,7.0,19.0
+part_3/457097411184441-SALT SHAKER.mp4,saltshaker,train,114,114,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,42.0,30.0,False,0.0,0.0,13.0,71.0
+part_3/45757520326719336-WEIGHT.mp4,weight,train,58,58,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,36.0,30.0,False,0.0,0.0,7.0,21.0
+part_3/47158446719889446-EGO.mp4,ego,train,78,77,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,46.0,38.0,False,0.0,0.0,9.0,30.0
+part_3/4756491102518132-PICNIC.mp4,picnic,train,105,105,both_hands_missing_fraction,,both_hands_missing_fraction,33.0,84.0,52.0,False,0.0,0.0,33.0,20.0
+part_3/48313464915789317-BRAG.mp4,brag,train,107,107,both_hands_missing_fraction,,both_hands_missing_fraction,31.0,74.0,44.0,False,2.272727272727273,1.0,31.0,32.0
+part_3/4838074686766505-SCHOOL.mp4,school,train,96,96,both_hands_missing_fraction,,both_hands_missing_fraction,19.0,64.0,46.0,False,2.1739130434782608,1.0,19.0,31.0
+part_3/48726938722294433-SWALLOW.mp4,swallow,train,65,65,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,42.0,30.0,False,0.0,0.0,13.0,22.0
+part_3/4894632992540995-GET IN_BED.mp4,getinbed,train,85,84,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,54.0,42.0,False,0.0,0.0,13.0,29.0
+part_3/4951174780421559-DEATH.mp4,death,train,79,79,both_hands_missing_fraction,,both_hands_missing_fraction,26.0,34.0,9.0,True,0.0,0.0,26.0,44.0
+part_3/4958072496453685-REDUCE.mp4,reduce,train,68,68,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,38.0,25.0,True,0.0,0.0,14.0,29.0
+part_3/4993283542043576-ZIPPER.mp4,zipper,train,55,55,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,28.0,22.0,True,0.0,0.0,7.0,26.0
+part_3/501034080069992-SAILBOAT.mp4,sailboat,train,87,87,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,40.0,35.0,False,0.0,0.0,6.0,46.0
+part_3/5091278642970272-HEADPHONES.mp4,headphones,train,54,54,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,26.0,22.0,True,0.0,0.0,5.0,27.0
+part_3/5099794103667052-SUMMER.mp4,summer,train,83,82,both_hands_missing_fraction,,both_hands_missing_fraction,19.0,53.0,35.0,False,0.0,0.0,19.0,28.0
+part_3/5136087734043544-MEMBER.mp4,member,train,152,152,both_hands_missing_fraction,,both_hands_missing_fraction,48.0,104.0,57.0,False,0.0,0.0,48.0,47.0
+part_3/5178948812994735-LOUD.mp4,loud,train,108,108,both_hands_missing_fraction,,both_hands_missing_fraction,21.0,74.0,54.0,False,11.11111111111111,3.0,21.0,33.0
+part_3/5236730717037961-MASCARA.mp4,mascara,train,59,59,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,35.0,30.0,False,0.0,0.0,6.0,23.0
+part_3/5240642662751536-PERSPECTIVE.mp4,perspective,train,85,85,both_hands_missing_fraction,,both_hands_missing_fraction,26.0,61.0,36.0,False,0.0,0.0,26.0,23.0
+part_3/5284442635198221-seedCRASH.mp4,crash,train,134,133,both_hands_missing_fraction,,both_hands_missing_fraction,27.0,68.0,42.0,False,0.0,0.0,27.0,64.0
+part_3/5320352660994052-ATLANTA.mp4,atlanta,train,197,197,both_hands_missing_fraction,,both_hands_missing_fraction,61.0,136.0,76.0,False,0.0,0.0,61.0,60.0
+part_3/5322960163151325-ELEGANCE.mp4,elegance,train,124,124,both_hands_missing_fraction,,both_hands_missing_fraction,49.0,89.0,41.0,False,0.0,0.0,49.0,34.0
+part_3/5361592700937574-SUSPEND.mp4,suspend,train,74,74,both_hands_missing_fraction,,both_hands_missing_fraction,23.0,50.0,28.0,True,3.571428571428571,1.0,23.0,23.0
+part_3/5377518041774723-CONSUME.mp4,consume,train,78,77,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,27.0,14.0,True,0.0,0.0,14.0,49.0
+part_4/5397567469672582-OWE.mp4,owe,train,55,55,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,34.0,29.0,True,0.0,0.0,6.0,20.0
+part_4/5481447158893427-ABSOLUTELY NOTHING.mp4,absolutelynothing,train,72,72,both_hands_missing_fraction,,both_hands_missing_fraction,27.0,52.0,26.0,True,0.0,0.0,27.0,19.0
+part_4/5510822299428495-OSTRICH.mp4,ostrich,train,86,86,both_hands_missing_fraction,,both_hands_missing_fraction,12.0,54.0,43.0,False,0.0,0.0,12.0,31.0
+part_4/5527432382922375-ENEMY.mp4,enemy,train,31,62,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,31.0,24.0,True,0.0,0.0,8.0,30.0
+part_4/559768801316793-PRECIOUS.mp4,precious,train,33,33,both_hands_missing_fraction,,both_hands_missing_fraction,4.0,11.0,8.0,True,0.0,0.0,4.0,21.0
+part_4/5628093426848517-SUMMON.mp4,summon,train,82,82,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,37.0,33.0,False,0.0,0.0,5.0,44.0
+part_4/5654201049709489-CROCODILE.mp4,crocodile,train,95,114,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,53.0,40.0,False,27.500000000000004,4.0,14.0,60.0
+part_4/5665441262141131-NET.mp4,net,train,59,59,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,38.0,31.0,False,0.0,0.0,8.0,20.0
+part_4/5688725140267121-STEAK.mp4,steak,train,73,73,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,46.0,39.0,False,0.0,0.0,8.0,26.0
+part_4/5708154987302507-MASSAGE.mp4,massage,train,162,162,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,32.0,131.0,100.0,False,34.0,32.0,32.0,30.0
+part_4/5708598578821673-CONTINUE.mp4,continue,train,88,88,both_hands_missing_fraction,,both_hands_missing_fraction,29.0,71.0,43.0,False,0.0,0.0,29.0,16.0
+part_4/5719477017744072-SSHH.mp4,sshh,train,19,38,too_few_decoded_frames,too_few_decoded_frames,,,,,,,,,
+part_4/575097801448069-SPIT OUT.mp4,spitout,train,48,48,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,22.0,15.0,True,0.0,0.0,8.0,25.0
+part_4/5757520428166414-TABLE.mp4,table,train,103,103,both_hands_missing_fraction,,both_hands_missing_fraction,18.0,65.0,48.0,False,0.0,0.0,18.0,37.0
+part_4/5774167915990722-CONFIDENT.mp4,confident,train,61,61,both_hands_missing_fraction,,both_hands_missing_fraction,12.0,44.0,33.0,False,0.0,0.0,12.0,16.0
+part_4/5874422860461079-MAINSTREAM.mp4,mainstream,train,86,103,both_hands_missing_fraction,,both_hands_missing_fraction,26.0,56.0,31.0,False,0.0,0.0,26.0,46.0
+part_4/6066172643835521-VITAMINS.mp4,vitamins,train,108,108,both_hands_missing_fraction,,both_hands_missing_fraction,27.0,71.0,45.0,False,2.2222222222222223,1.0,27.0,36.0
+part_4/606708459571577-ENEMY.mp4,enemy,train,158,158,both_hands_missing_fraction,,both_hands_missing_fraction,56.0,89.0,34.0,False,0.0,0.0,56.0,68.0
+part_4/6120598533455035-TOP.mp4,top,train,123,123,both_hands_missing_fraction,,both_hands_missing_fraction,44.0,90.0,47.0,False,2.127659574468085,1.0,44.0,32.0
+part_4/6190592230678937-BASIC.mp4,basic,train,54,54,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,30.0,23.0,True,0.0,0.0,8.0,23.0
+part_4/6199416921256531-PROMOTE.mp4,promote,train,61,61,,,,7.0,60.0,54.0,False,16.666666666666664,7.0,7.0,0.0
+part_4/6280050722469468-JEWELRY.mp4,jewelry,train,106,106,both_hands_missing_fraction,,both_hands_missing_fraction,19.0,70.0,52.0,False,0.0,0.0,19.0,35.0
+part_4/63226247444836-BRIGHT.mp4,bright,train,85,83,both_hands_missing_fraction,,both_hands_missing_fraction,30.0,61.0,32.0,False,0.0,0.0,30.0,21.0
+part_4/6330199362456541-EVENT.mp4,event,train,76,76,both_hands_missing_fraction,,both_hands_missing_fraction,23.0,57.0,35.0,False,0.0,0.0,23.0,18.0
+part_4/637166540888664-AGENCY.mp4,agency,train,72,72,both_hands_missing_fraction,,both_hands_missing_fraction,10.0,42.0,33.0,False,0.0,0.0,10.0,29.0
+part_4/6385604913876339-EXPLODE.mp4,explode,train,63,62,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,45.0,31.0,False,0.0,0.0,15.0,16.0
+part_4/639844108842305-HOWL.mp4,howl,train,69,69,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,57.0,51.0,False,7.8431372549019605,1.0,7.0,11.0
+part_4/6449139793505076-GOOD.mp4,good,train,103,122,both_hands_missing_fraction,,both_hands_missing_fraction,26.0,66.0,41.0,False,0.0,0.0,26.0,55.0
+part_4/6471960992477459-WHEELCHAIR.mp4,wheelchair,train,67,67,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,16.0,3.0,True,0.0,0.0,14.0,50.0
+part_4/6498026727353476-HOLD ACCOUNTABLE.mp4,holdaccountable,train,61,61,both_hands_missing_fraction,,both_hands_missing_fraction,4.0,39.0,36.0,False,0.0,0.0,4.0,21.0
+part_4/6515057454623217-INDIAN.mp4,indian,train,119,119,both_hands_missing_fraction,,both_hands_missing_fraction,38.0,85.0,48.0,False,2.083333333333333,1.0,38.0,33.0
+part_4/6543927401448224-COST.mp4,cost,train,48,48,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,26.0,22.0,True,0.0,0.0,5.0,21.0
+part_4/6564979311240984-COME OUT.mp4,comeout,train,60,59,both_hands_missing_fraction,,both_hands_missing_fraction,11.0,35.0,25.0,True,0.0,0.0,11.0,23.0
+part_4/6582550912371123-IGNORE.mp4,ignore,train,44,44,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,26.0,22.0,True,0.0,0.0,5.0,17.0
+part_4/6602261622676402-TEENAGER.mp4,teenager,train,72,72,both_hands_missing_fraction,,both_hands_missing_fraction,10.0,58.0,49.0,False,0.0,0.0,10.0,13.0
+part_4/6618587122323296-STOPWATCH.mp4,stopwatch,train,80,80,both_hands_missing_fraction,,both_hands_missing_fraction,18.0,59.0,42.0,False,9.523809523809524,4.0,18.0,20.0
+part_4/661920641516625-HINGE.mp4,hinge,train,70,70,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,49.0,42.0,False,0.0,0.0,8.0,20.0
+part_4/6620417008413066-PREFER.mp4,prefer,train,51,51,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,28.0,24.0,True,0.0,0.0,5.0,22.0
+part_4/6627894493111854-WHIP.mp4,whip,train,77,77,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,53.0,40.0,False,2.5,1.0,14.0,23.0
+part_4/6639287403552572-FANTASY.mp4,fantasy,train,82,106,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,66.0,52.0,False,0.0,0.0,15.0,39.0
+part_4/6640029673956236-FIFTH.mp4,fifth,train,99,99,both_hands_missing_fraction,,both_hands_missing_fraction,25.0,61.0,37.0,False,0.0,0.0,25.0,37.0
+part_4/6708956410631581-WORKSHOP.mp4,workshop,train,47,47,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,33.0,28.0,True,0.0,0.0,6.0,13.0
+part_4/672982715949773-NOISE.mp4,noise,train,66,79,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,48.0,34.0,False,0.0,0.0,15.0,30.0
+part_4/6739155491670814-MIRROR.mp4,mirror,train,44,44,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,31.0,26.0,True,0.0,0.0,6.0,12.0
+part_4/6740870378979742-MARRY.mp4,marry,train,82,82,both_hands_missing_fraction,,both_hands_missing_fraction,19.0,53.0,35.0,False,2.857142857142857,1.0,19.0,28.0
+part_4/6745347552311414-SOUP.mp4,soup,train,125,125,both_hands_missing_fraction,,both_hands_missing_fraction,36.0,80.0,45.0,False,13.333333333333334,2.0,36.0,44.0
+part_4/6851609432154622-UNICORN.mp4,unicorn,train,63,63,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,49.0,36.0,False,0.0,0.0,14.0,13.0
+part_4/6947179407989328-BUSTED.mp4,busted,train,75,75,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,34.0,28.0,True,0.0,0.0,7.0,40.0
+part_4/6959191613137512-PIANO.mp4,piano,train,87,87,both_hands_missing_fraction,,both_hands_missing_fraction,11.0,61.0,51.0,False,0.0,0.0,11.0,25.0
+part_4/6978076914016362-FAMOUS.mp4,famous,train,102,99,both_hands_missing_fraction,,both_hands_missing_fraction,18.0,55.0,38.0,False,0.0,0.0,18.0,43.0
+part_4/7022292214541699-HUNDRED.mp4,hundred,train,65,64,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,33.0,25.0,True,0.0,0.0,9.0,30.0
+part_4/7032972889937701-WALK-TIGHTROPE-CL.mp4,walk-tightrope-cl,train,131,148,both_hands_missing_run,,both_hands_missing_run,27.0,147.0,121.0,False,0.0,0.0,27.0,0.0
+part_4/7074460232925452-SKUNK.mp4,skunk,train,94,94,both_hands_missing_fraction,,both_hands_missing_fraction,23.0,65.0,43.0,False,27.906976744186046,12.0,23.0,28.0
+part_4/7084386663017326-STAFF.mp4,staff,train,44,44,both_hands_missing_fraction,,both_hands_missing_fraction,10.0,23.0,14.0,True,7.142857142857142,1.0,10.0,20.0
+part_4/708769017680714-HEAD.mp4,head,train,47,47,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,15.0,7.0,True,0.0,0.0,9.0,31.0
+part_4/7103942618147332-ORANGE THROAT.mp4,orangethroat,train,91,108,both_hands_missing_fraction,,both_hands_missing_fraction,18.0,62.0,45.0,False,0.0,0.0,18.0,45.0
+part_4/7170471283154412-HEARTBODY.mp4,heartbody,train,107,108,both_hands_missing_fraction,,both_hands_missing_fraction,11.0,58.0,48.0,False,0.0,0.0,11.0,49.0
+part_4/718787866827413-DRYER.mp4,dryer,train,114,167,both_hands_missing_fraction,,both_hands_missing_fraction,89.0,127.0,39.0,False,10.256410256410255,2.0,89.0,39.0
+part_4/7202275052053524-SLINGSHOT.mp4,slingshot,train,55,55,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,41.0,27.0,True,0.0,0.0,15.0,13.0
+part_5/7236529952440116-STIR.mp4,stir,train,55,55,both_hands_missing_fraction,,both_hands_missing_fraction,10.0,30.0,21.0,True,0.0,0.0,10.0,24.0
+part_5/7242876288888909-WALL.mp4,wall,train,153,154,both_hands_missing_fraction,,both_hands_missing_fraction,43.0,104.0,62.0,False,0.0,0.0,43.0,49.0
+part_5/7245006849273199-NOT A_THING.mp4,notathing,train,89,86,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,48.0,35.0,False,0.0,0.0,14.0,37.0
+part_5/7270428598615575-CHAMPION.mp4,champion,train,85,85,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,49.0,36.0,False,0.0,0.0,14.0,35.0
+part_5/7275550135371469-IMPROVE.mp4,improve,train,89,89,both_hands_missing_fraction,,both_hands_missing_fraction,21.0,58.0,38.0,False,0.0,0.0,21.0,30.0
+part_5/7332760064631829-SHORT PERSON.mp4,shortperson,train,50,50,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,40.0,26.0,True,0.0,0.0,15.0,9.0
+part_5/7342952201700828-EASY TO_DO.mp4,easytodo,train,73,73,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,32.0,26.0,True,0.0,0.0,7.0,40.0
+part_5/7355141712214706-NONSENSE.mp4,nonsense,train,67,67,both_hands_missing_fraction,,both_hands_missing_fraction,11.0,38.0,28.0,True,0.0,0.0,11.0,28.0
+part_5/7388043140555935-TWO MORE.mp4,twomore,train,79,79,both_hands_missing_fraction,,both_hands_missing_fraction,35.0,54.0,20.0,True,0.0,0.0,35.0,24.0
+part_5/7388125968431167-SMALL.mp4,small,train,35,35,both_hands_missing_fraction,,both_hands_missing_fraction,4.0,22.0,19.0,True,0.0,0.0,4.0,12.0
+part_5/7391350877622198-TWO.mp4,two,train,38,38,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,18.0,10.0,True,0.0,0.0,9.0,19.0
+part_5/7414236047407246-WISE.mp4,wise,train,55,55,both_hands_missing_fraction,,both_hands_missing_fraction,19.0,49.0,31.0,False,0.0,0.0,19.0,5.0
+part_5/7486439188211713-LAW.mp4,law,train,73,73,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,51.0,43.0,False,0.0,0.0,9.0,21.0
+part_5/7527029229359257-STARBUCKS.mp4,starbucks,train,84,83,both_hands_missing_fraction,,both_hands_missing_fraction,11.0,43.0,33.0,False,0.0,0.0,11.0,39.0
+part_5/761622248999501-CAROUSEL.mp4,carousel,train,96,96,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,59.0,53.0,False,0.0,0.0,7.0,36.0
+part_5/763498941361828-ALL WAY.mp4,allway,train,65,65,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,25.0,20.0,True,0.0,0.0,6.0,39.0
+part_5/7642293204520254-BOILING MAD.mp4,boilingmad,train,182,182,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,16.0,128.0,113.0,False,33.6283185840708,36.0,16.0,53.0
+part_5/7649422761687801-BITCH.mp4,bitch,train,46,83,both_hands_missing_fraction,,both_hands_missing_fraction,27.0,49.0,23.0,True,0.0,0.0,27.0,33.0
+part_5/7665344568774906-STRONG.mp4,strong,train,54,54,both_hands_missing_fraction,,both_hands_missing_fraction,11.0,29.0,19.0,True,10.526315789473683,2.0,11.0,24.0
+part_5/7709413638313658-PEACE.mp4,peace,train,70,69,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,41.0,34.0,False,20.588235294117645,4.0,8.0,27.0
+part_5/7719463054713409-BACON.mp4,bacon,train,114,114,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,65.0,52.0,False,0.0,0.0,14.0,48.0
+part_5/7798893370763214-ESCAPE.mp4,escape,train,149,149,both_hands_missing_fraction,active_both_hands_missing_run,both_hands_missing_fraction,20.0,114.0,95.0,False,25.263157894736842,24.0,20.0,34.0
+part_5/7813798378617343-BINOCULARS.mp4,binoculars,train,100,117,both_hands_missing_fraction,,both_hands_missing_fraction,28.0,74.0,47.0,False,0.0,0.0,28.0,42.0
+part_5/7871589392560625-PROMISE.mp4,promise,train,70,70,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,47.0,33.0,False,3.0303030303030303,1.0,15.0,22.0
+part_5/7908307098233258-PHILOSOPHY.mp4,philosophy,train,124,124,both_hands_missing_fraction,,both_hands_missing_fraction,16.0,56.0,41.0,False,0.0,0.0,16.0,67.0
+part_5/7921459983875652-BLEED.mp4,bleed,train,130,130,both_hands_missing_fraction,,both_hands_missing_fraction,34.0,72.0,39.0,False,0.0,0.0,34.0,57.0
+part_5/8007270485753197-ITCH.mp4,itch,train,107,107,both_hands_missing_run,,both_hands_missing_run,0.0,80.0,81.0,False,0.0,0.0,0.0,26.0
+part_5/8035766172480758-SPOON.mp4,spoon,train,50,50,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,31.0,25.0,True,0.0,0.0,7.0,18.0
+part_5/8040413047655517-WHO.mp4,who,train,61,60,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,24.0,18.0,True,0.0,0.0,7.0,35.0
+part_5/811396261446274-FAINT.mp4,faint,train,255,254,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,52.0,201.0,150.0,False,42.0,36.0,52.0,52.0
+part_5/8205773121223954-POWER.mp4,power,train,74,74,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,55.0,41.0,False,2.4390243902439024,1.0,15.0,18.0
+part_5/8210462187869705-BLOW MIND.mp4,blowmind,train,57,57,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,34.0,29.0,True,13.793103448275861,3.0,6.0,22.0
+part_5/8213420013877373-OBSESS.mp4,obsess,train,88,88,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,52.0,47.0,False,0.0,0.0,6.0,35.0
+part_5/830820846298649-seedWOOD.mp4,wood,train,142,140,both_hands_missing_fraction,,both_hands_missing_fraction,36.0,92.0,57.0,False,0.0,0.0,36.0,47.0
+part_5/8337247032758022-ATTENTION.mp4,attention,train,81,81,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,57.0,43.0,False,0.0,0.0,15.0,23.0
+part_5/8342410352892276-MOCK.mp4,mock,train,65,65,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,37.0,25.0,True,0.0,0.0,13.0,27.0
+part_5/8375949091211665-JIGSAW PUZZLE.mp4,jigsawpuzzle,train,203,203,both_hands_missing_fraction,,both_hands_missing_fraction,16.0,119.0,104.0,False,0.0,0.0,16.0,83.0
+part_5/8428189850668126-HEN.mp4,hen,train,53,53,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,29.0,21.0,True,0.0,0.0,9.0,23.0
+part_5/8470723155711255-ANIMAL.mp4,animal,train,92,91,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,59.0,45.0,False,0.0,0.0,15.0,31.0
+part_5/8545363405007698-FLIP SWITCH.mp4,flipswitch,train,49,49,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,19.0,5.0,True,0.0,0.0,15.0,29.0
+part_5/861943373105919-DILEMMA.mp4,dilemma,train,89,89,both_hands_missing_fraction,,both_hands_missing_fraction,29.0,56.0,28.0,True,0.0,0.0,29.0,32.0
+part_5/8631506472137154-DEFLATE.mp4,deflate,train,69,69,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,52.0,40.0,False,0.0,0.0,13.0,16.0
+part_5/8656492779276159-CHEESE GRATER.mp4,cheesegrater,train,62,62,,,,3.0,44.0,42.0,False,0.0,0.0,3.0,17.0
+part_5/8696305530592072-POOP.mp4,poop,train,115,115,both_hands_missing_fraction,,both_hands_missing_fraction,36.0,82.0,47.0,False,0.0,0.0,36.0,32.0
+part_5/8699210337284036-NOW.mp4,now,train,41,41,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,25.0,17.0,True,0.0,0.0,9.0,15.0
+part_5/8738294912791575-GET TOGETHER.mp4,gettogether,train,74,74,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,48.0,44.0,False,0.0,0.0,5.0,25.0
+part_5/8759690473866555-MUMMY.mp4,mummy,train,81,81,both_hands_missing_fraction,,both_hands_missing_fraction,27.0,57.0,31.0,False,0.0,0.0,27.0,23.0
+part_5/8762740499189581-BOSS.mp4,boss,train,38,38,both_hands_missing_fraction,,both_hands_missing_fraction,10.0,28.0,19.0,True,0.0,0.0,10.0,9.0
+part_5/8765379179357844-WASH MACHINE.mp4,washmachine,train,60,60,both_hands_missing_fraction,,both_hands_missing_fraction,4.0,39.0,36.0,False,0.0,0.0,4.0,20.0
+part_5/8774968471358-POLE.mp4,pole,train,83,83,both_hands_missing_fraction,,both_hands_missing_fraction,24.0,54.0,31.0,False,3.225806451612903,1.0,24.0,28.0
+part_5/8830124407529862-PLANT.mp4,plant,train,73,73,both_hands_missing_fraction,,both_hands_missing_fraction,16.0,47.0,32.0,False,0.0,0.0,16.0,25.0
+part_5/8860308707960689-ROOF.mp4,roof,train,72,72,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,36.0,28.0,True,3.571428571428571,1.0,9.0,35.0
+part_5/8885915598928231-CARRY.mp4,carry,train,62,62,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,39.0,34.0,False,2.941176470588235,1.0,6.0,22.0
+part_5/888614784762559-POPCORN.mp4,popcorn,train,47,47,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,26.0,13.0,True,0.0,0.0,14.0,20.0
+part_5/8953075518220837-COMMUTE.mp4,commute,train,266,266,both_hands_missing_fraction,,both_hands_missing_fraction,42.0,114.0,73.0,False,10.95890410958904,5.0,42.0,151.0
+part_6/9001663609516171-FLIPFLOPS.mp4,flipflops,train,61,61,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,36.0,29.0,True,0.0,0.0,8.0,24.0
+part_6/9045560219783599-DO DO.mp4,dodo,train,83,83,both_hands_missing_fraction,,both_hands_missing_fraction,0.0,30.0,31.0,False,0.0,0.0,0.0,52.0
+part_6/9124929111701665-NECK.mp4,neck,train,222,223,both_hands_missing_fraction,,both_hands_missing_fraction,29.0,137.0,109.0,False,0.0,0.0,29.0,85.0
+part_6/9166220101554237-NEAR.mp4,near,train,65,65,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,32.0,26.0,True,0.0,0.0,7.0,32.0
+part_6/9225802407671602-BATH.mp4,bath,train,104,104,both_hands_missing_fraction,,both_hands_missing_fraction,18.0,62.0,45.0,False,0.0,0.0,18.0,41.0
+part_6/9249741371593849-SLIPPER.mp4,slipper,train,75,75,both_hands_missing_fraction,,both_hands_missing_fraction,17.0,48.0,32.0,False,0.0,0.0,17.0,26.0
+part_6/9271543226842556-MOUSE.mp4,mouse,train,67,67,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,36.0,23.0,True,4.3478260869565215,1.0,14.0,30.0
+part_6/929892595638057-PUZZLED.mp4,puzzled,train,23,46,too_few_decoded_frames,too_few_decoded_frames,,,,,,,,,
+part_6/9354715454887605-GREEN.mp4,green,train,72,72,,,,11.0,71.0,61.0,False,0.0,0.0,11.0,0.0
+part_6/9368540135693042-seedTOUCH.mp4,touch,train,101,100,both_hands_missing_fraction,,both_hands_missing_fraction,25.0,55.0,31.0,False,0.0,0.0,25.0,44.0
+part_6/9434616943387211-DANCE.mp4,dance,train,131,130,both_hands_missing_fraction,,both_hands_missing_fraction,49.0,105.0,57.0,False,0.0,0.0,49.0,24.0
+part_6/9468945982728585-EVALUATE.mp4,evaluate,train,68,68,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,43.0,35.0,False,0.0,0.0,9.0,24.0
+part_6/9469327065533588-NOSE BLEED.mp4,nosebleed,train,48,48,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,25.0,18.0,True,0.0,0.0,8.0,22.0
+part_6/9641716767561754-COUNT.mp4,count,train,82,82,both_hands_missing_fraction,,both_hands_missing_fraction,17.0,52.0,36.0,False,0.0,0.0,17.0,29.0
+part_6/968185019787583-BACKYARD.mp4,backyard,train,167,167,both_hands_missing_fraction,,both_hands_missing_fraction,49.0,120.0,72.0,False,0.0,0.0,49.0,46.0
+part_6/9738124822287095-CANNON.mp4,cannon,train,64,64,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,43.0,38.0,False,0.0,0.0,6.0,20.0
+part_6/9739619129066301-VISUALIZE.mp4,visualize,train,97,109,both_hands_missing_fraction,,both_hands_missing_fraction,19.0,70.0,52.0,False,0.0,0.0,19.0,38.0
+part_6/9756898650736014-PIRATE.mp4,pirate,train,75,75,both_hands_missing_fraction,,both_hands_missing_fraction,12.0,37.0,26.0,True,0.0,0.0,12.0,37.0
+part_6/9769917325972981-LIBRARY.mp4,library,train,59,58,,,,9.0,53.0,45.0,False,0.0,0.0,9.0,4.0
+part_6/9819880833945527-HANDCUFFS.mp4,handcuffs,train,81,81,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,49.0,37.0,False,0.0,0.0,13.0,31.0
+part_6/9845660015904845-TURBAN.mp4,turban,train,65,65,both_hands_missing_fraction,active_both_hands_missing_fraction,both_hands_missing_fraction,25.0,55.0,31.0,False,32.25806451612903,9.0,25.0,9.0
+part_6/9862882272897495-DRY.mp4,dry,train,45,45,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,17.0,11.0,True,0.0,0.0,7.0,27.0
+part_6/989516810898259-MATCH.mp4,match,train,70,70,both_hands_missing_fraction,,both_hands_missing_fraction,6.0,45.0,40.0,False,0.0,0.0,6.0,24.0
+part_6/A_video_1_a_aug_11.mp4,a,train,84,84,both_hands_missing_fraction,,both_hands_missing_fraction,20.0,58.0,39.0,False,2.564102564102564,1.0,20.0,25.0
+part_6/C • ASL Dictionary_c_aug_2.mp4,c,train,53,53,both_hands_missing_fraction,,both_hands_missing_fraction,13.0,41.0,29.0,True,0.0,0.0,13.0,11.0
+part_6/California_video_0.mp4,california,train,77,96,both_hands_missing_fraction,,both_hands_missing_fraction,26.0,63.0,38.0,False,0.0,0.0,26.0,32.0
+part_6/Earth_video_21.mp4,earth,train,85,85,both_hands_missing_fraction,,both_hands_missing_fraction,20.0,59.0,40.0,False,27.500000000000004,5.0,20.0,25.0
+part_6/H2O_video_10.mp4,water,train,118,118,both_hands_missing_fraction,,both_hands_missing_fraction,28.0,98.0,71.0,False,7.042253521126761,2.0,28.0,19.0
+part_6/J_video_3_j_aug_24.mp4,j,train,83,83,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,81.0,74.0,False,28.37837837837838,7.0,8.0,1.0
+part_6/K_video_2_k_aug_8.mp4,k,train,100,100,both_hands_missing_fraction,,both_hands_missing_fraction,26.0,67.0,42.0,False,0.0,0.0,26.0,32.0
+part_6/L_video_1_l_aug_3.mp4,l,train,92,92,both_hands_missing_fraction,,both_hands_missing_fraction,24.0,67.0,44.0,False,0.0,0.0,24.0,24.0
+part_6/M_video_1_m_aug_1.mp4,m,train,83,83,both_hands_missing_fraction,,both_hands_missing_fraction,25.0,52.0,28.0,True,0.0,0.0,25.0,30.0
+part_6/N_video_3_n_aug_3.mp4,n,train,33,34,,,,0.0,33.0,34.0,False,11.76470588235294,4.0,0.0,0.0
+part_6/P_video_1.mp4,p,train,80,80,both_hands_missing_fraction,,both_hands_missing_fraction,27.0,67.0,41.0,False,0.0,0.0,27.0,12.0
+part_6/Q_video_0_q_aug_1.mp4,q,train,44,55,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,35.0,27.0,True,3.7037037037037033,1.0,9.0,19.0
+part_6/V.mp4,v,train,64,64,,,,0.0,63.0,64.0,False,0.0,0.0,0.0,0.0
+part_6/adopt_video_1.mp4,adopt,train,85,85,,,,6.0,67.0,62.0,False,0.0,0.0,6.0,17.0
+part_6/advantage_video_2.mp4,advantage,train,93,93,both_hands_missing_fraction,,both_hands_missing_fraction,26.0,72.0,47.0,False,2.127659574468085,1.0,26.0,20.0
+part_6/animal_13.mp4,animal,train,54,54,,,,0.0,53.0,54.0,False,0.0,0.0,0.0,0.0
+part_6/animal_video_52.mp4,animal,train,88,88,both_hands_missing_fraction,,both_hands_missing_fraction,29.0,81.0,53.0,False,0.0,0.0,29.0,6.0
+part_6/animate_being_video_49.mp4,animate being,train,78,78,both_hands_missing_run,,both_hands_missing_run,0.0,54.0,55.0,False,0.0,0.0,0.0,23.0
+part_6/art_video_4.mp4,art,train,95,95,both_hands_missing_fraction,,both_hands_missing_fraction,14.0,71.0,58.0,False,1.7241379310344827,1.0,14.0,23.0
+part_6/article_5.mp4,article,train,37,37,,,,0.0,36.0,37.0,False,0.0,0.0,0.0,0.0
+part_6/assist_8.mp4,assist,train,76,75,both_hands_missing_fraction,,both_hands_missing_fraction,19.0,52.0,34.0,False,0.0,0.0,19.0,22.0
+part_6/b_3_b_aug_4.mp4,b,train,286,286,both_hands_missing_run,,both_hands_missing_run,20.0,271.0,252.0,False,0.0,0.0,20.0,14.0
+part_6/baby_20241119_172633_60.mp4,baby,train,87,87,both_hands_missing_fraction,,both_hands_missing_fraction,29.0,61.0,33.0,False,0.0,0.0,29.0,25.0
+part_6/backbone_video_30.mp4,backbone,train,82,82,both_hands_missing_fraction,,both_hands_missing_fraction,36.0,71.0,36.0,False,5.555555555555555,2.0,36.0,10.0
+part_6/backpack_20241119_172633_47.mp4,backpack,train,126,126,both_hands_missing_fraction,,both_hands_missing_fraction,42.0,104.0,63.0,False,0.0,0.0,42.0,21.0
+part_6/backup_video_6.mp4,backup,train,28,35,too_few_decoded_frames,too_few_decoded_frames,,,,,,,,,
+part_6/bag_20241119_172633_81.mp4,bag,train,106,106,both_hands_missing_fraction,,both_hands_missing_fraction,15.0,69.0,55.0,False,7.2727272727272725,2.0,15.0,36.0
+part_6/ball_video_5.mp4,ball,train,78,98,both_hands_missing_fraction,,both_hands_missing_fraction,31.0,66.0,36.0,False,0.0,0.0,31.0,31.0
+part_6/banana_20241119_172634_60.mp4,banana,train,126,124,both_hands_missing_fraction,,both_hands_missing_fraction,28.0,79.0,52.0,False,0.0,0.0,28.0,44.0
+part_7/bat_20241119_172634_72.mp4,bat,train,48,48,both_hands_missing_fraction,,both_hands_missing_fraction,8.0,32.0,25.0,True,0.0,0.0,8.0,15.0
+part_7/bath_video_6.mp4,bath,train,121,121,both_hands_missing_run,,both_hands_missing_run,29.0,120.0,92.0,False,3.260869565217391,2.0,29.0,0.0
+part_7/bathroom_video_18.mp4,bathroom,train,81,81,both_hands_missing_fraction,,both_hands_missing_fraction,9.0,48.0,40.0,False,0.0,0.0,9.0,32.0
+part_7/behavior_video_3.mp4,behavior,train,70,70,both_hands_missing_fraction,,both_hands_missing_fraction,24.0,64.0,41.0,False,0.0,0.0,24.0,5.0
+part_7/blinds_20241119_180303_25.mp4,blinds,train,166,166,both_hands_missing_fraction,,both_hands_missing_fraction,46.0,126.0,81.0,False,0.0,0.0,46.0,39.0
+part_7/blue_4.mp4,blue,train,79,79,both_hands_missing_fraction,,both_hands_missing_fraction,34.0,51.0,18.0,True,11.11111111111111,2.0,34.0,27.0
+part_7/both.mp4,both,train,64,64,,,,0.0,63.0,64.0,False,1.5625,1.0,0.0,0.0
+part_7/bother_video_3.mp4,bother,train,91,91,both_hands_missing_fraction,,both_hands_missing_fraction,22.0,65.0,44.0,False,0.0,0.0,22.0,25.0
+part_7/bound_video_36.mp4,bound,train,51,51,,,,0.0,50.0,51.0,False,0.0,0.0,0.0,0.0
+part_7/bow_20241119_172635_67.mp4,bow,train,100,100,both_hands_missing_fraction,no_active_signing_interval,both_hands_missing_fraction,,,0.0,False,,,,
+part_7/breathe_video_8.mp4,breathe,train,91,92,,,,9.0,77.0,69.0,False,2.898550724637681,1.0,9.0,14.0
+part_7/bridge_20241119_172635_24.mp4,bridge,train,63,62,both_hands_missing_fraction,,both_hands_missing_fraction,7.0,37.0,31.0,False,0.0,0.0,7.0,24.0
+part_7/brush_video_4.mp4,brush,train,86,86,both_hands_missing_fraction,,both_hands_missing_fraction,24.0,69.0,46.0,False,4.3478260869565215,1.0,24.0,16.0
+part_7/burn_video_1.mp4,burn,train,120,120,both_hands_missing_fraction,,both_hands_missing_fraction,25.0,95.0,71.0,False,0.0,0.0,25.0,24.0
+part_7/calendar_20241119_172635_22.mp4,calendar,train,78,78,both_hands_missing_fraction,,both_hands_missing_fraction,5.0,37.0,33.0,False,0.0,0.0,5.0,40.0
+part_7/cancel_20241119_172636.mp4,cancel,train,83,104,both_hands_missing_fraction,,both_hands_missing_fraction,31.0,64.0,34.0,False,0.0,0.0,31.0,39.0

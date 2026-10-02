@@ -1,0 +1,68 @@
+{
+  "revision": "e7979505c0dff7072ef36d45b3cddfffb50ba871",
+  "csv_rows": 108618,
+  "csv_unique_words": 2207,
+  "repo_video_files": 108616,
+  "repo_files_per_folder": {
+    "part_1": 10000,
+    "part_10": 10000,
+    "part_11": 8616,
+    "part_2": 10000,
+    "part_3": 10000,
+    "part_4": 10000,
+    "part_5": 10000,
+    "part_6": 10000,
+    "part_7": 10000,
+    "part_8": 10000,
+    "part_9": 10000
+  },
+  "repo_total_bytes": 54293681516,
+  "repo_extensions": {
+    "mp4": 108616
+  },
+  "repo_files_missing_sha256": 0,
+  "issues": {
+    "file_missing_in_repo": 1,
+    "duplicate_csv_row": 1
+  },
+  "issue_rows": [
+    {
+      "csv_row": 13,
+      "word": "b",
+      "filename": "b_8.mp4",
+      "issue": "file_missing_in_repo"
+    },
+    {
+      "csv_row": 82,
+      "word": "h",
+      "filename": "h_5.mp4",
+      "issue": "duplicate_csv_row"
+    }
+  ],
+  "eligible_pre_probe_samples": 108616,
+  "eligible_pre_probe_classes": 2207,
+  "duplicate_content": {
+    "groups": 3410,
+    "files_in_groups": 9218,
+    "redundant_copies": 5808,
+    "cross_label_groups": 2810,
+    "files_in_cross_label_groups": 7940
+  },
+  "source_proxy_counts": {
+    "numericid-WORD": 55751,
+    "word_timestamp_n": 25669,
+    "word_video_n": 16961,
+    "word_n": 9172,
+    "word_only": 1062,
+    "other": 1
+  },
+  "label_anomaly_counts": {
+    "classifier_suffix": 1,
+    "concatenation_of_labels": 159,
+    "contains_digit": 5,
+    "long_unseparated": 13,
+    "near_duplicate_label": 2,
+    "repeated_word": 6,
+    "uppercase": 1
+  }
+}

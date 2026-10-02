@@ -1,0 +1,20 @@
+# Step 3: sequence preparation (docs/step3_methodology.md). Landmark configurations and
+# storage format come from configs/step2_landmarks.yaml and are not redefined here.
+sequences:
+  windows: [30, 45, 60]
+  content_region: active_interval      # inclusive [start, end] on the 30 FPS grid
+  resampling: uniform_linear           # p_k = start + k (L-1)/(W-1); see methodology §3
+
+labels:
+  mapping_path: data/sequences/label_mapping.json   # built from the frozen Step 1 split vocabulary
+
+stores:                                # landmark stores (Step 2 output layout) -> index location
+  benchmark_v2_mixed:
+    landmarks_dir: data/landmarks/benchmark_v2_mixed
+    index_dir: data/sequences/benchmark_v2_mixed
+
+dataloader:
+  batch_size: 64
+  num_workers: 0
+  seed: 42                             # seeds the training shuffle generator
+  drop_last_train: false
