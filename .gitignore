@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/playwright-report
+/test-results
 
 # next.js
 /.next/
@@ -19,10 +21,13 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
 *.pem
+.idea/
+.vscode/
 
 # debug
 npm-debug.log*
@@ -30,8 +35,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# Local environment files and secrets. Keep the documented template tracked.
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +45,47 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/.ai
+# ---------------------------------------------------------------- secrets (any directory)
+# `.env*` above already covers .env, .env.local, .env.production, ... (templates re-included).
+!.env.*.example
+.envrc
+*.key
+*.p12
+*.pfx
+*.crt
+id_rsa*
+id_ed25519*
+.netrc
+credentials*.json
+service-account*.json
+*secret*.json
+*secrets*.y*ml
+.huggingface/
+
+# ---------------------------------------------------------------- Python (also see model/.gitignore)
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------- model weights / checkpoints (any directory)
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.tflite
+*.h5
+
+# ---------------------------------------------------------------- OS / editor / temp
+Thumbs.db
+*.swp
+*.swo
+*~
+*.tmp
