@@ -107,6 +107,20 @@ selected checkpoint is reloaded. **The 18-experiment matrix has not been run.**
 | `s4_02_run_experiment.py` | Runs exactly ONE experiment (`--model --feature-config --window --store`) |
 | `s4_03_report.py` | Summary, curves, confusion figures → `reports/step4/` |
 
+## Step 5 (subset vocabulary — proposed, awaiting review)
+
+Methodology: `docs/step5_vocabulary.md`. Config: `configs/step5_vocabulary.yaml`. Metadata only.
+
+| Script | What it does |
+|---|---|
+| `s5_01_select_vocabulary.py` | Duplicate/problem-class analysis and rule-based selection → `configs/vocabulary_100.json`, `configs/vocabulary_expanded.json` (300, superset), `reports/step5/` |
+| `s2_02_extract_landmarks.py --vocabulary … --profile hands_pose_f32` | Extract only the vocabulary's videos, hands + pose, float32 (no face) → `data/landmarks/dev100_hp/` |
+| `s3_04_prepare_store.py --vocabulary …` | Sequence index with the 100-class mapping `data/sequences/label_mapping_dev_100.json` |
+| `s2_10_verify_store.py` | Integrity, feature layout (F = 261), missing landmarks, normalization, Dataset windows, splits, storage, landmark overlay → `reports/step2/<tag>_verification.md` |
+
+Exact commands and the hands + pose feature layout: `docs/step5_vocabulary.md` (Stage 2A).
+With the python.org Python 3.12 build, downloads need `export SSL_CERT_FILE=/etc/ssl/cert.pem`.
+
 ## Remote extraction (val/test) — prepared, not yet run
 
 Runbook: `docs/cloud_extraction_runbook.md`. `s2_07_prepare_extraction.py` (plan + shards +

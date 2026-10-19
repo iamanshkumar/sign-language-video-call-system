@@ -12,6 +12,10 @@ stores:                                # landmark stores (Step 2 output layout) 
   benchmark_v2_mixed:
     landmarks_dir: data/landmarks/benchmark_v2_mixed
     index_dir: data/sequences/benchmark_v2_mixed
+  dev100_hp:                           # Step 5 dev vocabulary, hands + pose (float32), 100-class mapping
+    landmarks_dir: data/landmarks/dev100_hp
+    index_dir: data/sequences/dev100
+    label_mapping: data/sequences/label_mapping_dev_100.json
 
 dataloader:
   batch_size: 64

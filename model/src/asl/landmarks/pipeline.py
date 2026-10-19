@@ -155,9 +155,12 @@ def run_pipeline(
             shutil.rmtree(bdir, ignore_errors=True)
             n_done += len(batch)
             el = time.perf_counter() - t_start
-            log.info("part %05d: %d/%d videos, %.1f videos/min, rejected %d, download failures %d",
-                     part_idx, n_done, len(todo), 60 * n_done / el,
-                     int(df["rejected"].eq(True).sum()), int(df["rejection_reason"].eq(DOWNLOAD_FAILED).sum()))
+            log.info("part %05d: %d/%d videos (%.1f%%), %.1f videos/min, ETA %.1f min, rejected %d, "
+                     "download failures %d, errors %d",
+                     part_idx, n_done, len(todo), 100 * n_done / len(todo), 60 * n_done / el,
+                     (len(todo) - n_done) / max(n_done / el, 1e-9) / 60,
+                     int(df["rejected"].eq(True).sum()), int(df["rejection_reason"].eq(DOWNLOAD_FAILED).sum()),
+                     int(df["rejection_reason"].isin(["decode_or_mediapipe_error", "preprocessing_error"]).sum()))
     summary = {"started_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                "videos_attempted": int(len(todo)), "wall_s": time.perf_counter() - t_start,
                "workers": workers, "download_workers": download_workers, "batch_size": batch_size,

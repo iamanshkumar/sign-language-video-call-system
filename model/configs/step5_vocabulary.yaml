@@ -1,0 +1,55 @@
+# Step 5: evidence-driven subset vocabulary (docs/step5_vocabulary.md).
+# Metadata only: frozen split v1 + manifest + label audit. No video is downloaded.
+# The frozen split is never re-split: a vocabulary only filters it by class.
+split_version: v1
+
+rules:                                # a class failing any rule is excluded (all reasons recorded)
+  max_cross_label_shared_clips: 0     # byte-identical clip filed under another label = label ambiguity / noise
+  max_augmented_clips: 0              # *_aug_N copies (26 letter classes) are near-duplicates of one source
+  exclude_multiword_labels: true      # phrases / synonym expansions ("whole slew", "set up")
+  exclude_label_audit_anomalies: true # data/metadata/label_audit.csv (digits, -cl, concatenations, ...)
+  min_val_units: 6                    # independent split units (SHA-256 group + aug family) per class
+  min_test_units: 6
+  train_fraction_range: [0.60, 0.80]  # per-class train share of independent units
+  max_within_class_duplicate_fraction: 0.10   # same bytes twice under the same label
+  max_single_batch_share: 0.50        # word_timestamp_n batches (<word>_<date>_<time>_<n>.mp4)
+  min_source_patterns: 2              # distinct filename collections (proxy for recording diversity)
+
+heavy_share_threshold: 0.50           # "heavily shared" flag in the duplicate analysis
+
+ranking:                              # lexicographic, descending; deterministic tie-break
+  keys: [min_eval_units, source_patterns, units]
+  tie_break_seed: 42                  # sha256("<seed>:<word>") ascending
+
+sets:
+  dev: {size: 100, output: configs/vocabulary_100.json}
+  expanded: {size: 300, output: configs/vocabulary_expanded.json}   # superset of dev
+
+# Lexical judgement, NOT metadata evidence: English homonyms whose senses are different ASL
+# signs, so one label may mix two signs. Kept out of both vocabularies until a manual look
+# at their videos settles it (see the report). The ranked pool then refills the sets.
+deferred_pending_inspection:
+  sign: "SIGN (language) and SIGN (placard / signature) are different ASL signs"
+  fly: "FLY (to fly / airplane) and FLY (insect) are different ASL signs"
+  lie: "LIE (untruth) and LIE-DOWN are different ASL signs"
+  cold: "COLD (temperature) and COLD (illness) are different ASL signs"
+  charge: "CHARGE (cost), CHARGE (battery) and CHARGE (attack) are different ASL signs"
+  wave: "WAVE (water) and WAVE (hand greeting) are different ASL signs"
+  major: "MAJOR (field of study) and MAJOR (military rank / important) are different ASL signs"
+
+# Lexically related labels that both end up in a vocabulary. They share no clip and are
+# distinct English words with distinct ASL signs as far as is known, so they are kept
+# separate; listed so their confusions can be checked after training.
+related_pairs_kept_separate:
+  - [much, many]
+  - [grandmother, grandfather]
+  - [aunt, uncle]
+  - [husband, wife]
+  - [cheap, expensive]
+  - [cafeteria, restaurant]
+  - [chat, discuss]
+  - [summer, winter]
+  - [north, south]
+  - [happy, excited]
+
+reports_dir: reports/step5

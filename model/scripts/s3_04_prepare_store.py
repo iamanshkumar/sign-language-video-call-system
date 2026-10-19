@@ -19,9 +19,11 @@ from asl.config import PROJECT_ROOT, STEP2_CONFIG, load_config, load_yaml
 from asl.data.split import load_frozen_split
 from asl.landmarks.layout import GROUPS, feature_dim, group_feature_dim
 from asl.landmarks.pipeline import DOWNLOAD_FAILED, load_metadata
+from asl.landmarks.storage import available_configurations, store_groups
+from asl.data.vocabulary import load_vocabulary, subset_label_mapping
 from asl.sequences.dataset import SequenceDataset
 from asl.sequences.index import INTERVAL_BINS, SPLITS, build_index
-from asl.sequences.labels import load_label_mapping
+from asl.sequences.labels import load_label_mapping, save_label_mapping
 
 STEP3 = PROJECT_ROOT / "configs" / "step3_sequences.yaml"
 
@@ -35,13 +37,23 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--landmarks-dir", required=True)
     ap.add_argument("--index-dir", required=True)
+    ap.add_argument("--vocabulary", default=None,
+                    help="vocabulary JSON: use its subset label mapping (data/sequences/label_mapping_<name>.json)")
     args = ap.parse_args()
     lm, out = PROJECT_ROOT / args.landmarks_dir, PROJECT_ROOT / args.index_dir
     frozen = load_frozen_split(c1.path("splits"), c1["split"]["version"])
-    mapping = load_label_mapping(PROJECT_ROOT / c3["labels"]["mapping_path"])
+    if args.vocabulary:
+        lock = json.loads((c1.path("splits") / f"split_{c1['split']['version']}.lock.json").read_text())
+        voc = load_vocabulary(PROJECT_ROOT / args.vocabulary, lock["sha256"])
+        mapping_path = PROJECT_ROOT / "data" / "sequences" / f"label_mapping_{voc['name']}.json"
+        save_label_mapping(subset_label_mapping(frozen, voc, lock["sha256"]), mapping_path)  # write-once
+    else:
+        mapping_path = PROJECT_ROOT / c3["labels"]["mapping_path"]
+    mapping = load_label_mapping(mapping_path)
     meta = load_metadata(lm)
     meta = meta[meta["rejection_reason"].ne(DOWNLOAD_FAILED)]
-    windows, configs = c3["sequences"]["windows"], c2["configurations"]
+    windows = c3["sequences"]["windows"]
+    configs = available_configurations(c2["configurations"], store_groups(meta))  # e.g. no face in a hands+pose store
     idx, excluded = build_index(meta, frozen, mapping, lm / "arrays", windows, c2["rejection"]["short_active_interval_frames"])
     digest = frame_hash(idx)
     out.mkdir(parents=True, exist_ok=True)
@@ -71,6 +83,8 @@ def main() -> None:
                 seqs[f"{cname}/w{w}/{split}"] = len(ds)
     summary = {
         "landmarks_dir": args.landmarks_dir, "index_dir": args.index_dir, "index_sha256": digest,
+        "label_mapping": str(mapping_path.relative_to(PROJECT_ROOT)), "num_classes": mapping["num_classes"],
+        "configurations": {k: feature_dim(v) for k, v in configs.items()},
         "label_mapping_vocabulary_sha256": mapping["vocabulary_sha256"], "landmark_videos": int(len(meta)),
         "accepted_indexed": int(len(idx)), "excluded": int(len(excluded)),
         "excluded_by_split_reason": excluded.groupby(["split", "rejection_reason"]).size().rename("n").reset_index()

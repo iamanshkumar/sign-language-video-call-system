@@ -291,3 +291,71 @@ def test_refused_run_leaves_no_directory(tmp_path, store, mapping):
     with pytest.raises(ValueError):
         run_experiment(ExperimentSpec("lstm", "hands", 30), **kw)
     assert not (tmp_path / "exp" / "r" / "hands_w30_lstm").exists()
+
+
+# ---------------------------------------------------------------- Step 5: subset stores, preflight, export
+def test_preflight_passes_and_catches_bad_labels(store, mapping):
+    from asl.models.experiment import preflight
+
+    idx, arrays = store
+    r = preflight(idx, arrays, ExperimentSpec("lstm", "hands_pose", 30), CONFIGS, mapping)
+    assert r["labels_valid"] and r["feature_dim"] == 261
+    assert all(v["item_shapes"] == ["((30, 261), 'torch.float32')"] for v in r["splits"].values())
+    bad = idx.copy()
+    bad.loc[0, "label"] = NC  # out of range
+    with pytest.raises(ValueError):
+        preflight(bad, arrays, ExperimentSpec("lstm", "hands_pose", 30), CONFIGS, mapping)
+    with pytest.raises(ValueError):  # a split without samples
+        preflight(idx[idx.split != "test"], arrays, ExperimentSpec("lstm", "hands_pose", 30), CONFIGS, mapping)
+
+
+def test_export_roundtrip_reproduces_checkpoint(tmp_path, store, mapping):
+    from asl.models.experiment import export_model, load_exported_model
+
+    r = _run(tmp_path, store, mapping, ExperimentSpec("lstm", "hands_pose", 30))
+    info = export_model(r["exp_dir"], tmp_path / "models", mapping, CONFIGS)
+    model, meta = load_exported_model(tmp_path / "models" / "best_model.pt")
+    ref = build_model("lstm", 261, NC, CFG4["neural"])
+    load_checkpoint(r["exp_dir"] / "best.pt", ref)
+    x = torch.randn(3, 30, 261)
+    assert torch.equal(model(x), ref.eval()(x))
+    assert meta["window"] == 30 and meta["input_dim"] == 261 and meta["groups"] == CONFIGS["hands_pose"]
+    assert info["epoch"] == r["meta"]["best_epoch"]
+    cm = json.loads((tmp_path / "models" / "class_mapping.json").read_text())
+    assert cm["num_classes"] == NC and cm["index_to_class"]["0"] == "w0000" and cm["class_to_index"]["w0005"] == 5
+    other = build_label_mapping(pd.DataFrame({"word": ["a", "b"]}), "x")
+    with pytest.raises(ValueError):  # wrong mapping
+        export_model(r["exp_dir"], tmp_path / "m2", other, CONFIGS)
+
+
+def test_dev100_store_config_uses_the_100_class_mapping():
+    from asl.sequences.labels import load_label_mapping
+
+    st = load_yaml(PROJECT_ROOT / "configs" / "step3_sequences.yaml")["stores"]["dev100_hp"]
+    m = load_label_mapping(PROJECT_ROOT / st["label_mapping"])
+    voc = json.loads((PROJECT_ROOT / "configs" / "vocabulary_100.json").read_text())
+    assert m["num_classes"] == 100
+    assert all(m["word_to_index"][c["class"]] == c["index"] for c in voc["classes"])
+
+
+def test_tagged_run_gets_its_own_directory_and_row(tmp_path, store, mapping):
+    a = _run(tmp_path, store, mapping, ExperimentSpec("lstm", "hands", 30))
+    b = _run(tmp_path, store, mapping, ExperimentSpec("lstm", "hands", 30), tag="e100")
+    assert a["exp_dir"] != b["exp_dir"] and b["exp_dir"].name == "hands_w30_lstm_e100"
+    assert (a["exp_dir"] / "best.pt").exists() and (b["exp_dir"] / "best.pt").exists()
+    res = pd.read_csv(tmp_path / "results.csv")
+    assert res["experiment_id"].tolist() == ["hands_w30_lstm", "hands_w30_lstm_e100"]
+    assert b["meta"]["tag"] == "e100" and b["meta"]["max_epochs_used"] == 3
+
+
+def test_dropout_override_reaches_model_and_metadata(tmp_path, store, mapping):
+    idx, arrays = store
+    cfg = _cfg(dropout=0.5)
+    r = run_experiment(ExperimentSpec("lstm", "hands", 30), store="d", index=idx, arrays_dir=arrays, mapping=mapping,
+                       configurations=CONFIGS, cfg=cfg, experiments_root=tmp_path / "exp",
+                       results_csv=tmp_path / "r.csv", max_epochs=2, tag="do05")
+    assert r["meta"]["neural_config"]["dropout"] == 0.5
+    assert json.loads((r["exp_dir"] / "config.json").read_text())["step4"]["neural"]["dropout"] == 0.5
+    m = build_model("lstm", 128, NC, cfg["neural"])
+    assert m.lstm.dropout == 0.5 and m.dropout.p == 0.5
+    assert CFG4["neural"]["dropout"] == 0.30  # project default unchanged

@@ -53,3 +53,11 @@ output:
   groups_to_store: [pose, face, left_hand, right_hand]
   keep_arrays_for_hand_rejections: false
   max_videos_without_approval: 1000   # s2_02 refuses larger runs unless --approved-large-run is given
+
+# Storage profiles (s2_02 --profile). A profile only changes WHICH groups are written and in
+# which dtype; MediaPipe settings, 30 FPS resampling, rejection rules, gap handling and shoulder
+# normalization are identical. Configurations needing an unstored group become unavailable.
+storage_profiles:
+  hands_pose_f32:               # Step 5 dev vocabulary: no face; all coordinates float32
+    groups_to_store: [pose, left_hand, right_hand]
+    coord_dtype: {pose: float32, left_hand: float32, right_hand: float32}
