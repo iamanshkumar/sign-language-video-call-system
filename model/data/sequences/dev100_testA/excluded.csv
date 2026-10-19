@@ -1,0 +1,4 @@
+sample_id,word,split,rejection_reason
+part_6/9467614082498448-HERE.mp4,here,train,active_both_hands_missing_fraction
+part_6/Japan_video_5.mp4,japan,train,too_few_decoded_frames
+part_8/fat_video_4.mp4,fat,train,active_both_hands_missing_fraction

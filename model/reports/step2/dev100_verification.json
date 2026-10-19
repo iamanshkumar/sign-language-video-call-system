@@ -1,0 +1,413 @@
+{
+  "landmarks_dir": "data/landmarks/dev100_hp",
+  "index_dir": "data/sequences/dev100",
+  "vocabulary": "dev_100",
+  "stored_groups": [
+    "pose",
+    "left_hand",
+    "right_hand"
+  ],
+  "configurations": {
+    "hands": 128,
+    "hands_pose": 261
+  },
+  "integrity": {
+    "metadata_records": 5131,
+    "accepted_arrays": 4838,
+    "rejected": {
+      "active_both_hands_missing_fraction": 150,
+      "too_few_decoded_frames": 101,
+      "active_both_hands_missing_run": 36,
+      "no_active_signing_interval": 6
+    },
+    "check_outputs_problems": [],
+    "unreferenced_arrays": [],
+    "files_failing": [],
+    "keys": [
+      "active_interval",
+      "center",
+      "flags",
+      "left_hand",
+      "pose",
+      "pose_vis",
+      "right_hand",
+      "scale",
+      "shoulder_measured",
+      "version"
+    ],
+    "T_frames": {
+      "count": 4838.0,
+      "mean": 82.5,
+      "std": 41.0,
+      "min": 30.0,
+      "25%": 59.0,
+      "50%": 76.0,
+      "75%": 93.0,
+      "max": 845.0
+    },
+    "decoded_fps": {
+      "count": 4838.0,
+      "mean": 29.26,
+      "std": 3.16,
+      "min": 10.0,
+      "25%": 29.97,
+      "50%": 29.97,
+      "75%": 30.0,
+      "max": 120.0
+    }
+  },
+  "feature_layout": {
+    "F_hands_pose": 261,
+    "F_hands": 128,
+    "blocks": [
+      {
+        "block": "left_hand x,y,z",
+        "columns": "0-62",
+        "width": 63,
+        "contents": "21 landmarks x 3, interleaved x0,y0,z0,x1,..."
+      },
+      {
+        "block": "left_hand present",
+        "columns": "63-63",
+        "width": 1,
+        "contents": "0/1"
+      },
+      {
+        "block": "right_hand x,y,z",
+        "columns": "64-126",
+        "width": 63,
+        "contents": "21 landmarks x 3, interleaved x0,y0,z0,x1,..."
+      },
+      {
+        "block": "right_hand present",
+        "columns": "127-127",
+        "width": 1,
+        "contents": "0/1"
+      },
+      {
+        "block": "pose x,y,z",
+        "columns": "128-226",
+        "width": 99,
+        "contents": "33 landmarks x 3, interleaved x0,y0,z0,x1,..."
+      },
+      {
+        "block": "pose present",
+        "columns": "227-227",
+        "width": 1,
+        "contents": "0/1"
+      },
+      {
+        "block": "pose visibility",
+        "columns": "228-260",
+        "width": 33,
+        "contents": "MediaPipe visibility x present"
+      }
+    ],
+    "first_names": [
+      "left_hand_0_x",
+      "left_hand_0_y",
+      "left_hand_0_z",
+      "left_hand_1_x"
+    ],
+    "presence_columns": [
+      63,
+      127,
+      227
+    ],
+    "assembled_equals_raw_blocks": true
+  },
+  "missing_landmarks": {
+    "frames": {
+      "left_hand_missing_only": 76375,
+      "right_hand_missing_only": 20185,
+      "both_hands_missing": 188127,
+      "pose_missing": 975,
+      "interpolated_hand_frames": 18583
+    },
+    "frames_inside_active_interval": {
+      "frames_inside_active_interval": 206425,
+      "left_hand_missing_only": 72697,
+      "right_hand_missing_only": 18675,
+      "both_hands_missing": 1090,
+      "pose_missing": 0
+    },
+    "first_example": {
+      "right_hand_missing_only": "part_1/00015575668519507424-GOVERNMENT.mp4 frame 6",
+      "both_hands_missing": "part_1/00015575668519507424-GOVERNMENT.mp4 frame 0",
+      "left_hand_missing_only": "part_1/0002600716749214804-VOMIT.mp4 frame 51",
+      "pose_missing": "part_1/0027552557268062383-EGYPT.mp4 frame 0"
+    },
+    "representation_consistent": true,
+    "rule": "absent group -> its x,y,z (and pose visibility) are 0.0 and its presence column is 0; gaps <= 5 frames are interpolated and marked present"
+  },
+  "normalization": {
+    "rule": "pixel coords (x*W, y*H, z*W); origin = midpoint of pose 11/12 (shoulders); scale = 2-D shoulder distance; frames with shoulder visibility < 0.5 reuse the last measured frame (leading frames the first)",
+    "max_abs_normalized_shoulder_midpoint": 0.0,
+    "max_abs_normalized_shoulder_distance_minus_1": 3.1690541746343115e-08,
+    "frames_measured": 398043,
+    "frames_carried": 975,
+    "carried_frames_reuse_reference": true,
+    "shoulder_width_over_image_width": {
+      "count": 4838.0,
+      "mean": 0.349,
+      "std": 0.088,
+      "min": 0.049,
+      "25%": 0.257,
+      "50%": 0.371,
+      "75%": 0.421,
+      "max": 0.6
+    }
+  },
+  "sequence_dataset": {
+    "w30/train": {
+      "items": 3407,
+      "item_shape": [
+        [
+          30,
+          261
+        ]
+      ],
+      "batch": [
+        8,
+        30,
+        261
+      ],
+      "dtype": "torch.float32",
+      "labels_match_vocabulary": true
+    },
+    "w30/val": {
+      "items": 725,
+      "item_shape": [
+        [
+          30,
+          261
+        ]
+      ],
+      "batch": [
+        8,
+        30,
+        261
+      ],
+      "dtype": "torch.float32",
+      "labels_match_vocabulary": true
+    },
+    "w30/test": {
+      "items": 706,
+      "item_shape": [
+        [
+          30,
+          261
+        ]
+      ],
+      "batch": [
+        8,
+        30,
+        261
+      ],
+      "dtype": "torch.float32",
+      "labels_match_vocabulary": true
+    },
+    "w45/train": {
+      "items": 3407,
+      "item_shape": [
+        [
+          45,
+          261
+        ]
+      ],
+      "batch": [
+        8,
+        45,
+        261
+      ],
+      "dtype": "torch.float32",
+      "labels_match_vocabulary": true
+    },
+    "w45/val": {
+      "items": 725,
+      "item_shape": [
+        [
+          45,
+          261
+        ]
+      ],
+      "batch": [
+        8,
+        45,
+        261
+      ],
+      "dtype": "torch.float32",
+      "labels_match_vocabulary": true
+    },
+    "w45/test": {
+      "items": 706,
+      "item_shape": [
+        [
+          45,
+          261
+        ]
+      ],
+      "batch": [
+        8,
+        45,
+        261
+      ],
+      "dtype": "torch.float32",
+      "labels_match_vocabulary": true
+    },
+    "w60/train": {
+      "items": 3407,
+      "item_shape": [
+        [
+          60,
+          261
+        ]
+      ],
+      "batch": [
+        8,
+        60,
+        261
+      ],
+      "dtype": "torch.float32",
+      "labels_match_vocabulary": true
+    },
+    "w60/val": {
+      "items": 725,
+      "item_shape": [
+        [
+          60,
+          261
+        ]
+      ],
+      "batch": [
+        8,
+        60,
+        261
+      ],
+      "dtype": "torch.float32",
+      "labels_match_vocabulary": true
+    },
+    "w60/test": {
+      "items": 706,
+      "item_shape": [
+        [
+          60,
+          261
+        ]
+      ],
+      "batch": [
+        8,
+        60,
+        261
+      ],
+      "dtype": "torch.float32",
+      "labels_match_vocabulary": true
+    }
+  },
+  "splits": {
+    "per_split": {
+      "train": 3407,
+      "val": 725,
+      "test": 706
+    },
+    "leakage_problems": [],
+    "index_split_equals_frozen": true,
+    "sample_ids_disjoint": true,
+    "datasets_contain_only_their_split": true
+  },
+  "storage": {
+    "videos_processed": 5131,
+    "accepted": 4838,
+    "acceptance_rate": 0.9428961216137205,
+    "raw_download_mb": 2304.018728,
+    "npz_total_mb": 432.386742,
+    "npz_mean_kb": 89.37303472509302,
+    "npz_median_kb": 82.554,
+    "bytes_per_frame": 1083.627159677007,
+    "vocabulary_videos": 5131,
+    "vocabulary_raw_download_gb": 2.304018728,
+    "estimated_vocabulary_npz_gb": 0.43238674200000005,
+    "mean_seconds_per_video_per_worker": 5.544142191538748
+  },
+  "visualization": {
+    "figure": "reports/step2/figures/dev100_landmarks.png",
+    "samples": [
+      {
+        "sample_id": "part_1/00015575668519507424-GOVERNMENT.mp4",
+        "word": "government",
+        "split": "train",
+        "frames_drawn": [
+          6,
+          13,
+          21
+        ],
+        "fraction_points_outside_image": 0.0
+      },
+      {
+        "sample_id": "part_1/0039817736578176-TUESDAY.mp4",
+        "word": "tuesday",
+        "split": "val",
+        "frames_drawn": [
+          6,
+          21,
+          37
+        ],
+        "fraction_points_outside_image": 0.0
+      },
+      {
+        "sample_id": "part_1/0012446426080812145-EGG.mp4",
+        "word": "egg",
+        "split": "test",
+        "frames_drawn": [
+          5,
+          12,
+          20
+        ],
+        "fraction_points_outside_image": 0.0
+      },
+      {
+        "sample_id": "part_1/0002600716749214804-VOMIT.mp4",
+        "word": "vomit",
+        "split": "train",
+        "frames_drawn": [
+          34,
+          49,
+          64
+        ],
+        "fraction_points_outside_image": 0.0
+      },
+      {
+        "sample_id": "part_1/0005388901379577149-BEARD.mp4",
+        "word": "beard",
+        "split": "train",
+        "frames_drawn": [
+          15,
+          24,
+          33
+        ],
+        "fraction_points_outside_image": 0.0
+      },
+      {
+        "sample_id": "part_1/0020247732352038916-WATER.mp4",
+        "word": "water",
+        "split": "train",
+        "frames_drawn": [
+          30,
+          58,
+          86
+        ],
+        "fraction_points_outside_image": 0.0
+      }
+    ]
+  },
+  "checks": {
+    "1_integrity": true,
+    "2_feature_layout": true,
+    "3_missing_landmarks": true,
+    "4_normalization": true,
+    "5_sequence_dataset": true,
+    "6_split_separation": true,
+    "7_storage_measured": true
+  },
+  "all_checks_pass": true
+}

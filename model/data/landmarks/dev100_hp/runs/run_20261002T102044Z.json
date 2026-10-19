@@ -1,0 +1,13 @@
+{
+  "started_utc": "2026-10-02T10:20:44+00:00",
+  "videos_attempted": 48,
+  "wall_s": 200.72729095898103,
+  "workers": 4,
+  "download_workers": 8,
+  "batch_size": 50,
+  "peak_rss_mb": 313.71875,
+  "mean_rss_mb": 58.21565672588832,
+  "mean_cpu_pct": 24.960913705583756,
+  "peak_cpu_pct": 54.9,
+  "logical_cpus": 8
+}

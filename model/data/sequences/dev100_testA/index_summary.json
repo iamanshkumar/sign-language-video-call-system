@@ -1,0 +1,93 @@
+{
+  "landmarks_dir": "data/landmarks/dev100_hp",
+  "index_dir": "data/sequences/dev100_testA",
+  "index_sha256": "36050a51d8a0902551eccdbe261b0f22910833156fbfc3ca29b5be2a4ebcdc94",
+  "label_mapping": "data/sequences/label_mapping_dev_100.json",
+  "num_classes": 100,
+  "configurations": {
+    "hands": 128,
+    "hands_pose": 261
+  },
+  "label_mapping_vocabulary_sha256": "9c2a943b28dc4c969665505b0fa4d372d3bbf981fbd0c6189551a48e1da5f743",
+  "landmark_videos": 48,
+  "accepted_indexed": 45,
+  "excluded": 3,
+  "excluded_by_split_reason": [
+    {
+      "split": "train",
+      "rejection_reason": "active_both_hands_missing_fraction",
+      "n": 2
+    },
+    {
+      "split": "train",
+      "rejection_reason": "too_few_decoded_frames",
+      "n": 1
+    }
+  ],
+  "by_split": {
+    "train": {
+      "videos": 29,
+      "classes": 8,
+      "short_active": 9,
+      "active_bins": {
+        "<30": 9,
+        "30-44": 5,
+        "45-59": 11,
+        ">=60": 4
+      }
+    },
+    "val": {
+      "videos": 8,
+      "classes": 8,
+      "short_active": 3,
+      "active_bins": {
+        "<30": 3,
+        "30-44": 5,
+        "45-59": 0,
+        ">=60": 0
+      }
+    },
+    "test": {
+      "videos": 8,
+      "classes": 8,
+      "short_active": 2,
+      "active_bins": {
+        "<30": 2,
+        "30-44": 4,
+        "45-59": 0,
+        ">=60": 2
+      }
+    }
+  },
+  "sequences_per_config_window_split": {
+    "hands/w30/train": 29,
+    "hands/w30/val": 8,
+    "hands/w30/test": 8,
+    "hands/w45/train": 29,
+    "hands/w45/val": 8,
+    "hands/w45/test": 8,
+    "hands/w60/train": 29,
+    "hands/w60/val": 8,
+    "hands/w60/test": 8,
+    "hands_pose/w30/train": 29,
+    "hands_pose/w30/val": 8,
+    "hands_pose/w30/test": 8,
+    "hands_pose/w45/train": 29,
+    "hands_pose/w45/val": 8,
+    "hands_pose/w45/test": 8,
+    "hands_pose/w60/train": 29,
+    "hands_pose/w60/val": 8,
+    "hands_pose/w60/test": 8
+  },
+  "unable_to_produce_window": 0,
+  "max_stretch": {
+    "30": 2.0,
+    "45": 3.0,
+    "60": 4.0
+  },
+  "checks": {
+    "shape_finite_presence": true,
+    "regeneration_identical": true
+  },
+  "all_checks_pass": true
+}

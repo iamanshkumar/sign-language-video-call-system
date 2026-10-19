@@ -1,0 +1,136 @@
+{
+  "experiment_id": "hands_pose_w30_lstm",
+  "store": "dev100_hp",
+  "model": "lstm",
+  "feature_config": "hands_pose",
+  "groups": [
+    "left_hand",
+    "right_hand",
+    "pose"
+  ],
+  "window_size": 30,
+  "feature_dim": 261,
+  "seed": 42,
+  "samples": {
+    "train": 3407,
+    "val": 725,
+    "test": 706
+  },
+  "train_classes": 100,
+  "vocabulary_size": 100,
+  "label_mapping_sha256": "9c2a943b28dc4c969665505b0fa4d372d3bbf981fbd0c6189551a48e1da5f743",
+  "environment": {
+    "python": "3.12.6",
+    "torch": "2.14.1",
+    "numpy": "1.26.4",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "machine": "arm64",
+    "device": "cpu",
+    "cpu_threads": 4
+  },
+  "started_utc": "2026-10-03T09:47:00+00:00",
+  "notes": "Step 5 baseline: dev_100 vocabulary, hands+pose, documented defaults, no tuning",
+  "train_seconds": 182.81713666697033,
+  "neural_config": {
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.3,
+    "optimizer": "adamw",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "loss": "cross_entropy",
+    "batch_size": 64,
+    "fallback_batch_size": 32,
+    "max_epochs": 50,
+    "early_stopping_patience": 7,
+    "scheduler": {
+      "name": "reduce_lr_on_plateau",
+      "monitor": "val_macro_f1",
+      "mode": "max",
+      "factor": 0.5,
+      "patience": 3
+    },
+    "selection_metric": "val_macro_f1"
+  },
+  "batch_size_used": 64,
+  "params": 345188,
+  "epochs": 50,
+  "best_epoch": 49,
+  "best_val_macro_f1": 0.5387610673640084,
+  "stopped_early": false,
+  "checkpoint": "best.pt",
+  "selection": "best validation macro-F1",
+  "checkpoint_epoch": 49,
+  "max_epochs_used": 50,
+  "reloaded_val_macro_f1": 0.5387610673640084,
+  "checkpoint_reload_reproduces_val_f1": true,
+  "latency": [
+    {
+      "batch_size": 1,
+      "runs": 200,
+      "mean_ms": 0.8877511977334507,
+      "median_ms": 0.8832499734126031,
+      "p95_ms": 0.9443351329537109,
+      "throughput_samples_per_s": 1126.4417356497358,
+      "device": "cpu",
+      "warmup": 20,
+      "timing": "model forward only"
+    },
+    {
+      "batch_size": 64,
+      "runs": 200,
+      "mean_ms": 9.949963704275433,
+      "median_ms": 9.811437514144927,
+      "p95_ms": 10.815723240375517,
+      "throughput_samples_per_s": 6432.184267415933,
+      "device": "cpu",
+      "warmup": 20,
+      "timing": "model forward only"
+    },
+    {
+      "batch_size": 1,
+      "runs": 50,
+      "mean_ms": 1.3215091358870268,
+      "median_ms": 1.290812506340444,
+      "p95_ms": 1.5322168357670307,
+      "throughput_samples_per_s": 756.7106218518705,
+      "warmup": 5,
+      "timing": "end-to-end per sample: load .npz + resample + assemble + model (no MediaPipe)"
+    }
+  ],
+  "evaluations": {
+    "train": {
+      "samples": 3407,
+      "accuracy": 0.8467860287643088,
+      "macro_f1": 0.8458289690362584,
+      "weighted_f1": 0.8471748114336327,
+      "classes_in_y_true": 100
+    },
+    "val": {
+      "samples": 725,
+      "accuracy": 0.543448275862069,
+      "macro_f1": 0.5387610673640084,
+      "weighted_f1": 0.5431008428128105,
+      "classes_in_y_true": 100
+    },
+    "test": {
+      "samples": 706,
+      "accuracy": 0.5368271954674221,
+      "macro_f1": 0.5283030282546333,
+      "weighted_f1": 0.5330856480147148,
+      "classes_in_y_true": 100
+    }
+  },
+  "generalization_gap": {
+    "train_minus_test_accuracy": 0.30995883329688667,
+    "train_minus_test_macro_f1": 0.3175259407816251
+  },
+  "finished_utc": "2026-10-03T09:50:10+00:00",
+  "resources": {
+    "peak_rss_mb": 547.796875,
+    "mean_rss_mb": 483.3824800531915,
+    "mean_cpu_pct": 28.210638297872343,
+    "peak_cpu_pct": 39.3,
+    "logical_cpus": 8
+  }
+}
