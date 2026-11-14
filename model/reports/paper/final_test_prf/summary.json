@@ -1,0 +1,26 @@
+{
+  "inputs": [
+    "hands_pose_w30_lstm_e100/predictions_test.csv (development)",
+    "hands_pose_w30_lstm_e100_s1/predictions_test.csv (development)",
+    "hands_pose_w30_lstm_e100_s2/predictions_test.csv (development)",
+    "hands_pose_w30_lstm_e100_s3/predictions_test.csv (development)",
+    "hands_pose_w30_lstm_e100_s4/predictions_test.csv (development)",
+    "predictions_test_all.csv (one-time final evaluation; baseline rows reused)"
+  ],
+  "unit_of_analysis": "one run (model x seed) on 706 test clips; summarised over 5 seeds (mean, sample SD)",
+  "averaging": {
+    "macro": "unweighted mean over the 100 classes (union of true and predicted labels)",
+    "weighted": "mean weighted by true-class support",
+    "micro": "equals accuracy for single-label classification (not reported separately)",
+    "zero_division": 0
+  },
+  "bootstrap": "class-stratified over clips, 2000 resamples, seed 0, same resample for every seed",
+  "reconciliation": {
+    "checks": 100,
+    "all_match": true,
+    "max_abs_diff": 0.0,
+    "tolerance": 1e-12
+  },
+  "new_inference": false,
+  "note": "lstm test predictions were produced during development (not part of the one-time final evaluation)"
+}

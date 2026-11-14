@@ -1,0 +1,57 @@
+{
+  "attempts": 20,
+  "outcomes": {
+    "missed": 3,
+    "wrong": 5,
+    "pre_go_only": 7,
+    "correct": 4,
+    "rejected": 1
+  },
+  "accuracy_all_attempts": 0.2,
+  "accuracy_when_answered": 0.4444444444444444,
+  "top5_rate_when_answered": 0.7777777777777778,
+  "attempts_with_duplicates": 0,
+  "early_events_total": 15,
+  "pre_go_events_total": 14,
+  "suppressed_events_total": 0,
+  "attempts_with_hands_up_before_go": 7,
+  "legacy_accuracy_all_attempts": 0.4,
+  "scoring": "strict: first non-suppressed segment whose first hand frame is at/after GO",
+  "rejection_reasons": {
+    "too_few_decoded_frames": 1
+  },
+  "delay_s": {
+    "n": 10,
+    "median": 0.4020512909919489,
+    "p95": 0.4662998605912435
+  },
+  "confidence_correct_median": 0.5924350470304489,
+  "confidence_wrong_median": 0.6450172066688538,
+  "per_sign_accuracy": {
+    "africa": 0.0,
+    "blind": 0.0,
+    "computer": 0.0,
+    "director": 0.5,
+    "forbid": 0.0,
+    "here": 0.0,
+    "more": 0.5,
+    "please": 0.0,
+    "shower": 0.5,
+    "tuesday": 0.5
+  },
+  "mean_hand_visible_fraction": 0.7244446404709561,
+  "source_session": "reports/step6/webcam_eval/20261019T075328Z_camera_S01",
+  "settings": {
+    "pre_roll_s": 0.5,
+    "end_rest_s": 0.4,
+    "max_segment_s": 4.0,
+    "confidence_threshold": 0.0,
+    "smoothing_window": 1,
+    "smoothing_min_votes": 1
+  },
+  "overrides": {},
+  "replay_reproduces_recorded_events": true,
+  "events": 39,
+  "events_outside_attempts": 0,
+  "note": "offline replay of saved landmarks; delays exclude live processing time"
+}

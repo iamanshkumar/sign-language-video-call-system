@@ -1,0 +1,40 @@
+{
+  "rule": {
+    "mean_change": 0.010231609306623457,
+    "mean_change_ci": [
+      -0.002045022298404149,
+      0.023220226377713742
+    ],
+    "ni_mean_ge_-0.01": true,
+    "ni_ci_lower_ge_-0.02": true,
+    "classes_with_zero_f1_e2": [],
+    "no_zero_class": true,
+    "seeds_better": 4,
+    "sign_test_p": 0.375,
+    "improvement_rule_met": false,
+    "non_inferiority_met": true
+  },
+  "configs_ok": true,
+  "overfitting": {
+    "e1": {
+      "train_accuracy": 0.9960082183739359,
+      "val_accuracy": 0.695448275862069,
+      "train_minus_val_acc": 0.300559942511867
+    },
+    "e2": {
+      "train_accuracy": 0.9903727619606693,
+      "val_accuracy": 0.7048275862068966,
+      "train_minus_val_acc": 0.2855451757537727
+    }
+  },
+  "per_class": {
+    "better": 58,
+    "worse": 42,
+    "unchanged": 0
+  },
+  "webcam_core_top1_mean": {
+    "e1": 0.4391304347826087,
+    "e2": 0.43695652173913047
+  },
+  "note": "validation and webcam development set only; test not evaluated"
+}

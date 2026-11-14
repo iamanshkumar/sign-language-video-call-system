@@ -1,0 +1,6 @@
+seed,spec_equal,config_diff,config_diff_only_ablation,feature_dim,dropped_columns_match,test_evaluated,no_test_files
+42,True,['feature_ablation'],True,221,True,False,True
+1,True,['feature_ablation'],True,221,True,False,True
+2,True,['feature_ablation'],True,221,True,False,True
+3,True,['feature_ablation'],True,221,True,False,True
+4,True,['feature_ablation'],True,221,True,False,True

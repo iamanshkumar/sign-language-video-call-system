@@ -1,0 +1,16 @@
+{
+  "samples": 3407,
+  "correct": 3352,
+  "incorrect": 55,
+  "accuracy": 0.9838567654828295,
+  "vocabulary_size": 100,
+  "classes_in_y_true": 100,
+  "classes_evaluated": 100,
+  "macro_precision": 0.9844078710072768,
+  "macro_recall": 0.9837983972888534,
+  "macro_f1": 0.9838056865896097,
+  "weighted_precision": 0.9844033588065443,
+  "weighted_recall": 0.9838567654828295,
+  "weighted_f1": 0.9838241492239589,
+  "evaluated_split": "train (selected checkpoint, eval mode; not generalization)"
+}

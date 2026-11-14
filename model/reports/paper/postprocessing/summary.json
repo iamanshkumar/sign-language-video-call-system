@@ -1,0 +1,39 @@
+{
+  "sessions": [
+    "S3",
+    "S4",
+    "5a",
+    "5b",
+    "5c-1",
+    "5c-2"
+  ],
+  "grid": [
+    {
+      "cooldown_s": 0.0,
+      "confidence_threshold": 0.0
+    },
+    {
+      "cooldown_s": 0.5,
+      "confidence_threshold": 0.0
+    },
+    {
+      "cooldown_s": 1.0,
+      "confidence_threshold": 0.0
+    },
+    {
+      "cooldown_s": 0.0,
+      "confidence_threshold": 0.4
+    },
+    {
+      "cooldown_s": 0.0,
+      "confidence_threshold": 0.57
+    },
+    {
+      "cooldown_s": 0.0,
+      "confidence_threshold": 0.7
+    }
+  ],
+  "default_reproduces_replay_set_answers": true,
+  "core_attempts": 92,
+  "note": "one signer, development data, baseline BiLSTM candidate (live model); descriptive only"
+}

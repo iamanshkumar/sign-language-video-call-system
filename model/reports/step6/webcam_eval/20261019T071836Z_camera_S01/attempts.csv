@@ -1,0 +1,21 @@
+attempt,expected,events,duplicates,hand_visible_fraction,outcome,status,predicted,confidence,in_top5,reason,delay_s,segment_frames,forced_cut,top3
+0,africa,2,1,0.5540540540540541,wrong,ok,religion,0.4930371344089508,False,,0.4878067919926252,51.0,False,"[('religion', 0.493), ('pepper', 0.108), ('different', 0.081)]"
+1,africa,1,0,0.49333333333333335,wrong,ok,pepper,0.7706165313720703,False,,0.4375214579922613,54.0,False,"[('pepper', 0.771), ('bank', 0.167), ('tuesday', 0.01)]"
+2,blind,0,0,0.0,missed,,,,False,no segment detected,,,,
+3,blind,0,0,0.0,missed,,,,False,no segment detected,,,,
+4,computer,0,0,0.0,missed,,,,False,no segment detected,,,,
+5,computer,0,0,0.0,missed,,,,False,no segment detected,,,,
+6,director,1,0,0.24,rejected,rejected,,,False,too_few_decoded_frames,0.43036508400109597,29.0,False,[]
+7,director,1,0,0.28,wrong,ok,history,0.49165478348731995,False,,0.5026392090076115,39.0,False,"[('history', 0.492), ('three', 0.093), ('religion', 0.092)]"
+8,forbid,0,0,0.0,missed,,,,False,no segment detected,,,,
+9,forbid,0,0,0.0,missed,,,,False,no segment detected,,,,
+10,here,0,0,0.0,missed,,,,False,no segment detected,,,,
+11,here,3,2,0.9594594594594594,wrong,ok,day,0.49900540709495544,False,,0.09437033301219344,67.0,True,"[('day', 0.499), ('vote', 0.129), ('secret', 0.074)]"
+12,more,0,0,0.013513513513513514,missed,,,,False,no segment detected,,,,
+13,more,1,0,0.32,wrong,ok,blind,0.7673161029815674,False,,0.5004657079989556,36.0,False,"[('blind', 0.767), ('onion', 0.056), ('wednesday', 0.049)]"
+14,please,1,0,0.5733333333333334,rejected,rejected,,,False,active_both_hands_missing_fraction,0.4320322080166079,43.0,False,[]
+15,please,2,1,0.49333333333333335,wrong,ok,pepper,0.6637362241744995,False,,0.5038108330045361,64.0,False,"[('pepper', 0.664), ('history', 0.113), ('yes', 0.048)]"
+16,shower,1,0,0.41333333333333333,wrong,ok,onion,0.9307088255882263,False,,0.4374990409996826,30.0,False,"[('onion', 0.931), ('front', 0.022), ('gray', 0.014)]"
+17,shower,2,1,0.32,wrong,ok,delicious,0.9612430930137634,False,,0.03613204098655842,67.0,True,"[('delicious', 0.961), ('africa', 0.016), ('jealous', 0.016)]"
+18,tuesday,0,0,0.0,missed,,,,False,no segment detected,,,,
+19,tuesday,0,0,0.0,missed,,,,False,no segment detected,,,,

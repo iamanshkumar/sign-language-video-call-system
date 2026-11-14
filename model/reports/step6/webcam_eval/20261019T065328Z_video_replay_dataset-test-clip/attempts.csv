@@ -1,0 +1,2 @@
+attempt,expected,events,duplicates,hand_visible_fraction,outcome,status,predicted,confidence,in_top5,reason,delay_s,segment_frames,forced_cut,top3
+0,bottle,1,0,0.5882352941176471,correct,ok,bottle,0.9993720650672913,True,,0.4880305830081926,81,False,"[('bottle', 0.999), ('window', 0.0), ('diamond', 0.0)]"

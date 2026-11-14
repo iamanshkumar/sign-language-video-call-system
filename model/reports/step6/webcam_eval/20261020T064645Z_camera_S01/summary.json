@@ -1,0 +1,109 @@
+{
+  "attempts": 16,
+  "outcomes": {
+    "correct": 5,
+    "wrong": 11
+  },
+  "accuracy_all_attempts": 0.3125,
+  "accuracy_when_answered": 0.3125,
+  "top5_rate_when_answered": 0.5625,
+  "attempts_with_duplicates": 1,
+  "early_events_total": 0,
+  "pre_go_events_total": 0,
+  "suppressed_events_total": 0,
+  "attempts_with_hands_up_before_go": 0,
+  "legacy_accuracy_all_attempts": 0.3125,
+  "scoring": "strict: first non-suppressed segment whose first hand frame is at/after GO",
+  "rejection_reasons": {},
+  "delay_s": {
+    "n": 16,
+    "median": 0.45018500002333894,
+    "p95": 0.4561918332474306
+  },
+  "confidence_correct_median": 0.8924892544746399,
+  "confidence_wrong_median": 0.44929346442222595,
+  "per_sign_accuracy": {
+    "africa": 0.0,
+    "computer": 0.0,
+    "forbid": 0.0,
+    "here": 0.5,
+    "more": 1.0,
+    "please": 1.0,
+    "shower": 0.0,
+    "tuesday": 0.0
+  },
+  "mean_hand_visible_fraction": 0.5875,
+  "mode": "camera",
+  "real_world": true,
+  "signer_id": "S01",
+  "lighting": "daylight, frontal",
+  "camera_position": "closer, upper body in frame, hands rest out of view",
+  "notes": "session 5d: condition SINGLE (one movement cycle), repetition protocol v1",
+  "model_dir": "models/candidates/hands_pose_w30_bilstm_e100_s3",
+  "model": "hands_pose_w30_bilstm_e100_s3",
+  "settings": {
+    "pre_roll_s": 0.5,
+    "end_rest_s": 0.4,
+    "max_segment_s": 4.0,
+    "confidence_threshold": 0.0,
+    "smoothing_window": 1,
+    "smoothing_min_votes": 1,
+    "cooldown_s": 0.0
+  },
+  "frame_size": [
+    640,
+    480
+  ],
+  "frames": 3227,
+  "dropped_frames": 17,
+  "camera_fps_measured": 24.007277171677256,
+  "camera_requested": {
+    "width": 640,
+    "height": 480,
+    "fps": 30.0
+  },
+  "camera_reported_fps": 30.0,
+  "camera_frames_captured": 3245,
+  "capture_options": {
+    "threaded": true,
+    "preview_every": 3,
+    "hands_down_s": 0.5,
+    "max_wait_s": 6.0
+  },
+  "framing_at_end": "framing: shoulders 20% of width (training 26-42%) - move closer",
+  "input_diagnostics": {
+    "frames": 3227,
+    "frame_interval_ms": {
+      "median": 41.88891701051034,
+      "p95": 47.33726025006035,
+      "share_over_50ms": 0.008989460632362058
+    },
+    "processed_fps": 23.872663018456414,
+    "pose_present": 1.0,
+    "any_hand_present": 0.36132630926557174,
+    "both_hands": 0.14564611093895258,
+    "left_hand_only": 0.02107220328478463,
+    "right_hand_only": 0.19460799504183451,
+    "shoulder_width_over_frame_width_median": 0.20447039604187012,
+    "read_wait_ms_median": 10.097000020323321,
+    "loop_ms_median": 41.88891701051034
+  },
+  "training_reference": {
+    "shoulder_width_over_frame_width_median": 0.371,
+    "inside_active_interval": {
+      "frames_inside_active_interval": 206425,
+      "left_hand_missing_only": 72697,
+      "right_hand_missing_only": 18675,
+      "both_hands_missing": 1090,
+      "pose_missing": 0
+    }
+  },
+  "capture_fps_median": 23.872663018456414,
+  "processed_fps_median": 23.872663018456414,
+  "mediapipe_ms": {
+    "median": 28.138791996752843,
+    "p95": 28.49936680868268
+  },
+  "events_outside_attempts": 0,
+  "created_utc": "2026-10-20T06:46:45+00:00"
+}

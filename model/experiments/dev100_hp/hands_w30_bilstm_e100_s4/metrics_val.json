@@ -1,0 +1,16 @@
+{
+  "samples": 725,
+  "correct": 488,
+  "incorrect": 237,
+  "accuracy": 0.6731034482758621,
+  "vocabulary_size": 100,
+  "classes_in_y_true": 100,
+  "classes_evaluated": 100,
+  "macro_precision": 0.7054884837384838,
+  "macro_recall": 0.6687380952380952,
+  "macro_f1": 0.666928906061259,
+  "weighted_precision": 0.7092397985156605,
+  "weighted_recall": 0.6731034482758621,
+  "weighted_f1": 0.6711352661312094,
+  "evaluated_split": "val"
+}

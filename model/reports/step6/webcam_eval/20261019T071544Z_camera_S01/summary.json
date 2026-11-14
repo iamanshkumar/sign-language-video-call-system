@@ -1,0 +1,61 @@
+{
+  "attempts": 20,
+  "outcomes": {
+    "missed": 16,
+    "wrong": 4
+  },
+  "accuracy_all_attempts": 0.0,
+  "accuracy_when_answered": 0.0,
+  "top5_rate_when_answered": 0.0,
+  "attempts_with_duplicates": 0,
+  "rejection_reasons": {},
+  "delay_s": {
+    "n": 4,
+    "median": 0.3126866870006779,
+    "p95": 0.4960696730995551
+  },
+  "confidence_correct_median": null,
+  "confidence_wrong_median": 0.5167855620384216,
+  "per_sign_accuracy": {
+    "africa": 0.0,
+    "blind": 0.0,
+    "computer": 0.0,
+    "director": 0.0,
+    "forbid": 0.0,
+    "here": 0.0,
+    "more": 0.0,
+    "please": 0.0,
+    "shower": 0.0,
+    "tuesday": 0.0
+  },
+  "mean_hand_visible_fraction": 0.12848055066364925,
+  "mode": "camera",
+  "real_world": true,
+  "signer_id": "S01",
+  "lighting": "daylight, frontal",
+  "camera_position": "laptop, arm's length",
+  "notes": "",
+  "model_dir": "models/candidates/hands_pose_w30_bilstm_e100_s3",
+  "model": "hands_pose_w30_bilstm_e100_s3",
+  "settings": {
+    "pre_roll_s": 0.5,
+    "end_rest_s": 0.4,
+    "max_segment_s": 4.0,
+    "confidence_threshold": 0.0,
+    "smoothing_window": 1,
+    "smoothing_min_votes": 1
+  },
+  "frame_size": [
+    1920,
+    1080
+  ],
+  "frames": 2435,
+  "dropped_frames": 0,
+  "capture_fps_median": 15.014752031037725,
+  "mediapipe_ms": {
+    "median": 22.52200001385063,
+    "p95": 33.64099128521047
+  },
+  "events_outside_attempts": 3,
+  "created_utc": "2026-10-19T07:15:44+00:00"
+}

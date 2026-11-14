@@ -1,0 +1,82 @@
+{
+  "attempts": 1,
+  "outcomes": {
+    "correct": 1
+  },
+  "accuracy_all_attempts": 1.0,
+  "accuracy_when_answered": 1.0,
+  "top5_rate_when_answered": 1.0,
+  "attempts_with_duplicates": 0,
+  "early_events_total": 0,
+  "answers_started_before_go": 0,
+  "rejection_reasons": {},
+  "delay_s": {
+    "n": 1,
+    "median": 0.4689005000034814,
+    "p95": 0.4689005000034814
+  },
+  "confidence_correct_median": 0.9993335604667664,
+  "confidence_wrong_median": null,
+  "per_sign_accuracy": {
+    "bottle": 1.0
+  },
+  "mean_hand_visible_fraction": 0.5555555555555556,
+  "mode": "video_replay",
+  "real_world": false,
+  "signer_id": "simcheck",
+  "lighting": "",
+  "camera_position": "",
+  "notes": "SIMULATION: tool check after S01 fixes",
+  "model_dir": "models/candidates/hands_pose_w30_bilstm_e100_s3",
+  "model": "hands_pose_w30_bilstm_e100_s3",
+  "settings": {
+    "pre_roll_s": 0.5,
+    "end_rest_s": 0.4,
+    "max_segment_s": 4.0,
+    "confidence_threshold": 0.0,
+    "smoothing_window": 1,
+    "smoothing_min_votes": 1
+  },
+  "frame_size": [
+    640,
+    480
+  ],
+  "frames": 108,
+  "dropped_frames": 25,
+  "camera_requested": null,
+  "camera_reported_fps": null,
+  "input_diagnostics": {
+    "frames": 108,
+    "frame_interval_ms": {
+      "median": 33.00000000000014,
+      "p95": 34.000000000000256,
+      "share_over_50ms": 0.009345794392523364
+    },
+    "processed_fps": 30.303030303030173,
+    "pose_present": 1.0,
+    "any_hand_present": 0.5555555555555556,
+    "both_hands": 0.4166666666666667,
+    "left_hand_only": 0.009259259259259259,
+    "right_hand_only": 0.12962962962962962,
+    "shoulder_width_over_frame_width_median": 0.40646037459373474,
+    "read_wait_ms_median": 4.695270996307954,
+    "loop_ms_median": 33.00000000000014
+  },
+  "training_reference": {
+    "shoulder_width_over_frame_width_median": 0.371,
+    "inside_active_interval": {
+      "frames_inside_active_interval": 206425,
+      "left_hand_missing_only": 72697,
+      "right_hand_missing_only": 18675,
+      "both_hands_missing": 1090,
+      "pose_missing": 0
+    }
+  },
+  "capture_fps_median": 30.303030303030173,
+  "mediapipe_ms": {
+    "median": 28.37647900742013,
+    "p95": 29.259848241053987
+  },
+  "events_outside_attempts": 0,
+  "created_utc": "2026-10-19T07:26:45+00:00"
+}

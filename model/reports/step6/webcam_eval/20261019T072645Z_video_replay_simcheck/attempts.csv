@@ -1,0 +1,2 @@
+attempt,expected,ready_start_s,start_s,end_s,events,duplicates,early_events,early_labels,hand_visible_fraction,outcome,status,predicted,confidence,in_top5,reason,delay_s,segment_frames,forced_cut,segment_start_s,last_hand_s,started_before_go,top3
+0,bottle,0.0,0.0,inf,1,0,0,[],0.5555555555555556,correct,ok,bottle,0.9993335604667664,True,,0.4689005000034814,86,False,0.867,3.267,False,"[('bottle', 0.999), ('window', 0.0), ('diamond', 0.0)]"

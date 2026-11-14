@@ -1,0 +1,67 @@
+{
+  "sessions": {
+    "S2": {
+      "folder": "20261019T075328Z_camera_S01",
+      "condition": "natural (15 fps capture)",
+      "core": false,
+      "landmarks_sha256": "d95c1c027b4210c31f27e172ce2759141167c295d0d988330442bf0c19b3db8c"
+    },
+    "S3": {
+      "folder": "20261019T084115Z_camera_S01",
+      "condition": "natural",
+      "core": true,
+      "landmarks_sha256": "ae34bdfea9fdb8975f5821924a60d124b57160fb68d8dc596146b3c70da87515"
+    },
+    "S4": {
+      "folder": "20261020T045903Z_camera_S01",
+      "condition": "controlled, sign once",
+      "core": true,
+      "landmarks_sha256": "cc29d3bf27c46270055b37b74d98b5e6ed2d708083ba01f4335d6e2483198953"
+    },
+    "5a": {
+      "folder": "20261020T063535Z_camera_S01",
+      "condition": "protocol v1 SINGLE",
+      "core": true,
+      "landmarks_sha256": "f98789b557ba848acca5462621400f1e7edd5bbc069793575ff9282ade6135ac"
+    },
+    "5b": {
+      "folder": "20261020T063812Z_camera_S01",
+      "condition": "protocol v1 REPEATED",
+      "core": true,
+      "landmarks_sha256": "06e9c350eb4ffd4153a8f58b40ffabb1e35153f32ebd264e97d32ac01cba86ac"
+    },
+    "5c-1": {
+      "folder": "20261020T064102Z_camera_S01",
+      "condition": "protocol v1 REPEATED",
+      "core": true,
+      "landmarks_sha256": "6ec0c188ebba33c44ecdc50c4e901b4ee854989b12a03fed4098138435673c80"
+    },
+    "5c-2": {
+      "folder": "20261020T064353Z_camera_S01",
+      "condition": "protocol v1 REPEATED",
+      "core": true,
+      "landmarks_sha256": "5108ffb555cee8b501c051f9acf330e3ad3fa190e1b4bde040d0d78e02ed6d81"
+    },
+    "5d": {
+      "folder": "20261020T064645Z_camera_S01",
+      "condition": "protocol v1 SINGLE (24 fps, invalid block)",
+      "core": false,
+      "landmarks_sha256": "9c32321203f63b609666c8a85efc8bacd61741a138977c9269b48c0fe6c71df5"
+    }
+  },
+  "attempts": 140,
+  "attempts_with_segment": 134,
+  "core_valid_attempts": 92,
+  "candidate_reproduces_strict_replay_answers": true,
+  "candidate_reproduces_live_answers_of_strict_sessions": true,
+  "strict_live_sessions": [
+    "S4",
+    "5a",
+    "5b",
+    "5c-1",
+    "5c-2",
+    "5d"
+  ],
+  "bilstm_s3_run_equals_candidate": true,
+  "status": "development data: one signer (S01), already inspected; secondary evidence only"
+}

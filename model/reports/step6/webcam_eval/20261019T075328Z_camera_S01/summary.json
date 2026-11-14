@@ -1,0 +1,97 @@
+{
+  "attempts": 20,
+  "outcomes": {
+    "missed": 3,
+    "wrong": 9,
+    "correct": 8
+  },
+  "accuracy_all_attempts": 0.4,
+  "accuracy_when_answered": 0.47058823529411764,
+  "top5_rate_when_answered": 0.7647058823529411,
+  "attempts_with_duplicates": 7,
+  "early_events_total": 15,
+  "answers_started_before_go": 14,
+  "rejection_reasons": {},
+  "delay_s": {
+    "n": 17,
+    "median": 0.17208529100753367,
+    "p95": 0.5029046920128166
+  },
+  "confidence_correct_median": 0.7676856815814972,
+  "confidence_wrong_median": 0.4918232858181,
+  "per_sign_accuracy": {
+    "africa": 0.0,
+    "blind": 0.5,
+    "computer": 0.0,
+    "director": 0.5,
+    "forbid": 0.0,
+    "here": 0.0,
+    "more": 0.5,
+    "please": 1.0,
+    "shower": 0.5,
+    "tuesday": 1.0
+  },
+  "mean_hand_visible_fraction": 0.7244446404709561,
+  "mode": "camera",
+  "real_world": true,
+  "signer_id": "S01",
+  "lighting": "daylight, frontal",
+  "camera_position": "laptop, arm's length, upper body and both hands in frame",
+  "notes": "session 2 after evaluation fixes",
+  "model_dir": "models/candidates/hands_pose_w30_bilstm_e100_s3",
+  "model": "hands_pose_w30_bilstm_e100_s3",
+  "settings": {
+    "pre_roll_s": 0.5,
+    "end_rest_s": 0.4,
+    "max_segment_s": 4.0,
+    "confidence_threshold": 0.0,
+    "smoothing_window": 1,
+    "smoothing_min_votes": 1
+  },
+  "frame_size": [
+    640,
+    360
+  ],
+  "frames": 2433,
+  "dropped_frames": null,
+  "camera_requested": {
+    "width": 640,
+    "height": 480,
+    "fps": 30.0
+  },
+  "camera_reported_fps": 30.0,
+  "input_diagnostics": {
+    "frames": 2433,
+    "frame_interval_ms": {
+      "median": 66.6272289963672,
+      "p95": 70.1582480862271,
+      "share_over_50ms": 0.993421052631579
+    },
+    "processed_fps": 15.00887872816269,
+    "pose_present": 0.9958898479243732,
+    "any_hand_present": 0.6292642827784628,
+    "both_hands": 0.2655158240854912,
+    "left_hand_only": 0.04356761200164406,
+    "right_hand_only": 0.32018084669132757,
+    "shoulder_width_over_frame_width_median": 0.2247197926044464,
+    "read_wait_ms_median": 23.0745000008028,
+    "loop_ms_median": 66.6272289963672
+  },
+  "training_reference": {
+    "shoulder_width_over_frame_width_median": 0.371,
+    "inside_active_interval": {
+      "frames_inside_active_interval": 206425,
+      "left_hand_missing_only": 72697,
+      "right_hand_missing_only": 18675,
+      "both_hands_missing": 1090,
+      "pose_missing": 0
+    }
+  },
+  "capture_fps_median": 15.00887872816269,
+  "mediapipe_ms": {
+    "median": 31.397625018144026,
+    "p95": 32.30969179421663
+  },
+  "events_outside_attempts": 0,
+  "created_utc": "2026-10-19T07:53:28+00:00"
+}

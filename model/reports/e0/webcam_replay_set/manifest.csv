@@ -1,0 +1,141 @@
+session,folder,condition,core,attempt,expected,excluded,live_outcome,live_predicted,has_segment,i0,i1,forced,feature_row,replay_predicted
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,0,africa,,missed,,True,99,145,False,0,africa
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,1,africa,,wrong,grandmother,True,206,240,False,1,grandmother
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,2,blind,,wrong,fish,True,309,376,True,2,nose
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,3,blind,,correct,blind,True,462,500,False,3,blind
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,4,computer,pre_go,wrong,church,False,-1,-1,,-1,
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,5,computer,signed_during_wait;pre_go,wrong,church,False,-1,-1,,-1,
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,6,director,pre_go,wrong,strong,False,-1,-1,,-1,
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,7,director,pre_go,correct,director,False,-1,-1,,-1,
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,8,forbid,pre_go,wrong,day,False,-1,-1,,-1,
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,9,forbid,signed_during_wait,missed,,True,1156,1222,True,4,church
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,10,here,,wrong,forbid,True,1282,1333,False,5,japan
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,11,here,,wrong,scared,True,1384,1427,False,6,scared
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,12,more,,missed,,True,1521,1588,True,7,more
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,13,more,,correct,more,True,1628,1694,True,8,more
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,14,please,,correct,please,True,1788,1839,False,9,please
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,15,please,pre_go,correct,please,False,-1,-1,,-1,
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,16,shower,,wrong,sun,True,2039,2083,False,10,shower
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,17,shower,,correct,shower,True,2106,2172,True,11,shower
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,18,tuesday,,correct,tuesday,True,2281,2327,False,12,aunt
+S2,20261019T075328Z_camera_S01,natural (15 fps capture),False,19,tuesday,,correct,tuesday,True,2357,2422,True,13,tuesday
+S3,20261019T084115Z_camera_S01,natural,True,0,africa,signed_during_wait,correct,africa,True,298,398,False,14,africa
+S3,20261019T084115Z_camera_S01,natural,True,1,africa,signed_during_wait,correct,africa,True,547,674,False,15,africa
+S3,20261019T084115Z_camera_S01,natural,True,2,blind,signed_during_wait,correct,blind,True,857,953,False,16,blind
+S3,20261019T084115Z_camera_S01,natural,True,3,blind,,correct,blind,True,1096,1229,True,17,blind
+S3,20261019T084115Z_camera_S01,natural,True,4,computer,signed_during_wait,wrong,church,True,1434,1569,True,18,church
+S3,20261019T084115Z_camera_S01,natural,True,5,computer,,wrong,church,True,1674,1808,True,19,church
+S3,20261019T084115Z_camera_S01,natural,True,6,director,signed_during_wait,correct,director,True,1937,2065,False,20,director
+S3,20261019T084115Z_camera_S01,natural,True,7,director,,wrong,awake,True,2183,2317,False,21,awake
+S3,20261019T084115Z_camera_S01,natural,True,8,forbid,,missed,,True,2448,2583,True,22,church
+S3,20261019T084115Z_camera_S01,natural,True,9,forbid,,wrong,church,True,2662,2797,True,23,church
+S3,20261019T084115Z_camera_S01,natural,True,10,here,signed_during_wait,wrong,impossible,True,2936,3070,True,24,impossible
+S3,20261019T084115Z_camera_S01,natural,True,11,here,,wrong,scared,True,3178,3312,True,25,scared
+S3,20261019T084115Z_camera_S01,natural,True,12,more,,correct,more,True,3420,3542,False,26,more
+S3,20261019T084115Z_camera_S01,natural,True,13,more,,correct,more,True,3657,3788,False,27,more
+S3,20261019T084115Z_camera_S01,natural,True,14,please,,correct,please,True,3896,4030,True,28,please
+S3,20261019T084115Z_camera_S01,natural,True,15,please,,correct,please,True,4138,4272,True,29,please
+S3,20261019T084115Z_camera_S01,natural,True,16,shower,,correct,shower,True,4384,4518,True,30,shower
+S3,20261019T084115Z_camera_S01,natural,True,17,shower,,correct,shower,True,4627,4761,True,31,shower
+S3,20261019T084115Z_camera_S01,natural,True,18,tuesday,,correct,tuesday,True,4865,4976,False,32,tuesday
+S3,20261019T084115Z_camera_S01,natural,True,19,tuesday,,correct,tuesday,True,5114,5248,True,33,tuesday
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,0,africa,,wrong,grandfather,True,273,362,False,34,grandfather
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,1,africa,,wrong,bank,True,486,582,False,35,bank
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,2,blind,signed_during_wait,correct,blind,True,778,899,False,36,blind
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,3,blind,,correct,blind,True,1001,1103,False,37,blind
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,4,computer,,wrong,church,True,1253,1387,True,38,church
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,5,computer,,wrong,summer,True,1490,1623,True,39,summer
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,6,director,,wrong,awake,True,1733,1843,False,40,awake
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,7,director,,wrong,strong,True,1970,2076,False,41,strong
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,8,forbid,,wrong,church,True,2207,2340,True,42,church
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,9,forbid,,wrong,school,True,2447,2527,False,43,school
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,10,here,,correct,here,True,2683,2799,False,44,here
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,11,here,,wrong,scared,True,2924,3033,False,45,scared
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,12,more,,correct,more,True,3176,3292,False,46,more
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,13,more,,correct,more,True,3410,3529,False,47,more
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,14,please,,correct,please,True,3643,3776,True,48,please
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,15,please,,correct,please,True,3889,3995,False,49,please
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,16,shower,,correct,shower,True,4128,4243,False,50,shower
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,17,shower,,correct,shower,True,4393,4499,False,51,shower
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,18,tuesday,,wrong,yes,True,4614,4747,True,52,yes
+S4,20261020T045903Z_camera_S01,"controlled, sign once",True,19,tuesday,,wrong,yes,True,4851,4947,False,53,yes
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,0,here,,wrong,japan,True,193,305,False,54,japan
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,1,shower,,correct,shower,True,430,548,False,55,shower
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,2,tuesday,signed_during_wait,correct,tuesday,True,670,805,True,56,tuesday
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,3,please,,correct,please,True,909,1025,False,57,please
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,4,forbid,,wrong,graduate,True,1155,1256,False,58,graduate
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,5,shower,,correct,shower,True,1394,1503,False,59,shower
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,6,more,,correct,more,True,1633,1747,False,60,more
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,7,forbid,,wrong,day,True,1875,1980,False,61,day
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,8,africa,,wrong,history,True,2112,2213,False,62,history
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,9,computer,signed_during_wait,wrong,church,True,2366,2499,False,63,church
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,10,africa,,wrong,pepper,True,2600,2699,False,64,pepper
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,11,here,signed_during_wait,wrong,japan,True,2857,2958,False,65,japan
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,12,more,,correct,more,True,3105,3235,False,66,more
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,13,computer,,wrong,long,True,3354,3488,True,67,long
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,14,please,,correct,please,True,3580,3689,False,68,please
+5a,20261020T063535Z_camera_S01,protocol v1 SINGLE,True,15,tuesday,,correct,tuesday,True,3823,3954,False,69,tuesday
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,0,tuesday,,wrong,wednesday,True,256,388,True,70,wednesday
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,1,here,,wrong,impossible,True,487,587,False,71,impossible
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,2,forbid,,wrong,long,True,729,834,False,72,long
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,3,please,,correct,please,True,959,1080,False,73,please
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,4,tuesday,,wrong,yes,True,1206,1320,False,74,yes
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,5,computer,,wrong,long,True,1443,1576,True,75,long
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,6,africa,,wrong,history,True,1685,1790,False,76,history
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,7,more,,correct,more,True,1928,2041,False,77,more
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,8,here,,wrong,scared,True,2168,2299,False,78,scared
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,9,shower,,wrong,sun,True,2412,2537,False,79,sun
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,10,more,,correct,more,True,2728,2823,False,80,more
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,11,forbid,,wrong,cookie,True,2861,2981,False,81,cookie
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,12,computer,,wrong,church,True,3124,3257,True,82,church
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,13,please,,correct,please,True,3366,3484,False,83,please
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,14,shower,,wrong,sun,True,3610,3740,False,84,sun
+5b,20261020T063812Z_camera_S01,protocol v1 REPEATED,True,15,africa,,wrong,history,True,3851,3969,False,85,history
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,0,shower,,wrong,sun,True,251,372,False,86,sun
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,1,more,,correct,more,True,492,602,False,87,more
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,2,forbid,,wrong,graduate,True,730,864,True,88,graduate
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,3,africa,,wrong,bank,True,973,1091,False,89,bank
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,4,computer,,wrong,long,True,1214,1348,True,90,long
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,5,africa,,wrong,history,True,1457,1562,False,91,history
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,6,please,,correct,please,True,1682,1802,False,92,please
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,7,shower,,wrong,sun,True,1931,2048,False,93,sun
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,8,here,,wrong,japan,True,2165,2286,False,94,japan
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,9,tuesday,,wrong,yes,True,2410,2542,True,95,yes
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,10,more,,correct,more,True,2649,2765,False,96,more
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,11,computer,signed_during_wait,wrong,diamond,True,2895,3028,True,97,diamond
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,12,here,,wrong,forbid,True,3133,3244,False,98,forbid
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,13,tuesday,,correct,tuesday,True,3370,3504,True,99,tuesday
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,14,forbid,,wrong,school,True,3635,3735,False,100,school
+5c-1,20261020T064102Z_camera_S01,protocol v1 REPEATED,True,15,please,,correct,please,True,3859,3955,False,101,please
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,0,shower,,wrong,sun,True,245,378,False,102,sun
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,1,more,,correct,more,True,506,640,True,103,more
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,2,forbid,,wrong,school,True,749,865,False,104,school
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,3,africa,signed_during_wait,wrong,history,True,974,1101,False,105,history
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,4,computer,,wrong,church,True,1245,1379,True,106,church
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,5,africa,,wrong,history,True,1462,1569,False,107,history
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,6,please,,correct,please,True,1712,1825,False,108,please
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,7,shower,,wrong,sun,True,1955,2064,False,109,sun
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,8,here,,wrong,impossible,True,2195,2316,False,110,impossible
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,9,tuesday,,wrong,yes,True,2460,2594,True,111,yes
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,10,more,,correct,more,True,2687,2799,False,112,more
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,11,computer,,wrong,chocolate,True,2928,3061,True,113,chocolate
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,12,here,,correct,here,True,3175,3292,False,114,here
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,13,tuesday,,wrong,yes,True,3415,3544,False,115,yes
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,14,forbid,,wrong,church,True,3647,3773,False,116,church
+5c-2,20261020T064353Z_camera_S01,protocol v1 REPEATED,True,15,please,,wrong,who,True,3891,4004,False,117,who
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,0,please,,correct,please,True,201,282,False,118,please
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,1,shower,,wrong,sun,True,389,493,False,119,sun
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,2,computer,,wrong,diamond,True,586,694,True,120,diamond
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,3,forbid,,wrong,school,True,814,918,False,121,school
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,4,tuesday,,wrong,sun,True,973,1054,False,122,sun
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,5,here,,correct,here,True,1163,1264,False,123,here
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,6,forbid,,wrong,school,True,1363,1443,False,124,school
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,7,here,,wrong,new,True,1549,1642,False,125,new
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,8,more,,correct,more,True,1740,1826,False,126,more
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,9,africa,,wrong,history,True,1940,2022,False,127,history
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,10,more,,correct,more,True,2131,2221,False,128,more
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,11,shower,,wrong,sun,True,2326,2428,False,129,sun
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,12,tuesday,,wrong,government,True,2520,2620,False,130,government
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,13,please,,correct,please,True,2710,2795,False,131,please
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,14,africa,,wrong,history,True,2902,2990,False,132,history
+5d,20261020T064645Z_camera_S01,"protocol v1 SINGLE (24 fps, invalid block)",False,15,computer,,wrong,diamond,True,3103,3210,True,133,diamond

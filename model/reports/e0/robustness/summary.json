@@ -1,0 +1,19 @@
+{
+  "clean_reproduces_saved_validation_predictions": true,
+  "validation_clips": 725,
+  "perturbations": [
+    "clean",
+    "hips_hidden",
+    "hips_visible",
+    "hold_start",
+    "hold_end",
+    "repeat_x2",
+    "drop_minor_hand",
+    "hand_dropout_20",
+    "mirror",
+    "rotate_10",
+    "noise_002"
+  ],
+  "bootstrap": "2000 resamples, class-stratified, seed 0, paired with clean",
+  "note": "validation only; diagnostic for choosing the first training experiment"
+}

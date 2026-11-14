@@ -1,0 +1,51 @@
+{
+  "attempts": 1,
+  "outcomes": {
+    "correct": 1
+  },
+  "accuracy_all_attempts": 1.0,
+  "accuracy_when_answered": 1.0,
+  "top5_rate_when_answered": 1.0,
+  "attempts_with_duplicates": 0,
+  "rejection_reasons": {},
+  "delay_s": {
+    "n": 1,
+    "median": 0.47776416701800173,
+    "p95": 0.47776416701800173
+  },
+  "confidence_correct_median": 0.9679607152938843,
+  "confidence_wrong_median": null,
+  "per_sign_accuracy": {
+    "fruit": 1.0
+  },
+  "mean_hand_visible_fraction": 0.4805194805194805,
+  "mode": "video_replay",
+  "real_world": false,
+  "signer_id": "dataset-test-clip",
+  "lighting": "",
+  "camera_position": "",
+  "notes": "SIMULATION replay of test clip part_1/1312328998680623-FRUIT.mp4",
+  "model_dir": "models/candidates/hands_pose_w30_bilstm_e100_s3",
+  "model": "hands_pose_w30_bilstm_e100_s3",
+  "settings": {
+    "pre_roll_s": 0.5,
+    "end_rest_s": 0.4,
+    "max_segment_s": 4.0,
+    "confidence_threshold": 0.0,
+    "smoothing_window": 1,
+    "smoothing_min_votes": 1
+  },
+  "frame_size": [
+    640,
+    480
+  ],
+  "frames": 154,
+  "dropped_frames": 18,
+  "capture_fps_median": 30.30303030302997,
+  "mediapipe_ms": {
+    "median": 28.52910450019408,
+    "p95": 30.58259768731659
+  },
+  "events_outside_attempts": 0,
+  "created_utc": "2026-10-19T06:53:35+00:00"
+}

@@ -1,0 +1,21 @@
+attempt,expected,events,duplicates,hand_visible_fraction,outcome,status,predicted,confidence,in_top5,reason,delay_s,segment_frames,forced_cut,top3
+0,africa,0,0,0.01098901098901099,missed,,,,False,no segment detected,,,,
+1,africa,0,0,0.0,missed,,,,False,no segment detected,,,,
+2,blind,0,0,0.0,missed,,,,False,no segment detected,,,,
+3,blind,0,0,0.0,missed,,,,False,no segment detected,,,,
+4,computer,1,0,1.0,wrong,ok,secret,0.8936620354652405,False,,0.08248345801257528,67.0,True,"[('secret', 0.894), ('who', 0.076), ('jealous', 0.007)]"
+5,computer,1,0,1.0,wrong,ok,frog,0.4567840099334717,False,,0.15766320799593814,65.0,True,"[('frog', 0.457), ('who', 0.223), ('secret', 0.212)]"
+6,director,1,0,0.11267605633802817,wrong,ok,who,0.4537712037563324,False,,0.4677101660054177,32.0,False,"[('who', 0.454), ('frog', 0.309), ('nose', 0.064)]"
+7,director,0,0,0.0,missed,,,,False,no segment detected,,,,
+8,forbid,0,0,0.0,missed,,,,False,no segment detected,,,,
+9,forbid,0,0,0.0,missed,,,,False,no segment detected,,,,
+10,here,0,0,0.0,missed,,,,False,no segment detected,,,,
+11,here,0,0,0.0,missed,,,,False,no segment detected,,,,
+12,more,0,0,0.0,missed,,,,False,no segment detected,,,,
+13,more,0,0,0.0,missed,,,,False,no segment detected,,,,
+14,please,0,0,0.0,missed,,,,False,no segment detected,,,,
+15,please,0,0,0.0,missed,,,,False,no segment detected,,,,
+16,shower,1,0,0.44594594594594594,wrong,ok,jealous,0.5767871141433716,False,,0.5010742919985205,45.0,False,"[('jealous', 0.577), ('delicious', 0.159), ('yes', 0.107)]"
+17,shower,0,0,0.0,missed,,,,False,no segment detected,,,,
+18,tuesday,0,0,0.0,missed,,,,False,no segment detected,,,,
+19,tuesday,0,0,0.0,missed,,,,False,no segment detected,,,,

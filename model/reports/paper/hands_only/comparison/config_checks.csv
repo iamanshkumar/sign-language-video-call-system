@@ -1,0 +1,6 @@
+seed,spec_diff,config_diff,ok,feature_dim
+42,['feature_config'],['evaluate_test'],True,128
+1,['feature_config'],['evaluate_test'],True,128
+2,['feature_config'],['evaluate_test'],True,128
+3,['feature_config'],['evaluate_test'],True,128
+4,['feature_config'],['evaluate_test'],True,128

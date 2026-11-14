@@ -1,0 +1,27 @@
+{
+  "configs_ok": true,
+  "mean_val_macro_f1": {
+    "hands": 0.685395639692265,
+    "hands_pose": 0.6624292190131401
+  },
+  "mean_val_accuracy": {
+    "hands": 0.689655172413793,
+    "hands_pose": 0.666206896551724
+  },
+  "mean_difference_hands_minus_hands_pose": 0.022966420679124955,
+  "difference_ci": [
+    0.007386720175731194,
+    0.03967002322777063
+  ],
+  "seeds_hands_lower": 0,
+  "sign_test_p": 0.0625,
+  "train_minus_val_acc": {
+    "hands": 0.30441585781808245,
+    "hands_pose": 0.32528121615740413
+  },
+  "per_class": {
+    "hands_better": 59,
+    "hands_worse": 41
+  },
+  "note": "validation only; descriptive; test not evaluated"
+}

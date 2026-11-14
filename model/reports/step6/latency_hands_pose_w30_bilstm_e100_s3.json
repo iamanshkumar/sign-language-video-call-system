@@ -1,0 +1,474 @@
+{
+  "created_utc": "2026-10-19T06:35:36+00:00",
+  "model": "bilstm",
+  "experiment_id": "hands_pose_w30_bilstm_e100_s3",
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "logical_cpus": 8,
+    "ram_gb": 8.0,
+    "torch": "2.14.1",
+    "torch_threads": 4,
+    "device": "cpu"
+  },
+  "protocol": {
+    "model_only": "random [1, 30, 261] input, 20 warm-up + 500 timed forward passes",
+    "mediapipe": "Holistic 0.10.21 model_complexity 1, CPU, one process, per frame; first 10 frames of the first clip excluded as warm-up",
+    "streaming": "StreamingRecognizer.push per frame on the clip's landmarks (MediaPipe time excluded); 'segment close' = the push/flush that runs preprocessing + model",
+    "clips": "20 random dev100 test clips (seed 0), downloaded to a temp dir and deleted"
+  },
+  "model_only_forward": {
+    "batch_size": 1,
+    "runs": 500,
+    "mean_ms": 1.6949661803082563,
+    "median_ms": 1.684478993411176,
+    "p95_ms": 1.8005202087806538,
+    "throughput_samples_per_s": 589.9822731673231,
+    "device": "cpu",
+    "warmup": 20,
+    "timing": "model forward only"
+  },
+  "predict_features_api": {
+    "batch_size": 1,
+    "runs": 500,
+    "mean_ms": 1.757349407474976,
+    "median_ms": 1.7463749973103404,
+    "p95_ms": 1.8609152670251203,
+    "throughput_samples_per_s": 569.0388011322327,
+    "warmup": 20,
+    "timing": "predict_features (validation + softmax + top-k), batch 1"
+  },
+  "mediapipe_per_frame": {
+    "n": 1595,
+    "median_ms": 28.462499991292134,
+    "p95_ms": 29.66154998575803,
+    "mean_ms": 29.285205255713617,
+    "max_ms": 185.51229100557975
+  },
+  "push_per_frame_no_segment": {
+    "n": 1586,
+    "median_ms": 0.007332986569963396,
+    "p95_ms": 0.009489493095315993,
+    "mean_ms": 0.007706229175819134,
+    "max_ms": 0.04591699689626694
+  },
+  "segment_close_preprocess_plus_model": {
+    "n": 20,
+    "median_ms": 4.077187506482005,
+    "p95_ms": 4.892020848637913,
+    "mean_ms": 4.292762503609993,
+    "max_ms": 5.688042001565918
+  },
+  "mediapipe_max_fps_single_process": 35.13394818817538,
+  "parity": {
+    "clips": 20,
+    "features_identical_to_training": 20,
+    "offline_prediction_equals_experiment": 20,
+    "streaming_first_segment_equals_offline": 20,
+    "clips_with_one_segment": 20,
+    "download_errors": 0
+  },
+  "clips": [
+    {
+      "sample_id": "part_4/5463500338204355-DRY.mp4",
+      "word": "dry",
+      "frames": 93,
+      "fps": 29.97,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "dry",
+      "stored_experiment_prediction": "dry",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "dry",
+          "status": "ok",
+          "confidence": 0.9169958233833313,
+          "frames": 66,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_9/paint_video_0.mp4",
+      "word": "paint",
+      "frames": 67,
+      "fps": 29.97,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "register",
+      "stored_experiment_prediction": "register",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "register",
+          "status": "ok",
+          "confidence": 0.761172890663147,
+          "frames": 63,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_2/27719227912887523-SUBTRACT.mp4",
+      "word": "subtract",
+      "frames": 79,
+      "fps": 30.0,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "subtract",
+      "stored_experiment_prediction": "subtract",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "subtract",
+          "status": "ok",
+          "confidence": 0.19370505213737488,
+          "frames": 57,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_4/6135836269970514-THANKSGIVING.mp4",
+      "word": "thanksgiving",
+      "frames": 65,
+      "fps": 30.0,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "thanksgiving",
+      "stored_experiment_prediction": "thanksgiving",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "thanksgiving",
+          "status": "ok",
+          "confidence": 0.9987327456474304,
+          "frames": 59,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_4/5649500289608069-AUNT.mp4",
+      "word": "aunt",
+      "frames": 42,
+      "fps": 30.0,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "aunt",
+      "stored_experiment_prediction": "aunt",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "aunt",
+          "status": "ok",
+          "confidence": 0.9505482316017151,
+          "frames": 40,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_11/topic_video_6.mp4",
+      "word": "topic",
+      "frames": 140,
+      "fps": 30.0,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "where",
+      "stored_experiment_prediction": "where",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "where",
+          "status": "ok",
+          "confidence": 0.7199863195419312,
+          "frames": 133,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_6/9068843570496055-BANK.mp4",
+      "word": "bank",
+      "frames": 92,
+      "fps": 30.3,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "bank",
+      "stored_experiment_prediction": "bank",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "bank",
+          "status": "ok",
+          "confidence": 0.31006500124931335,
+          "frames": 67,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_4/5993591768684134-GRANDFATHER.mp4",
+      "word": "grandfather",
+      "frames": 60,
+      "fps": 29.97,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "grandfather",
+      "stored_experiment_prediction": "grandfather",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "grandfather",
+          "status": "ok",
+          "confidence": 0.9898340702056885,
+          "frames": 41,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_1/10303717989819794-BROWN.mp4",
+      "word": "brown",
+      "frames": 54,
+      "fps": 30.42,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "brown",
+      "stored_experiment_prediction": "brown",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "brown",
+          "status": "ok",
+          "confidence": 0.9975501894950867,
+          "frames": 48,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_4/7059877407050861-BROWN.mp4",
+      "word": "brown",
+      "frames": 74,
+      "fps": 25.0,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "brown",
+      "stored_experiment_prediction": "brown",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "brown",
+          "status": "ok",
+          "confidence": 0.2610473930835724,
+          "frames": 45,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_5/8641790015591071-SCHOOL.mp4",
+      "word": "school",
+      "frames": 86,
+      "fps": 29.98,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "school",
+      "stored_experiment_prediction": "school",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "school",
+          "status": "ok",
+          "confidence": 0.9763610363006592,
+          "frames": 64,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_2/2814564048387007-SCHOOL.mp4",
+      "word": "school",
+      "frames": 154,
+      "fps": 29.92,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "impossible",
+      "stored_experiment_prediction": "impossible",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "impossible",
+          "status": "ok",
+          "confidence": 0.4327922463417053,
+          "frames": 89,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_4/7010344203418433-STUDENT.mp4",
+      "word": "student",
+      "frames": 82,
+      "fps": 30.43,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "student",
+      "stored_experiment_prediction": "student",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "student",
+          "status": "ok",
+          "confidence": 0.9973142743110657,
+          "frames": 67,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_7/bottle_video_3.mp4",
+      "word": "bottle",
+      "frames": 92,
+      "fps": 29.97,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "enjoy",
+      "stored_experiment_prediction": "enjoy",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "enjoy",
+          "status": "ok",
+          "confidence": 0.7009909749031067,
+          "frames": 82,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_1/03510200660797835-NEW.mp4",
+      "word": "new",
+      "frames": 70,
+      "fps": 29.91,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "boat",
+      "stored_experiment_prediction": "boat",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "boat",
+          "status": "ok",
+          "confidence": 0.7925756573677063,
+          "frames": 54,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_2/205616227519823-COW.mp4",
+      "word": "cow",
+      "frames": 75,
+      "fps": 30.0,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "cow",
+      "stored_experiment_prediction": "cow",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "cow",
+          "status": "ok",
+          "confidence": 0.47643131017684937,
+          "frames": 48,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_1/13498585088047066-BROTHER.mp4",
+      "word": "brother",
+      "frames": 89,
+      "fps": 30.0,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "brother",
+      "stored_experiment_prediction": "brother",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "brother",
+          "status": "ok",
+          "confidence": 0.986548125743866,
+          "frames": 73,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_9/minute_video_7.mp4",
+      "word": "minute",
+      "frames": 52,
+      "fps": 29.97,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "tuesday",
+      "stored_experiment_prediction": "tuesday",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "tuesday",
+          "status": "ok",
+          "confidence": 0.4191102981567383,
+          "frames": 39,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_9/new_6.mp4",
+      "word": "new",
+      "frames": 73,
+      "fps": 29.97,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "new",
+      "stored_experiment_prediction": "new",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "new",
+          "status": "ok",
+          "confidence": 0.3791918456554413,
+          "frames": 65,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "sample_id": "part_1/01624526520156344-SECRET.mp4",
+      "word": "secret",
+      "frames": 66,
+      "fps": 30.0,
+      "features_identical_to_training": true,
+      "max_abs_feature_diff": 0.0,
+      "offline_prediction": "secret",
+      "stored_experiment_prediction": "secret",
+      "offline_equals_stored": true,
+      "streaming_segments": [
+        {
+          "label": "secret",
+          "status": "ok",
+          "confidence": 0.9357373118400574,
+          "frames": 46,
+          "reason": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "model": "hands_pose_w30_bilstm_e100_s3",
+  "target_precision": 0.8,
+  "suggested_threshold_from_validation": 0.57,
+  "test_check_at_that_threshold": {
+    "threshold": 0.57,
+    "test_coverage": 0.7492917847025495,
+    "test_accuracy_of_accepted": 0.776937618147448
+  },
+  "splits": {
+    "val": {
+      "n": 725,
+      "accuracy": 0.6758620689655173,
+      "ece_15_bins": 0.09299644431163526,
+      "mean_confidence": 0.7678682208061218,
+      "median_conf_correct": 0.9538308382034302,
+      "median_conf_wrong": 0.5506829023361206,
+      "wrong_with_conf_ge_0.8": 48,
+      "coverage": [
+        {
+          "threshold": 0.0,
+          "coverage": 1.0,
+          "accuracy_of_accepted": 0.6758620689655173,
+          "wrong_accepted_per_100": 32.41379310344827
+        },
+        {
+          "threshold": 0.3,
+          "coverage": 0.9613793103448276,
+          "accuracy_of_accepted": 0.6944045911047346,
+          "wrong_accepted_per_100": 29.379310344827587
+        },
+        {
+          "threshold": 0.4,
+          "coverage": 0.9048275862068965,
+          "accuracy_of_accepted": 0.725609756097561,
+          "wrong_accepted_per_100": 24.82758620689655
+        },
+        {
+          "threshold": 0.5,
+          "coverage": 0.8220689655172414,
+          "accuracy_of_accepted": 0.7718120805369127,
+          "wrong_accepted_per_100": 18.758620689655174
+        },
+        {
+          "threshold": 0.6,
+          "coverage": 0.7379310344827587,
+          "accuracy_of_accepted": 0.8093457943925234,
+          "wrong_accepted_per_100": 14.06896551724138
+        },
+        {
+          "threshold": 0.7,
+          "coverage": 0.6482758620689655,
+          "accuracy_of_accepted": 0.8446808510638298,
+          "wrong_accepted_per_100": 10.068965517241379
+        },
+        {
+          "threshold": 0.8,
+          "coverage": 0.5572413793103448,
+          "accuracy_of_accepted": 0.8811881188118812,
+          "wrong_accepted_per_100": 6.620689655172414
+        },
+        {
+          "threshold": 0.9,
+          "coverage": 0.4496551724137931,
+          "accuracy_of_accepted": 0.9325153374233128,
+          "wrong_accepted_per_100": 3.0344827586206895
+        }
+      ]
+    },
+    "test": {
+      "n": 706,
+      "accuracy": 0.6402266288951841,
+      "ece_15_bins": 0.1190282084870946,
+      "mean_confidence": 0.7571004629135132,
+      "median_conf_correct": 0.9630336165428162,
+      "median_conf_wrong": 0.5441552996635437,
+      "wrong_with_conf_ge_0.8": 36,
+      "coverage": [
+        {
+          "threshold": 0.0,
+          "coverage": 1.0,
+          "accuracy_of_accepted": 0.6402266288951841,
+          "wrong_accepted_per_100": 35.977337110481585
+        },
+        {
+          "threshold": 0.3,
+          "coverage": 0.9419263456090652,
+          "accuracy_of_accepted": 0.6661654135338346,
+          "wrong_accepted_per_100": 31.444759206798867
+        },
+        {
+          "threshold": 0.4,
+          "coverage": 0.8682719546742209,
+          "accuracy_of_accepted": 0.7112561174551386,
+          "wrong_accepted_per_100": 25.07082152974504
+        },
+        {
+          "threshold": 0.5,
+          "coverage": 0.7903682719546742,
+          "accuracy_of_accepted": 0.7526881720430108,
+          "wrong_accepted_per_100": 19.54674220963173
+        },
+        {
+          "threshold": 0.6,
+          "coverage": 0.7181303116147308,
+          "accuracy_of_accepted": 0.796844181459566,
+          "wrong_accepted_per_100": 14.589235127478753
+        },
+        {
+          "threshold": 0.7,
+          "coverage": 0.6373937677053825,
+          "accuracy_of_accepted": 0.8444444444444444,
+          "wrong_accepted_per_100": 9.91501416430595
+        },
+        {
+          "threshold": 0.8,
+          "coverage": 0.5481586402266289,
+          "accuracy_of_accepted": 0.9069767441860465,
+          "wrong_accepted_per_100": 5.099150141643059
+        },
+        {
+          "threshold": 0.9,
+          "coverage": 0.45609065155807366,
+          "accuracy_of_accepted": 0.9440993788819876,
+          "wrong_accepted_per_100": 2.5495750708215295
+        }
+      ]
+    }
+  },
+  "note": "threshold chosen on validation only; configs/inference.yaml unchanged"
+}

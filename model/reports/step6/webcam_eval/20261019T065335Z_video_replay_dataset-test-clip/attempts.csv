@@ -1,0 +1,2 @@
+attempt,expected,events,duplicates,hand_visible_fraction,outcome,status,predicted,confidence,in_top5,reason,delay_s,segment_frames,forced_cut,top3
+0,fruit,1,0,0.4805194805194805,correct,ok,fruit,0.9679607152938843,True,,0.47776416701800173,102,False,"[('fruit', 0.968), ('brown', 0.015), ('cousin', 0.008)]"

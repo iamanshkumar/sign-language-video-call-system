@@ -1,0 +1,2 @@
+attempt,expected,events,duplicates,hand_visible_fraction,outcome,status,predicted,confidence,in_top5,reason,delay_s,segment_frames,forced_cut,top3
+0,calm,1,0,0.4222222222222222,correct,ok,calm,0.5358781814575195,True,,0.43390537500800574,33,False,"[('calm', 0.536), ('forbid', 0.185), ('copy', 0.157)]"

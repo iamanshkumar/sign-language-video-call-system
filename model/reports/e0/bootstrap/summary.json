@@ -1,0 +1,10 @@
+{
+  "all_point_estimates_reproduce_saved_metrics": true,
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 0,
+    "unit": "clip, stratified by true class",
+    "interval": "95% percentile"
+  },
+  "note": "computed from saved predictions; no new test inference"
+}

@@ -1,0 +1,6 @@
+seed,spec_equal,config_diff_only_allowed,config_diff,test_evaluated,no_test_files,augmentation,augmentation_counts
+42,True,True,"['evaluate_test', 'train_augmentation']",False,True,temporal,"{'hold_start': 27776, 'hold_end': 27690, 'tempo': 27932, 'repeat_span': 25528, 'none': 110426, 'repeat_span_no_loop': 2103}"
+1,True,True,"['evaluate_test', 'train_augmentation']",False,True,temporal,"{'hold_start': 27941, 'hold_end': 28037, 'tempo': 28309, 'repeat_span': 26015, 'none': 112263, 'repeat_span_no_loop': 2297}"
+2,True,True,"['evaluate_test', 'train_augmentation']",False,True,temporal,"{'hold_start': 24743, 'hold_end': 24562, 'tempo': 24685, 'repeat_span': 22625, 'none': 98996, 'repeat_span_no_loop': 1995}"
+3,True,True,"['evaluate_test', 'train_augmentation']",False,True,temporal,"{'hold_start': 23843, 'hold_end': 23836, 'tempo': 23967, 'repeat_span': 22123, 'none': 95138, 'repeat_span_no_loop': 1885}"
+4,True,True,"['evaluate_test', 'train_augmentation']",False,True,temporal,"{'hold_start': 26736, 'hold_end': 26877, 'tempo': 26753, 'repeat_span': 24638, 'none': 107559, 'repeat_span_no_loop': 2078}"

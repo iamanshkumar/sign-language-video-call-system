@@ -1,0 +1,30 @@
+{
+  "test_clips": 706,
+  "models": {
+    "baseline": [
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_s1",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_s2",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_s3",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_s4"
+    ],
+    "e1": [
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_augtemp",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_augtemp_s1",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_augtemp_s2",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_augtemp_s3",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_augtemp_s4"
+    ],
+    "e2": [
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_augtemp_upperpose",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_augtemp_upperpose_s1",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_augtemp_upperpose_s2",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_augtemp_upperpose_s3",
+      "/Users/anshkumar/Documents/full-stack-development/projects/sign-language-video-call-system/model/experiments/dev100_hp/hands_pose_w30_bilstm_e100_augtemp_upperpose_s4"
+    ]
+  },
+  "baseline_predictions": "reused from saved predictions_test.csv (test evaluated during development)",
+  "e1_e2_test_inference": "this run only",
+  "validation_reproduced": true,
+  "bootstrap": "2000 resamples, class-stratified, seed 0"
+}

@@ -1,0 +1,11 @@
+model,seed,clean_reproduces_saved
+lstm,42,True
+lstm,1,True
+lstm,2,True
+lstm,3,True
+lstm,4,True
+bilstm,42,True
+bilstm,1,True
+bilstm,2,True
+bilstm,3,True
+bilstm,4,True
