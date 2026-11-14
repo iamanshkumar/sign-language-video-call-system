@@ -1,7 +1,31 @@
 # Sign Language Translator Video Calling System — ML pipeline
 
 Isolated ASL **word** recognition from video (not sentence-level translation).
-Current status: **Step 1 — Dataset + EDA** (validation, EDA, frozen split).
+
+## Current status (2026-11-14)
+
+The pipeline runs end to end on the 100-word development vocabulary (`dev_100`): data → landmarks →
+sequences → training → export → streaming inference. It is **not connected to the video-call app**.
+
+| Status | What |
+|---|---|
+| Implemented and tested | Steps 1–3 (manifest, frozen split, MediaPipe landmarks, sequences); Step 4 training (LSTM, BiLSTM, Random Forest); temporal augmentation and feature ablation; export/promotion; `asl.inference` (contract-checked loading, streaming segmentation, post-processing); E0–E3 evaluation and paper scripts. `pytest`: 202 passed, 3 skipped on a fresh clone (the skips need git-ignored local artifacts: the exported candidate and webcam recordings); 205 passed with them present. |
+| Implemented, tested only through helpers | The CLIs `s6_01`–`s6_06` (no direct tests). `s6_03` has been run with a real webcam (10 sessions, 180 attempts, one signer, S01). |
+| Partial | Deployment: the validated candidate `models/candidates/hands_pose_w30_bilstm_e100_s3/` has **not been promoted**. `models/best_model.pt` still holds the older 50-epoch LSTM, which predates the preprocessing contract and is refused by `SignRecognizer.load`, so the default `model_dir: models` in `configs/inference.yaml` does not load. Pass `--model-dir models/candidates/hands_pose_w30_bilstm_e100_s3`. E1 and E2 runs cannot be exported (ablations are refused by `s4_04`; E1 was never exported). |
+| Prepared, not run | Cloud extraction of the full-vocabulary val/test splits (`docs/cloud_extraction_runbook.md`). |
+| Planned, not implemented | Inference service (FastAPI/WebSocket), caption delivery over an `RTCDataChannel`, and any integration with the Next.js call app (`docs/step7_integration_design.md`). |
+
+Latest saved results (dev_100, hands + pose, window 30; 5 seeds; sources in brackets):
+
+- Exported candidate (BiLSTM, seed 3): test accuracy 0.640, macro-F1 0.634
+  [`models/candidates/.../export_report.json`].
+- Final one-time test, 5-seed means: BiLSTM baseline 0.639; E1 (+ temporal augmentation) 0.661;
+  E2 (E1 + upper-body pose) 0.678 [`reports/paper/final_test/seed_mean.csv`]. Baseline test numbers were
+  computed during development, before the protocol in `docs/evaluation_protocol.md` was frozen.
+- Webcam replay set, one signer, 10 of the 100 signs, 92 core attempts: candidate top-1 0.402, top-5 0.587
+  [`reports/e0/webcam_replay_set/summary_by_model.csv`].
+- The models fit the training split almost perfectly (candidate train accuracy 0.9997), and the split is
+  not signer-independent.
 
 ## Setup
 
@@ -96,10 +120,19 @@ files in `.venv/.../site-packages`, and Python 3.12.13 then skips the editable-i
 ## Step 4 (training and evaluation infrastructure)
 
 Methodology: `docs/step4_methodology.md`. Config: `configs/step4_training.yaml`.
-LSTM / BiLSTM (2 × 128, dropout 0.30, AdamW 1e-3 / 1e-4, ≤ 50 epochs, early stopping 7,
+LSTM / BiLSTM (2 × 128, dropout 0.30, AdamW 1e-3 / 1e-4, ≤ 50 epochs by default, early stopping 7,
 ReduceLROnPlateau 0.5 / 3, selection on validation macro-F1) and a Random Forest on
 temporal statistics (mean / std / min / max). Test data is evaluated only after the
-selected checkpoint is reloaded. **The 18-experiment matrix has not been run.**
+selected checkpoint is reloaded. The planned 18-experiment matrix on the full 2,207-word vocabulary
+was **not run**; development moved to the `dev_100` vocabulary (Step 5). The dev_100 runs
+(`experiments/dev100_hp/`, `reports/step4/results/experiment_results.csv`) mostly use a 100-epoch
+budget (`--max-epochs 100`, tag `e100`); every e100 run stopped early. `reports/step4/experiment_summary.md` and
+`reports/step4/results/experiments.json` were generated on 2026-10-02, before those runs, and are out of
+date; `experiment_results.csv` is current.
+
+`s4_02_run_experiment.py` options added for the dev_100 studies: `--seed`, `--augment temporal`
+(training-only, `src/asl/sequences/augment.py`), `--drop-pose-landmarks` (feature ablation; such runs
+cannot be exported) and `--no-test-eval` (test is kept for final candidates).
 
 | Script | What it does |
 |---|---|
@@ -107,9 +140,11 @@ selected checkpoint is reloaded. **The 18-experiment matrix has not been run.**
 | `s4_02_run_experiment.py` | Runs exactly ONE experiment (`--model --feature-config --window --store`) |
 | `s4_03_report.py` | Summary, curves, confusion figures → `reports/step4/` |
 
-## Step 5 (subset vocabulary — proposed, awaiting review)
+## Step 5 (subset vocabulary — dev_100 adopted)
 
-Methodology: `docs/step5_vocabulary.md`. Config: `configs/step5_vocabulary.yaml`. Metadata only.
+Methodology: `docs/step5_vocabulary.md`. Config: `configs/step5_vocabulary.yaml`. The selection uses
+metadata only; the dev_100 videos were then extracted (hands + pose) and used for all training since.
+`vocabulary_expanded.json` (300 words) has not been extracted or trained on.
 
 | Script | What it does |
 |---|---|
@@ -119,9 +154,52 @@ Methodology: `docs/step5_vocabulary.md`. Config: `configs/step5_vocabulary.yaml`
 | `s2_10_verify_store.py` | Integrity, feature layout (F = 261), missing landmarks, normalization, Dataset windows, splits, storage, landmark overlay → `reports/step2/<tag>_verification.md` |
 
 Exact commands and the hands + pose feature layout: `docs/step5_vocabulary.md` (Stage 2A).
+Training experiments and the LSTM/BiLSTM seed study: `docs/step5_vocabulary.md` (Stage 2B),
+`scripts/s5_02_seed_study.py` → `reports/step5/seed_study.md`.
+
+## Step 6 (export, promotion, inference)
+
+Methodology and measurements: `docs/step6_inference.md`. Config: `configs/inference.yaml`.
+
+| Script | What it does |
+|---|---|
+| `s4_04_export_model.py` | Export a trained experiment as a validated candidate (`models/candidates/<id>/`), no retraining |
+| `s4_05_promote_model.py` | Reversible promotion of a candidate to `models/best_model.pt` (backup + restore) |
+| `s6_01_run_inference.py` | Streaming isolated-sign recognition on a video file or webcam |
+| `s6_02_measure_latency.py` | Model / MediaPipe / segment latency and live-vs-training feature parity on test clips |
+| `s6_03_webcam_eval.py` | Guided webcam evaluation with a human signer (or `--video` simulation replay) → `reports/step6/webcam_eval/` |
+| `s6_05_replay_session.py` | Replay a recorded session's landmarks offline (parity check, re-scoring, setting variants) → `<session>/replay_<tag>/` |
+| `s6_04_confidence_calibration.py` | Calibration (ECE) and confidence-threshold coverage on validation/test → `reports/step6/calibration_*.json` |
+
+Webcam evaluation procedure, session analyses and readiness: `docs/step6_webcam_evaluation.md`;
+integration design (proposal, not implemented): `docs/step7_integration_design.md`.
+
+Promotion status: the candidate has not been promoted (see "Current status"). Until it is, run
+inference with `--model-dir models/candidates/hands_pose_w30_bilstm_e100_s3`.
+
+## Evaluation protocol and paper scripts (E0–E3)
+
+Protocol: `docs/evaluation_protocol.md` (frozen 2026-10-23). Scripts read saved predictions and
+sessions; they do not train.
+
+| Script | What it does |
+|---|---|
+| `e0_01_bootstrap_ci.py`, `e0_02_webcam_replay_set.py`, `e0_03_robustness.py` | Confidence intervals, frozen webcam replay set, robustness perturbations → `reports/e0/` |
+| `e1_01_compare.py`, `e2_01_compare.py` | Temporal augmentation (E1) and upper-body pose (E2) decisions → `reports/e1/`, `reports/e2/` |
+| `e3_01_final_test.py` | One-time final test of baseline → E1 → E2 → `reports/paper/final_test/` |
+| `pp_01_postprocessing_replay.py`, `pp_02_hands_only_compare.py` | Post-processing replay on webcam sessions; hands-only comparison → `reports/paper/` |
+| `paper_01`–`paper_05` | Paper tables, pipeline figure, claim verification, webcam details, precision/recall |
+
+```python
+from asl.inference import SignRecognizer, StreamingRecognizer
+```
+
 With the python.org Python 3.12 build, downloads need `export SSL_CERT_FILE=/etc/ssl/cert.pem`.
 
-## Remote extraction (val/test) — prepared, not yet run
+## Remote extraction (full-vocabulary val/test) — prepared, not yet run
+
+The dev_100 store (train, val and test) was extracted locally. The tooling below is for the full
+2,207-word splits and has only been exercised in a dry run (`data/landmarks/runs/dryrun_valtest_m2/`).
 
 Runbook: `docs/cloud_extraction_runbook.md`. `s2_07_prepare_extraction.py` (plan + shards +
 fingerprint), `s2_08_extract_shard.py` (one shard, refuses on fingerprint mismatch),
@@ -142,3 +220,5 @@ split = load_frozen_split(load_config().path("splits"), "v1")  # verifies the ch
 - No signer IDs → the split is not signer-independent.
 - Many labels are synonyms that share byte-identical videos (see the EDA report).
 - Only byte-identical duplicates are detected; near-duplicates are not.
+- Webcam evidence comes from one signer and 10 signs; recognition quality for other signers is unknown.
+- No inference service or video-call integration exists yet.

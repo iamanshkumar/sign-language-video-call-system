@@ -1,7 +1,10 @@
 # Step 5 — Subset vocabulary methodology
 
-Status: vocabularies proposed (metadata only), **awaiting review**; no video downloaded, no
-landmark extraction. Config: `configs/step5_vocabulary.yaml`. Code: `src/asl/data/vocabulary.py`,
+Status (updated 2026-11-14): `dev_100` was adopted. Its videos were extracted (Stage 2A, store
+`data/landmarks/dev100_hp/`, hands + pose) and all training since has used it (Stage 2B and the E0–E3
+studies in `docs/evaluation_protocol.md`). `vocabulary_expanded.json` (300 words) is still a proposal:
+not extracted, not trained on. The original status line read: "vocabularies proposed (metadata only),
+awaiting review; no video downloaded, no landmark extraction". Config: `configs/step5_vocabulary.yaml`. Code: `src/asl/data/vocabulary.py`,
 `scripts/s5_01_select_vocabulary.py`. Report: `reports/step5/vocabulary_report.md`.
 
 ## Why a subset
@@ -135,3 +138,104 @@ signs by right-handed signers), right hand only missing 9.0 %, both hands missin
 missing 0. Normalized shoulder midpoint max |error| 0.0, shoulder distance max |error − 1|
 3.2e-8; the 975 frames without valid shoulders reuse the reference frame as specified.
 This verifies the video → landmarks → `.npz` → Dataset pipeline only; no model has been trained.
+
+## Stage 2B — dev_100 training experiments (controlled, one change at a time)
+
+Common setup (unless the row says otherwise): store `dev100_hp` (4,838 accepted videos; frozen
+split v1 → train 3,407 / val 725 / test 706; 100 classes, `label_mapping_dev_100.json`),
+`hands_pose` features (F = 261), active interval resampled to W frames, 2 recurrent layers,
+hidden 128, dropout 0.3, AdamW lr 1e-3 / weight decay 1e-4, cross-entropy, batch 64,
+ReduceLROnPlateau (×0.5, patience 3) and early stopping (patience 7) on validation macro-F1,
+best-validation checkpoint, seed 42, CPU 4 threads, deterministic. Test is evaluated once,
+after the selected checkpoint is reloaded. Rows: `reports/step4/results/experiment_results.csv`;
+artifacts: `experiments/dev100_hp/<experiment_id>/`.
+
+| experiment_id | change vs. previous best | best / run epochs | train acc | val acc | val macro-F1 | test acc | test macro-F1 | train − val acc | train time |
+|---|---|---|---|---|---|---|---|---|---|
+| `hands_pose_w30_lstm` | baseline, max 50 epochs | 49 / 50 (cap) | 84.7 % | 54.3 % | 0.539 | 53.7 % | 0.528 | 30.3 pts | 183 s |
+| `hands_pose_w30_lstm_e100` | max 100 epochs | 71 / 78 | 97.1 % | 60.3 % | 0.600 | 61.2 % | 0.612 | 36.8 pts | 294 s |
+| `hands_pose_w30_lstm_e100_do05` | dropout 0.5 | 76 / 83 | 90.9 % | 60.4 % | 0.599 | 59.5 % | 0.586 | 30.5 pts | 312 s |
+| `hands_pose_w45_lstm_e100` | window 45 | 63 / 70 | 85.1 % | 52.6 % | 0.518 | 50.7 % | 0.500 | 32.5 pts | 311 s |
+| **`hands_pose_w30_bilstm_e100`** | **BiLSTM** (vs `lstm_e100`) | 50 / 57 | 99.9 % | **66.8 %** | **0.666** | **64.7 %** | **0.645** | 33.1 pts | 305 s |
+
+### BiLSTM experiment (2026-10-19)
+
+- Change: `--model bilstm` only; `config.json` of the run is identical to `hands_pose_w30_lstm_e100`
+  except `spec.model`. Classifier input = forward state after the last step ‖ backward state after
+  the first step = 2 × 128 = 256 → `Linear(256, 100)`; 821,348 parameters (LSTM: 345,188).
+- Validity checks: same index (hash unchanged since it was built), same train/val/test sample ids
+  and labels in both runs, labels = `label_mapping_dev_100.json`, no split leakage
+  (`check_index_leakage`), preflight `[30, 261]` float32 finite for every sample, reloaded
+  checkpoint reproduces validation macro-F1. Only environment difference: macOS 27.0 → 27.0.1;
+  re-running the first 3 epochs of `lstm_e100` reproduced its history bit-for-bit.
+- Result: +6.5 pts validation accuracy (+0.066 macro-F1) and +3.5 pts test accuracy (+0.033 macro-F1).
+  Paired on the same clips: test — 67 clips right only with BiLSTM vs 42 only with LSTM (exact
+  McNemar p = 0.021); validation — 86 vs 39 (p < 0.001). Per-class test F1 median 0.667 (LSTM 0.615),
+  no class at 0.
+- Overfitting is not solved: train accuracy 99.9 %, train − val gap 33.1 pts (LSTM 36.8), train −
+  test 35.1 pts (LSTM 35.9). Converged: LR halved at epochs 46 and 55, early stop at 57.
+- Cost: inference 1.75 ms per sample (LSTM 0.93 ms), still negligible next to MediaPipe. A BiLSTM
+  needs the whole window before predicting (non-causal), which matches the planned window-based
+  real-time inference.
+- Conclusion: BiLSTM is the new best dev_100 configuration by the pre-registered selection metric
+  (validation macro-F1), and test agrees. Single seed; the gap to 100 % train accuracy shows the
+  remaining problem is generalization (data per class / signer variation), not capacity.
+  `models/best_model.pt` was **not** replaced (it still holds the 50-epoch baseline); promote with
+  `s4_02 ... --export-dir` only after review.
+
+Reproduce:
+
+```bash
+cd model
+PYTHONPATH=src .venv/bin/python scripts/s4_02_run_experiment.py --store dev100_hp --model bilstm \
+    --feature-config hands_pose --window 30 --max-epochs 100 --tag e100 \
+    --notes "BiLSTM only (vs hands_pose_w30_lstm_e100); everything else identical"
+```
+(`s4_02` refuses to overwrite an existing experiment directory; to re-run, use a new `--tag`.)
+
+### Seed study: LSTM vs BiLSTM (2026-10-19)
+
+Both architectures were trained with seeds 42 (existing runs), 1, 2, 3 and 4; the seed changes weight
+initialisation, dropout masks and training shuffle order only (each run's `config.json` equals its
+seed-42 run apart from `seed`; checked by the script). Every run selects its checkpoint on validation
+macro-F1; the test split is evaluated once per run and never used for any choice. Full tables:
+`reports/step5/seed_study.md` (generated by `scripts/s5_02_seed_study.py`).
+
+| mean ± std (min–max), 5 seeds | LSTM | BiLSTM |
+|---|---|---|
+| validation macro-F1 | 0.594 ± 0.033 (0.562–0.640) | 0.662 ± 0.010 (0.651–0.673) |
+| test accuracy | 57.5 ± 3.8 % (52.3–61.2) | 63.9 ± 1.0 % (62.2–64.7) |
+| test macro-F1 | 0.570 ± 0.043 (0.514–0.612) | 0.634 ± 0.010 (0.618–0.644) |
+| train accuracy | 92.4 ± 7.0 % | 99.1 ± 1.3 % |
+| train − val accuracy gap | 32.4 ± 4.2 pts | 32.5 ± 1.1 pts |
+
+- BiLSTM is better in all 5 seed pairs on validation macro-F1, test accuracy and test macro-F1
+  (mean paired difference: +0.068 val macro-F1, +6.3 pts test accuracy, +0.064 test macro-F1) and is
+  far less seed-sensitive (test-accuracy std 1.0 vs 3.8 pts). The single-seed comparison (61.2 % vs
+  64.7 %) understated the gap: seed 42 was the best of the five LSTM runs.
+- Statistics (limits stated in the report): exact two-sided sign test p = 0.0625 for every metric -
+  the smallest value possible with 5 pairs, so it cannot reach 0.05; paired t-tests give p = 0.009–0.014
+  but assume normal per-seed differences that 5 values cannot verify. Per-seed exact McNemar tests on
+  the 706 test clips favour BiLSTM in every pair (p from 0.021 to 1e-8); they measure clip-level, not
+  seed-level, variation. Conclusion: a consistent improvement on this split, not a proven
+  significant one; the split is not signer-independent.
+- Overfitting is unchanged: the train − validation gap is ~32 pts for both architectures.
+- Run note: `hands_pose_w30_bilstm_e100_s3` spent 22 min (instead of ~12 s) in its post-training
+  evaluation. Not reproducible: its checkpoint evaluates the full test split in 0.22 s like the other
+  seeds, has no subnormal weights and reproduces its stored predictions; metrics are unaffected
+  (training time 343 s is measured separately).
+
+Candidate selection rule (validation only): the BiLSTM run with the highest validation macro-F1 -
+`hands_pose_w30_bilstm_e100_s3` (0.673; test 64.0 % / 0.634, train 99.97 %). It is exported as a
+candidate (`models/candidates/hands_pose_w30_bilstm_e100_s3/`), **not** promoted; see
+`docs/step6_inference.md`.
+
+Reproduce (from `model/`; each command refuses to overwrite an existing run):
+
+```bash
+for m in bilstm lstm; do for s in 1 2 3 4; do
+  PYTHONPATH=src .venv/bin/python scripts/s4_02_run_experiment.py --store dev100_hp --model $m \
+      --feature-config hands_pose --window 30 --max-epochs 100 --seed $s --tag e100_s$s
+done; done
+PYTHONPATH=src .venv/bin/python scripts/s5_02_seed_study.py
+```
