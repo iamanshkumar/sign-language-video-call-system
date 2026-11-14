@@ -77,3 +77,16 @@ logs/
 *~
 .DS_Store
 Thumbs.db
+
+# ---------------------------------------------------------------- live-evaluation recordings
+# per-frame body/hand landmarks of real signers (personal data) stay local
+reports/step6/webcam_eval/**/landmarks.npz
+# landmark-derived feature arrays of real signers (e.g. reports/e0/webcam_replay_set/features.npz)
+reports/**/*.npz
+reports/**/*.npy
+# any raw webcam/video recording saved next to a report
+reports/**/*.mp4
+reports/**/*.mov
+reports/**/*.avi
+reports/**/*.mkv
+reports/**/*.webm
