@@ -1,0 +1,2 @@
+classes,accepted clips,train / val / test,"train clips per class (median, min–max)",signer-independent split
+100,4838,3407 / 725 / 706,33 (26–45),no (no signer IDs)

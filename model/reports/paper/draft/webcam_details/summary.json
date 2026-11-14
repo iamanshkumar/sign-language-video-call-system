@@ -1,0 +1,25 @@
+{
+  "duplicate_emissions": 14,
+  "continuations_of_cut_sign": 13,
+  "other": [
+    {
+      "session": "5c-2",
+      "attempt": 0,
+      "gap_after_answer_last_hand_s": 0.57
+    }
+  ],
+  "never_or_rarely_recognised": {
+    "africa": {
+      "model_attempts": 180,
+      "correct": 0
+    },
+    "computer": {
+      "model_attempts": 180,
+      "correct": 0
+    },
+    "forbid": {
+      "model_attempts": 240,
+      "correct": 1
+    }
+  }
+}

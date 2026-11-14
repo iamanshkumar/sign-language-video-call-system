@@ -1,0 +1,10 @@
+component,median ms,p95 ms,note
+MediaPipe Holistic per frame,28.5,29.7,max 35.1 frames/s single process
+"BiLSTM forward, batch 1",1.68,1.80,"dedicated benchmark, 500 runs"
+"LSTM forward, batch 1 (5 training runs)",0.89,–,measured inside training runs (median of runs)
+"BiLSTM forward, batch 1 (5 training runs)",1.72,–,measured inside training runs (median of runs)
+streaming push per frame,0.007,0.009,
+segment close: preprocessing + model,4.1,4.9,20 dataset clips
+live capture S2,66.6 (frame interval),70.2,15.0 processed fps; threaded=False
+live capture S3,33.5 (frame interval),38.1,29.8 processed fps; threaded=True
+live capture S4,33.4 (frame interval),34.6,29.9 processed fps; threaded=True

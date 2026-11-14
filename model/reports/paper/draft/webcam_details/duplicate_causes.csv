@@ -1,0 +1,15 @@
+session,attempt,answer_forced_cut,continuation_of_cut_sign,gap_after_answer_last_hand_s,answer,duplicate
+5a,13,True,True,0.03,long,day
+5b,5,True,True,0.03,long,long
+5b,12,True,True,0.03,church,brother
+5c-1,4,True,True,0.03,long,church
+5c-2,0,False,False,0.57,sun,where
+5c-2,11,True,True,0.03,chocolate,diamond
+S3,3,True,True,0.04,blind,blind
+S3,5,True,True,0.03,church,church
+S3,9,True,True,0.03,church,paint
+S3,11,True,True,0.03,scared,boat
+S3,15,True,True,0.03,please,please
+S3,17,True,True,0.37,shower,shower
+S4,8,True,True,0.03,church,cup
+S4,18,True,True,0.03,yes,tuesday

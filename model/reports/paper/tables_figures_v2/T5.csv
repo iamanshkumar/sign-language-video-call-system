@@ -1,0 +1,4 @@
+model,val macro-F1 (mean ± SD),val accuracy %,train − val (pts),paired change (95 % CI),test acc / macro-F1
+Baseline BiLSTM,0.662 ± 0.010,66.6,32.5,reference,63.9 % / 0.634 (reported in development)
+E1: + temporal augmentation,0.691 ± 0.011,69.5,30.1,+0.028 (+0.017 to +0.041); 5/5 seeds; §3 met,66.1 % / 0.658 (one-time final evaluation)
+E2: E1 + upper-body pose,0.701 ± 0.017,70.5,28.6,"+0.010 vs E1 (-0.002 to +0.023); 4/5 seeds; §3a non-inferiority met, §3 not met",67.8 % / 0.675 (one-time final evaluation)

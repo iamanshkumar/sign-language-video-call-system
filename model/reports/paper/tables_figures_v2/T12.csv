@@ -1,0 +1,7 @@
+use,count,source
+test metrics computed for development runs,13,reports/step4/results/experiment_results.csv (rows with test values)
+confidence-threshold check on test (candidate s3),1,reports/step6/calibration_hands_pose_w30_bilstm_e100_s3.json
+latency/parity script: predictions on 20 test clips (equality check only),1,reports/step6/latency_hands_pose_w30_bilstm_e100_s3.json
+simulated live replay of dataset test clips,3,reports/step6/webcam_eval/*_video_replay_dataset-test-clip
+"one-time final test evaluation of E1 and E2 (5 seeds each), after development closed",1,reports/paper/final_test/
+hands-only test inference,0,metadata.json test_evaluated = false

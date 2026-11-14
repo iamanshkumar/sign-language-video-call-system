@@ -1,0 +1,7 @@
+split,model,accuracy % (mean ± SD),95 % CI,macro-F1 (mean ± SD),95 % CI 
+val,LSTM,60.0 ± 3.2,57.4–62.6,0.594 ± 0.033,0.561–0.615
+val,BiLSTM,66.6 ± 0.9,63.9–69.4,0.662 ± 0.010,0.629–0.685
+test,LSTM,57.5 ± 3.8,54.8–60.3,0.570 ± 0.043,0.537–0.592
+test,BiLSTM,63.9 ± 1.0,61.1–66.6,0.634 ± 0.010,0.600–0.656
+val,BiLSTM − LSTM (paired),+6.6 pts,+5.3 to +7.9,+0.068,+0.054 to +0.083
+test,BiLSTM − LSTM (paired),+6.3 pts,+4.9 to +7.7,+0.064,+0.049 to +0.078

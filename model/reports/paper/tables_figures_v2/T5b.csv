@@ -1,0 +1,7 @@
+model,test accuracy % (mean ± SD),95 % CI,test macro-F1 (mean ± SD),95 % CI 
+"Baseline BiLSTM (saved predictions, reported in development)",63.9 ± 1.0,61.1–66.6,0.634 ± 0.010,0.600–0.656
+E1: + temporal augmentation,66.1 ± 1.8,63.5–69.0,0.658 ± 0.019,0.625–0.681
+E2: E1 + upper-body pose (221 features),67.8 ± 1.6,65.3–70.6,0.675 ± 0.017,0.643–0.698
+paired e1 - baseline,+2.3 pts,+1.1 to +3.6,+0.024 (5/5 seeds better),+0.012 to +0.038
+paired e2 - e1,+1.6 pts,+0.4 to +2.8,+0.016 (5/5 seeds better),+0.004 to +0.030
+paired e2 - baseline,+3.9 pts,+2.5 to +5.3,+0.041 (5/5 seeds better),+0.026 to +0.057
