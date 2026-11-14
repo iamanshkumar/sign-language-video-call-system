@@ -1,12 +1,13 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { readApiJson } from "@/lib/client-api";
 
 type AuthMode = "login" | "register";
 
@@ -32,6 +33,17 @@ export default function Home() {
   const [notice, setNotice] = useState("");
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    const inviteRoom = new URLSearchParams(window.location.search).get("room");
+    if (!inviteRoom) return;
+
+    const linkMatch = inviteRoom.match(/^(?:https?:\/\/[^/]+)?\/?channel\/([a-zA-Z0-9_-]{1,64})\/?(?:[?#].*)?$/);
+    const roomId = linkMatch?.[1] ?? inviteRoom;
+    if (/^[a-zA-Z0-9_-]{1,64}$/.test(roomId)) {
+      router.replace(`/channel/${encodeURIComponent(roomId)}`);
+    }
+  }, [router]);
+
   async function handleAuth(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
@@ -43,7 +55,7 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(mode === "login" ? { email, password } : { name, email, password }),
       });
-      const data = await response.json();
+      const data = await readApiJson<{ error?: string; user: { name: string } }>(response, mode === "login" ? "Sign in" : "Account creation");
       if (!response.ok) throw new Error(data.error || "Something went wrong.");
       if (mode === "register") {
         setNotice("Your account is ready. Sign in to start a call.");

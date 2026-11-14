@@ -1,0 +1,34 @@
+services:
+  coturn:
+    image: coturn/coturn
+    container_name: coturn
+    restart: unless-stopped
+    # The image entrypoint runs each argument through `echo`; `-n` becomes
+    # an empty string there. Start turnserver directly so the flag is preserved.
+    entrypoint: ["turnserver"]
+    command:
+      - -n
+      - --log-file=stdout
+      - --use-auth-secret
+      - --static-auth-secret=${TURN_SHARED_SECRET:?Set TURN_SHARED_SECRET in .env.local}
+      - --realm=localhost
+      - --min-port=49160
+      - --max-port=49200
+      - --no-tls
+      - --no-dtls
+      - --listening-ip=0.0.0.0
+      - --relay-ip=172.29.255.2
+      - --external-ip=${TURN_EXTERNAL_IP:-127.0.0.1}/172.29.255.2
+    ports:
+      - "3478:3478/udp"
+      - "3478:3478/tcp"
+      - "49160-49200:49160-49200/udp"
+    networks:
+      turn:
+        ipv4_address: 172.29.255.2
+
+networks:
+  turn:
+    ipam:
+      config:
+        - subnet: 172.29.255.0/24

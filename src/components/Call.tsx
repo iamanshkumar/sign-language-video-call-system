@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { readApiJson } from "@/lib/client-api";
 
 type SignalType = "offer" | "answer" | "ice" | "leave";
 interface SignalMessage {
@@ -16,6 +17,16 @@ interface PresenceResponse {
   participants: string[];
   messages: SignalMessage[];
   error?: string;
+}
+
+const forceTurnRelay = process.env.NODE_ENV === "development"
+  && process.env.NEXT_PUBLIC_FORCE_TURN_RELAY === "true";
+
+function hasTurnServer(servers: RTCIceServer[]) {
+  return servers.some((server) => {
+    const urls = Array.isArray(server.urls) ? server.urls : [server.urls];
+    return urls.some((url) => /^turns?:/i.test(url));
+  });
 }
 
 function Icon({ name, className = "" }: React.SVGProps<SVGSVGElement> & { name: "mic" | "micOff" | "camera" | "cameraOff" | "phone" | "copy" | "users" | "spinner" }) {
@@ -43,21 +54,62 @@ export default function Call({ channelName }: { channelName: string }) {
   const [micOn, setMicOn] = useState(true);
   const [cameraOn, setCameraOn] = useState(true);
   const [copied, setCopied] = useState(false);
+  const [audioBlocked, setAudioBlocked] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const localVideoRef = useRef<HTMLVideoElement>(null);
   const remoteVideoRef = useRef<HTMLVideoElement>(null);
+  const remoteAudioRef = useRef<HTMLAudioElement>(null);
+  const remoteStreamRef = useRef<MediaStream | null>(null);
+  const iceServersRef = useRef<RTCIceServer[]>([
+    { urls: "stun:stun.l.google.com:19302" },
+    { urls: "stun:stun1.l.google.com:19302" },
+  ]);
+  const iceConfigurationPromiseRef = useRef<Promise<void>>(Promise.resolve());
+  const iceConfigurationErrorRef = useRef<string | null>(null);
+  const iceCheckTimeoutRef = useRef<number | null>(null);
+  const iceServerErrorRef = useRef<string | null>(null);
   const localStreamRef = useRef<MediaStream | null>(null);
   const peerRef = useRef<{ clientId: string; connection: RTCPeerConnection } | null>(null);
   const pendingIceRef = useRef<RTCIceCandidateInit[]>([]);
   const cursorRef = useRef("");
   const pollBusyRef = useRef(false);
-  const offeredToRef = useRef("");
+  const offerSentToRef = useRef("");
   const callStartedAtRef = useRef<number | null>(null);
   const signalingUrl = useMemo(() => `/api/signaling/${encodeURIComponent(channelName)}`, [channelName]);
 
   useEffect(() => {
     let cancelled = false;
-    const mediaRequest = navigator.mediaDevices?.getUserMedia
+    iceConfigurationPromiseRef.current = fetch("/api/turn", { cache: "no-store" })
+      .then(async (response) => {
+        const data = await readApiJson<{ iceServers?: RTCIceServer[]; error?: string }>(response, "ICE server configuration");
+        if (!response.ok) throw new Error(data.error || "Could not load ICE server configuration.");
+        const iceServers = data.iceServers ?? [];
+        if (forceTurnRelay && !hasTurnServer(iceServers)) {
+          throw new Error("Relay-only testing is enabled, but /api/turn returned no TURN server. Configure TURN_URLS and TURN_SHARED_SECRET, then restart Next.js.");
+        }
+        if (iceServers.length && !cancelled) iceServersRef.current = iceServers;
+      })
+      .catch((configError: unknown) => {
+        if (cancelled) return;
+        const message = configError instanceof Error
+          ? configError.message
+          : "Could not load ICE server configuration.";
+        iceConfigurationErrorRef.current = message;
+        console.warn("[Signcall] ICE server configuration unavailable:", message);
+        if (forceTurnRelay) {
+          setCallStatus("TURN configuration unavailable");
+          setError(message);
+        }
+      });
+
+    return () => { cancelled = true; };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    const mediaRequest = !window.isSecureContext
+      ? Promise.reject(new Error("This page is not secure enough to use your camera. Use http://localhost:3000 on this computer or open the app over HTTPS; a LAN address such as 192.168.x.x needs HTTPS."))
+      : navigator.mediaDevices?.getUserMedia
       ? navigator.mediaDevices.getUserMedia({
           audio: true,
           video: { width: { ideal: 1280 }, height: { ideal: 720 }, facingMode: "user" },
@@ -90,7 +142,18 @@ export default function Call({ channelName }: { channelName: string }) {
     if (localVideoRef.current) localVideoRef.current.srcObject = localStream;
   }, [localStream]);
   useEffect(() => {
-    if (remoteVideoRef.current) remoteVideoRef.current.srcObject = remoteStream;
+    if (remoteVideoRef.current) {
+      remoteVideoRef.current.srcObject = remoteStream;
+      if (remoteStream) void remoteVideoRef.current.play().catch(() => undefined);
+    }
+    if (remoteAudioRef.current) {
+      remoteAudioRef.current.srcObject = remoteStream;
+      if (remoteStream) {
+        void remoteAudioRef.current.play()
+          .then(() => setAudioBlocked(false))
+          .catch(() => setAudioBlocked(true));
+      }
+    }
   }, [remoteStream]);
 
   const sendSignal = useCallback(async (type: SignalType, toClientId: string, payload: object = {}) => {
@@ -100,8 +163,8 @@ export default function Call({ channelName }: { channelName: string }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ fromClientId: clientId, toClientId, type, payload }),
     });
+    const data = await readApiJson<{ error?: string }>(response, "Room signaling");
     if (!response.ok) {
-      const data = await response.json().catch(() => ({}));
       throw new Error(data.error || "Could not send a call signal.");
     }
   }, [clientId, signalingUrl]);
@@ -113,35 +176,144 @@ export default function Call({ channelName }: { channelName: string }) {
 
     peerRef.current?.connection.close();
     pendingIceRef.current = [];
+    iceServerErrorRef.current = null;
+    if (process.env.NODE_ENV === "development") {
+      console.info("[Signcall] Creating peer connection", {
+        forceTurnRelay,
+        iceServers: iceServersRef.current.map((server) => server.urls),
+      });
+    }
     const connection = new RTCPeerConnection({
-      iceServers: [
-        { urls: "stun:stun.l.google.com:19302" },
-        { urls: "stun:stun1.l.google.com:19302" },
-      ],
+      iceServers: iceServersRef.current,
+      ...(forceTurnRelay ? { iceTransportPolicy: "relay" as RTCIceTransportPolicy } : {}),
     });
     localStreamRef.current?.getTracks().forEach((track) => connection.addTrack(track, localStreamRef.current!));
     connection.ontrack = (event) => {
-      const stream = event.streams[0] ?? new MediaStream([event.track]);
+      if (peerRef.current?.connection !== connection) return;
+      const stream = remoteStreamRef.current ?? new MediaStream();
+      remoteStreamRef.current = stream;
+      if (!stream.getTracks().some((track) => track.id === event.track.id)) {
+        stream.addTrack(event.track);
+      }
       setRemoteStream(stream);
     };
     connection.onicecandidate = (event) => {
-      if (!event.candidate) return;
+      if (!event.candidate || peerRef.current?.connection !== connection || connection.signalingState === "closed") return;
       void sendSignal("ice", remoteClientId, { ...event.candidate.toJSON() }).catch((signalError: unknown) => {
         setError(signalError instanceof Error ? signalError.message : "Could not send network connection details.");
       });
     };
+    connection.onicecandidateerror = (event) => {
+      if (peerRef.current?.connection !== connection) return;
+      const serverUrl = typeof event.url === "string" && event.url ? event.url : "unknown ICE server";
+      const errorCode = typeof event.errorCode === "number" ? String(event.errorCode) : "unknown";
+      const errorText = typeof event.errorText === "string" && event.errorText.trim()
+        ? event.errorText.trim()
+        : "The browser did not provide additional details.";
+      const diagnostic = `${serverUrl} (ICE error ${errorCode}): ${errorText}`;
+      if (process.env.NODE_ENV === "development") {
+        // console.error opens Next.js's full-screen error overlay during development.
+        // ICE server failures are recoverable diagnostics, so report them as warnings.
+        console.warn(`[Signcall] ICE server request failed: ${diagnostic}`);
+      }
+      if (forceTurnRelay && /^turns?:/i.test(event.url ?? "")) {
+        iceServerErrorRef.current = diagnostic;
+        setCallStatus("TURN server unavailable");
+        setError(`The browser could not reach ${serverUrl} (ICE error ${errorCode}). ${errorText} Check that coturn is running and reachable from both browsers. If they are on different computers, localhost/127.0.0.1 cannot be used as the TURN host.`);
+      }
+    };
+    connection.onicegatheringstatechange = () => {
+      if (connection.iceGatheringState !== "complete" || peerRef.current?.connection !== connection) return;
+      void connection.getStats().then((stats) => {
+        const hasRelayCandidate = [...stats.values()].some((stat) =>
+          stat.type === "local-candidate" && stat.candidateType === "relay",
+        );
+        if (process.env.NODE_ENV === "development") {
+          console.info("[Signcall] ICE gathering complete", { hasRelayCandidate, forceTurnRelay });
+        }
+        if (forceTurnRelay && !hasRelayCandidate) {
+          setCallStatus("No TURN relay candidate");
+          const lastError = iceServerErrorRef.current ?? iceConfigurationErrorRef.current;
+          const detail = lastError ? ` Last error: ${lastError}` : " The browser did not expose a TURN request error.";
+          setError(`The browser finished ICE gathering without a TURN relay candidate.${detail} Check that coturn is running, the TURN host and ports are reachable from both browsers, and both services use the same shared secret. localhost/127.0.0.1 only works when both browsers are on the coturn computer.`);
+        }
+      }).catch((statsError: unknown) => {
+        if (process.env.NODE_ENV === "development") {
+          console.debug("[Signcall] Could not inspect gathered ICE candidates.", statsError);
+        }
+      });
+    };
     connection.onconnectionstatechange = () => {
+      if (peerRef.current?.connection !== connection) return;
       if (connection.connectionState === "connected") {
+        if (iceCheckTimeoutRef.current !== null) window.clearTimeout(iceCheckTimeoutRef.current);
+        iceCheckTimeoutRef.current = null;
         setError("");
         setCallStatus("Connected");
         if (!callStartedAtRef.current) callStartedAtRef.current = Date.now();
+        if (process.env.NODE_ENV === "development") {
+          void connection.getStats().then((stats) => {
+            let selectedPair: RTCIceCandidatePairStats | undefined;
+            stats.forEach((stat) => {
+              if (stat.type === "transport" && "selectedCandidatePairId" in stat && stat.selectedCandidatePairId) {
+                const pair = stats.get(stat.selectedCandidatePairId);
+                if (pair?.type === "candidate-pair") selectedPair = pair as RTCIceCandidatePairStats;
+              }
+            });
+            if (!selectedPair) {
+              selectedPair = [...stats.values()].find((stat): stat is RTCIceCandidatePairStats =>
+                stat.type === "candidate-pair" && stat.state === "succeeded" && stat.nominated,
+              );
+            }
+            const local = selectedPair && stats.get(selectedPair.localCandidateId);
+            const remote = selectedPair && stats.get(selectedPair.remoteCandidateId);
+            console.log("[Signcall] Selected ICE candidate pair", {
+              localType: local?.type === "local-candidate" ? local.candidateType : "unknown",
+              remoteType: remote?.type === "remote-candidate" ? remote.candidateType : "unknown",
+              relayUsed: local?.type === "local-candidate" && local.candidateType === "relay"
+                || remote?.type === "remote-candidate" && remote.candidateType === "relay",
+            });
+          }).catch((statsError: unknown) => {
+            console.debug("[Signcall] Could not inspect selected ICE candidate pair.", statsError);
+          });
+        }
       } else if (connection.connectionState === "failed") {
+        if (iceCheckTimeoutRef.current !== null) window.clearTimeout(iceCheckTimeoutRef.current);
+        iceCheckTimeoutRef.current = null;
         setCallStatus("Could not connect");
-        setError("A direct peer connection could not be made on these networks. This can happen behind restrictive routers; a TURN relay is needed for reliable fallback.");
+        const iceFailure = iceServerErrorRef.current ?? iceConfigurationErrorRef.current;
+        setError(iceFailure
+          ? `WebRTC could not establish a media path. ICE server error: ${iceFailure}. Check that TURN_URLS points to a host and ports both browsers can reach, and that coturn uses the same TURN_SHARED_SECRET.`
+          : forceTurnRelay
+            ? "Relay-only testing could not establish a media path. Check coturn's relay IP mapping and UDP port range, then rejoin. A localhost TURN address only works for browsers on the coturn computer."
+            : "WebRTC could not establish a media path. This network may require TURN; verify TURN_URLS, coturn's relay IP and UDP port range, then rejoin. localhost only works for browsers on the coturn computer.");
       } else if (connection.connectionState === "connecting") {
         setCallStatus("Connecting to participant…");
       } else if (connection.connectionState === "disconnected") {
         setCallStatus("Reconnecting…");
+      }
+    };
+    connection.oniceconnectionstatechange = () => {
+      if (peerRef.current?.connection !== connection) return;
+      if (connection.iceConnectionState === "checking") {
+        setCallStatus("Checking network path…");
+        if (iceCheckTimeoutRef.current !== null) window.clearTimeout(iceCheckTimeoutRef.current);
+        iceCheckTimeoutRef.current = window.setTimeout(() => {
+          if (connection.iceConnectionState === "checking") {
+            setCallStatus("Still checking network path");
+            setError("WebRTC has not found a working media route yet. If this continues, configure a TURN relay with TURN_URLS and TURN_SHARED_SECRET.");
+          }
+        }, 15_000);
+      } else if (connection.iceConnectionState === "failed") {
+        if (iceCheckTimeoutRef.current !== null) window.clearTimeout(iceCheckTimeoutRef.current);
+        iceCheckTimeoutRef.current = null;
+        setCallStatus("Network relay required");
+        setError("Direct connectivity failed. This network needs a TURN relay; configure TURN_URLS and TURN_SHARED_SECRET on the server, then rejoin.");
+      } else if (connection.iceConnectionState === "connected" || connection.iceConnectionState === "completed") {
+        if (iceCheckTimeoutRef.current !== null) window.clearTimeout(iceCheckTimeoutRef.current);
+        iceCheckTimeoutRef.current = null;
+        setCallStatus("Connected");
+        setError("");
       }
     };
     peerRef.current = { clientId: remoteClientId, connection };
@@ -155,7 +327,9 @@ export default function Call({ channelName }: { channelName: string }) {
         peerRef.current.connection.close();
         peerRef.current = null;
         pendingIceRef.current = [];
-        offeredToRef.current = "";
+        offerSentToRef.current = "";
+        remoteStreamRef.current = null;
+        setAudioBlocked(false);
         setRemoteStream(null);
         setCallStatus("Waiting for someone to join");
       }
@@ -163,7 +337,9 @@ export default function Call({ channelName }: { channelName: string }) {
     }
 
     const connection = ensurePeer(message.fromClientId);
+    const isCurrentConnection = () => peerRef.current?.connection === connection && connection.signalingState !== "closed";
     if (message.type === "ice") {
+      if (!isCurrentConnection()) return;
       const candidate = message.payload as RTCIceCandidateInit;
       if (connection.remoteDescription) await connection.addIceCandidate(candidate);
       else pendingIceRef.current.push(candidate);
@@ -171,18 +347,30 @@ export default function Call({ channelName }: { channelName: string }) {
     }
 
     if (message.type === "offer") {
+      // If storing the first answer failed transiently, the same offer is replayed.
+      // Re-send the already-created answer instead of applying the offer twice.
+      if (connection.remoteDescription?.type === "offer" && connection.localDescription?.type === "answer") {
+        await sendSignal("answer", message.fromClientId, { ...connection.localDescription.toJSON() });
+        return;
+      }
       await connection.setRemoteDescription(message.payload as unknown as RTCSessionDescriptionInit);
+      if (!isCurrentConnection()) return;
       for (const candidate of pendingIceRef.current.splice(0)) await connection.addIceCandidate(candidate);
       const answer = await connection.createAnswer();
+      if (!isCurrentConnection()) return;
       await connection.setLocalDescription(answer);
+      if (!isCurrentConnection()) return;
       if (connection.localDescription) {
         await sendSignal("answer", message.fromClientId, { ...connection.localDescription.toJSON() });
+        setCallStatus("Finding media route…");
       }
       return;
     }
 
     if (message.type === "answer" && !connection.remoteDescription) {
       await connection.setRemoteDescription(message.payload as unknown as RTCSessionDescriptionInit);
+      if (!isCurrentConnection()) return;
+      setCallStatus("Finding media route…");
       for (const candidate of pendingIceRef.current.splice(0)) await connection.addIceCandidate(candidate);
     }
   }, [ensurePeer, sendSignal]);
@@ -194,14 +382,14 @@ export default function Call({ channelName }: { channelName: string }) {
       if (stopped || pollBusyRef.current) return;
       pollBusyRef.current = true;
       try {
+        await iceConfigurationPromiseRef.current;
         const query = new URLSearchParams({ clientId });
         if (cursorRef.current) query.set("after", cursorRef.current);
         const response = await fetch(`${signalingUrl}?${query}`, { cache: "no-store" });
-        const data = await response.json() as PresenceResponse;
+        const data = await readApiJson<PresenceResponse>(response, "Room signaling");
         if (!response.ok) throw new Error(data.error || "Could not connect to room signaling.");
         if (stopped) return;
 
-        setError("");
         setParticipants(data.participants);
         const otherPeers = data.participants.filter((participantId) => participantId !== clientId);
         const remoteClientId = otherPeers.sort()[0];
@@ -213,19 +401,28 @@ export default function Call({ channelName }: { channelName: string }) {
           peerRef.current.connection.close();
           peerRef.current = null;
           pendingIceRef.current = [];
-          offeredToRef.current = "";
+          offerSentToRef.current = "";
+          remoteStreamRef.current = null;
+          setAudioBlocked(false);
           setRemoteStream(null);
           setCallStatus("Waiting for someone to join");
         }
 
         if (remoteClientId) {
           const connection = ensurePeer(remoteClientId);
-          if (clientId.localeCompare(remoteClientId) < 0 && offeredToRef.current !== remoteClientId && connection.signalingState === "stable") {
-            offeredToRef.current = remoteClientId;
-            const offer = await connection.createOffer();
-            await connection.setLocalDescription(offer);
-            if (connection.localDescription) {
+          if (clientId.localeCompare(remoteClientId) < 0 && offerSentToRef.current !== remoteClientId) {
+            if (connection.signalingState === "stable") {
+              const offer = await connection.createOffer();
+              if (stopped || peerRef.current?.connection !== connection) return;
+              await connection.setLocalDescription(offer);
+              if (stopped || peerRef.current?.connection !== connection) return;
+            }
+
+            // Keep retrying the same offer until the signaling API confirms delivery.
+            if (connection.signalingState === "have-local-offer" && connection.localDescription) {
+              setCallStatus("Calling participant…");
               await sendSignal("offer", remoteClientId, { ...connection.localDescription.toJSON() });
+              offerSentToRef.current = remoteClientId;
             }
           }
         } else if (!peerRef.current) {
@@ -254,8 +451,9 @@ export default function Call({ channelName }: { channelName: string }) {
       window.clearInterval(timer);
       const peer = peerRef.current;
       peer?.connection.close();
+      if (iceCheckTimeoutRef.current !== null) window.clearTimeout(iceCheckTimeoutRef.current);
+      iceCheckTimeoutRef.current = null;
       peerRef.current = null;
-      void fetch(`${signalingUrl}?clientId=${encodeURIComponent(clientId)}`, { method: "DELETE", keepalive: true });
     };
   }, [applySignal, clientId, ensurePeer, localStream, sendSignal, signalingUrl]);
 
@@ -325,7 +523,7 @@ export default function Call({ channelName }: { channelName: string }) {
           </div>
 
           {otherParticipants.length > 0 && <div className="relative min-h-[320px] overflow-hidden rounded-[26px] bg-[#dfe8e3] shadow-sm">
-            {remoteStream ? <video ref={remoteVideoRef} autoPlay playsInline className="absolute inset-0 h-full w-full object-contain" /> : <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[#e8e9f0] to-[#d5d9e7]"><div className="flex h-24 w-24 items-center justify-center rounded-full bg-white text-3xl font-semibold text-indigo-800 shadow-sm">G</div><p className="mt-4 text-sm font-medium text-slate-600">Connecting video…</p></div>}
+            {remoteStream ? <><video ref={remoteVideoRef} autoPlay muted playsInline className="absolute inset-0 h-full w-full object-contain" /><audio ref={remoteAudioRef} autoPlay playsInline className="hidden" />{audioBlocked && <button type="button" onClick={() => { const audio = remoteAudioRef.current; if (audio) void audio.play().then(() => setAudioBlocked(false)).catch(() => setError("Your browser blocked playback. Check the tab's audio permission and try again.")); }} className="absolute right-4 top-4 rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-800 shadow-md">Enable sound</button>}</> : <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[#e8e9f0] to-[#d5d9e7]"><div className="flex h-24 w-24 items-center justify-center rounded-full bg-white text-3xl font-semibold text-indigo-800 shadow-sm">G</div><p className="mt-4 text-sm font-medium text-slate-600">Connecting video…</p></div>}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-slate-950/10"/><div className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/25 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-md">Guest</div><div className="absolute bottom-4 left-4 flex items-center gap-2 text-sm font-medium text-white"><span className="h-2 w-2 rounded-full bg-emerald-400"/>Participant</div>
           </div>}
 
