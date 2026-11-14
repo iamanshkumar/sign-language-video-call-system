@@ -1,0 +1,16 @@
+# Step 6: inference settings. The model input itself (MediaPipe settings, preprocessing, features,
+# window) is NOT configured here: it is read from the exported checkpoint and checked against
+# configs/step2_landmarks.yaml + configs/step3_sequences.yaml at load time.
+model_dir: models                 # holds best_model.pt + class_mapping.json (exported by s4_04, promoted by s4_05)
+top_k: 5
+
+segmentation:                     # live stream -> one segment per sign (isolated words)
+  pre_roll_s: 0.5                 # frames kept before the first hand detection
+  end_rest_s: 0.4                 # segment ends after this long without hands
+  max_segment_s: 4.0              # longer segments are cut and classified
+
+postprocess:                      # defaults = pass-through (raw model output)
+  confidence_threshold: 0.0       # below -> status "low_confidence" (not emitted)
+  smoothing_window: 1             # majority vote over the last N accepted predictions
+  smoothing_min_votes: 1
+  cooldown_s: 0.0                 # >0: a segment starting within this many s of the previous one is classified but not emitted

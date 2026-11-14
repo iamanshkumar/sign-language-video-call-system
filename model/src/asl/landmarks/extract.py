@@ -44,6 +44,29 @@ def make_holistic(mp_cfg: dict):
     )
 
 
+def holistic_result_to_frame(res) -> tuple[np.ndarray, np.ndarray, np.ndarray, int]:
+    """One MediaPipe Holistic result -> (coords [543, 3] image-normalized x, y, z; observed [4] per
+    group; pose visibility [33]; number of groups dropped as invalid). Shared by offline
+    extraction and live inference so both produce the identical per-frame representation."""
+    c = np.zeros((N_LANDMARKS, 3), np.float32)
+    o = np.zeros(len(GROUP_ORDER), bool)
+    v = np.zeros(GROUPS["pose"], np.float32)
+    bad = 0
+    for g in GROUP_ORDER:
+        lms = getattr(res, _RESULT_FIELDS[g])
+        if lms is None:
+            continue
+        arr = np.array([(p.x, p.y, p.z) for p in lms.landmark], np.float32)
+        if arr.shape[0] != GROUPS[g] or not np.isfinite(arr).all():
+            bad += 1  # treated as a missing detection, repaired by gap handling
+            continue
+        c[SLICES[g]] = arr
+        o[GROUP_INDEX[g]] = True
+        if g == "pose":
+            v = np.array([p.visibility for p in lms.landmark], np.float32)
+    return c, o, v, bad
+
+
 def extract_landmarks(path: str, mp_cfg: dict) -> RawLandmarks:
     """Raises on decode errors; the caller records them as rejections."""
     times, coords, observed, vis = [], [], [], []
@@ -63,21 +86,8 @@ def extract_landmarks(path: str, mp_cfg: dict) -> RawLandmarks:
             decode_s += t1 - t0
             mp_s += t2 - t1
 
-            c = np.zeros((N_LANDMARKS, 3), np.float32)
-            o = np.zeros(len(GROUP_ORDER), bool)
-            v = np.zeros(GROUPS["pose"], np.float32)
-            for g in GROUP_ORDER:
-                lms = getattr(res, _RESULT_FIELDS[g])
-                if lms is None:
-                    continue
-                arr = np.array([(p.x, p.y, p.z) for p in lms.landmark], np.float32)
-                if arr.shape[0] != GROUPS[g] or not np.isfinite(arr).all():
-                    repaired += 1  # treated as a missing detection, repaired by gap handling
-                    continue
-                c[SLICES[g]] = arr
-                o[GROUP_INDEX[g]] = True
-                if g == "pose":
-                    v = np.array([p.visibility for p in lms.landmark], np.float32)
+            c, o, v, bad = holistic_result_to_frame(res)
+            repaired += bad
             times.append(frame.time if frame.time is not None else i / fps_guess)
             coords.append(c)
             observed.append(o)
