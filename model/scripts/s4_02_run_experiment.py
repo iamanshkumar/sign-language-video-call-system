@@ -34,12 +34,36 @@ def main() -> None:
     ap.add_argument("--max-epochs", type=int, default=None, help="override neural.max_epochs (default: config)")
     ap.add_argument("--tag", default="", help="variant name appended to the experiment id (own directory)")
     ap.add_argument("--dropout", type=float, default=None, help="override neural.dropout (default: config)")
+    ap.add_argument("--seed", type=int, default=None,
+                    help="override the seed (weights init, dropout, training shuffle order); default: config")
+    ap.add_argument("--augment", choices=["none", "temporal"], default="none",
+                    help="training-only augmentation (asl.sequences.augment); recorded in config.json/metadata")
+    ap.add_argument("--no-test-eval", action="store_true",
+                    help="build no test Dataset and run no test inference (development runs; docs/evaluation_protocol.md)")
+    ap.add_argument("--drop-pose-landmarks", default=None, metavar="A-B",
+                    help="feature ablation: remove the x, y, z and visibility columns of pose landmarks A..B "
+                         "(e.g. 23-32 = hips, knees, ankles, feet) for every split; recorded in config.json")
     ap.add_argument("--export-dir", default=None,
                     help="after the run, write <dir>/best_model.pt and <dir>/class_mapping.json (neural models)")
     args = ap.parse_args()
 
     if args.dropout is not None:  # the override is recorded in the experiment's config.json / metadata
         c4 = {**c4, "neural": {**c4["neural"], "dropout": args.dropout}}
+    if args.seed is not None:  # recorded in config.json / metadata / results row like the default seed
+        c4 = {**c4, "seed": args.seed}
+    augment = None
+    if args.augment == "temporal":
+        from asl.sequences.augment import TemporalAugment, TemporalAugmentConfig
+        augment = TemporalAugment(TemporalAugmentConfig(), seed=c4["seed"])
+        c4 = {**c4, "train_augmentation": augment.describe()}
+    if args.no_test_eval:
+        c4 = {**c4, "evaluate_test": False}
+    drop_columns: list[int] = []
+    if args.drop_pose_landmarks:
+        from asl.landmarks.layout import pose_landmark_columns
+        a, b = (int(x) for x in args.drop_pose_landmarks.split("-"))
+        drop_columns = pose_landmark_columns(c2["configurations"][args.feature_config], range(a, b + 1))
+        c4 = {**c4, "feature_ablation": {"drop_pose_landmarks": [a, b], "dropped_columns": drop_columns}}
     st = c3["stores"][args.store]
     index = pd.read_parquet(PROJECT_ROOT / st["index_dir"] / "index.parquet")
     # a store may carry its own (subset) label mapping, e.g. the 100-class dev vocabulary
@@ -51,7 +75,7 @@ def main() -> None:
     if spec.feature_config not in configs:
         raise SystemExit(f"store {args.store} does not hold the groups of {spec.feature_config}; available: {list(configs)}")
     if index["split"].eq("val").any():  # train-only pipeline checks have nothing to preflight against
-        pre = preflight(index, arrays_dir, spec, configs, mapping)
+        pre = preflight(index, arrays_dir, spec, configs, mapping, drop_columns=drop_columns)
         print("preflight:", json.dumps(pre))
     with ResourceMonitor() as mon:
         r = run_experiment(spec, store=args.store, index=index, arrays_dir=arrays_dir,
@@ -59,7 +83,8 @@ def main() -> None:
                            experiments_root=PROJECT_ROOT / c4["output"]["experiments_dir"],
                            results_csv=PROJECT_ROOT / c4["output"]["reports_dir"] / "results" / "experiment_results.csv",
                            allow_no_validation=args.allow_no_validation, notes=args.notes,
-                           max_epochs=args.max_epochs, tag=args.tag)
+                           max_epochs=args.max_epochs, tag=args.tag, train_augment=augment,
+                           evaluate_test=not args.no_test_eval, drop_columns=drop_columns)
     meta = json.loads((r["exp_dir"] / "metadata.json").read_text())
     meta["resources"] = mon.summary()
     (r["exp_dir"] / "metadata.json").write_text(json.dumps(meta, indent=2, default=str) + "\n")

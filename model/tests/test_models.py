@@ -359,3 +359,37 @@ def test_dropout_override_reaches_model_and_metadata(tmp_path, store, mapping):
     m = build_model("lstm", 128, NC, cfg["neural"])
     assert m.lstm.dropout == 0.5 and m.dropout.p == 0.5
     assert CFG4["neural"]["dropout"] == 0.30  # project default unchanged
+
+
+def test_bilstm_dev100_shape_and_export_roundtrip(tmp_path, store, mapping):
+    """BiLSTM as configured for dev100 (261 features, 2 x 128 hidden): the classifier sees the
+    doubled representation, and an exported BiLSTM checkpoint rebuilds as a BiLSTM."""
+    from asl.models.experiment import export_model, load_exported_model
+
+    m = build_model("bilstm", 261, 100, CFG4["neural"])
+    assert isinstance(m, BiLSTMClassifier) and m.fc.in_features == 2 * 128 and m.fc.out_features == 100
+    assert m.encode(torch.randn(2, 30, 261)).shape == (2, 256) and m(torch.randn(2, 30, 261)).shape == (2, 100)
+    r = _run(tmp_path, store, mapping, ExperimentSpec("bilstm", "hands_pose", 30), tag="e100")
+    assert r["exp_dir"].name == "hands_pose_w30_bilstm_e100"
+    export_model(r["exp_dir"], tmp_path / "models", mapping, CONFIGS)
+    model, meta = load_exported_model(tmp_path / "models" / "best_model.pt")
+    assert meta["model"] == "bilstm" and isinstance(model, BiLSTMClassifier) and model.fc.in_features == 256
+    ref = build_model("bilstm", 261, NC, CFG4["neural"])
+    load_checkpoint(r["exp_dir"] / "best.pt", ref)
+    x = torch.randn(3, 30, 261)
+    assert torch.equal(model(x), ref.eval()(x))
+
+
+def test_seed_override_changes_training_and_is_recorded(tmp_path, store, mapping):
+    idx, arrays = store
+    kw = dict(store="s", index=idx, arrays_dir=arrays, mapping=mapping, configurations=CONFIGS,
+              experiments_root=tmp_path / "exp", results_csv=tmp_path / "r.csv", max_epochs=2)
+    a = run_experiment(ExperimentSpec("bilstm", "hands", 30), cfg=_cfg(), tag="s42", **kw)
+    c7 = {**_cfg(), "seed": 7}
+    b = run_experiment(ExperimentSpec("bilstm", "hands", 30), cfg=c7, tag="s7", **kw)
+    assert a["meta"]["seed"] == 42 and b["meta"]["seed"] == 7 and b["row"]["seed"] == 7
+    assert json.loads((b["exp_dir"] / "config.json").read_text())["step4"]["seed"] == 7
+    ha = pd.read_csv(a["exp_dir"] / "history.csv")
+    hb = pd.read_csv(b["exp_dir"] / "history.csv")
+    assert not np.allclose(ha["train_loss"], hb["train_loss"])  # different init / shuffle
+    assert a["meta"]["samples"] == b["meta"]["samples"]  # same data, same split

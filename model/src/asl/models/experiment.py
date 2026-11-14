@@ -27,7 +27,7 @@ from scipy import sparse
 from torch.utils.data import DataLoader
 
 from asl.config import PROJECT_ROOT
-from asl.landmarks.layout import feature_dim
+from asl.landmarks.layout import feature_dim, feature_names
 from asl.models import latency as lat
 from asl.models.metrics import classification_metrics, confusion, per_class_table, summary, top_confusions
 from asl.models.recurrent import build_model, count_parameters
@@ -144,16 +144,21 @@ def _e2e_fn(ds: SequenceDataset, n: int, predict_one):
     def fn():
         path, s, e = items[state["i"] % len(items)]
         state["i"] += 1
-        return predict_one(load_sequence(path, ds.groups, s, e, ds.window))
+        return predict_one(load_sequence(path, ds.groups, s, e, ds.window, drop_columns=ds.drop_columns))
     return fn, len(items)
 
 
 def run_experiment(spec: ExperimentSpec, *, store: str, index: pd.DataFrame, arrays_dir: Path, mapping: dict,
                    configurations: dict[str, list[str]], cfg: dict, experiments_root: Path, results_csv: Path,
                    max_epochs: int | None = None, allow_no_validation: bool = False, notes: str = "",
-                   tag: str = "") -> dict:
+                   tag: str = "", train_augment=None, evaluate_test: bool = True, drop_columns=()) -> dict:
     """`tag` names a variant of the same spec (e.g. "e100" for a longer budget): it is appended to
-    the experiment id, so the run gets its own directory and results row."""
+    the experiment id, so the run gets its own directory and results row.
+    `train_augment`: optional callable applied to training clips only, through a separate training
+    Dataset (the train split is still evaluated without augmentation). `evaluate_test=False` builds no
+    test Dataset and runs no test inference (evaluation protocol: test only for final candidates).
+    `drop_columns`: feature columns removed for every split (feature ablation); recorded in metadata;
+    such a run cannot be exported until inference supports the reduced feature set."""
     run_id = f"{spec.experiment_id}_{tag}" if tag else spec.experiment_id
     counts = {s: int((index["split"] == s).sum()) for s in SPLITS}
     if counts["train"] == 0:
@@ -174,9 +179,16 @@ def run_experiment(spec: ExperimentSpec, *, store: str, index: pd.DataFrame, arr
     set_seed(seed)
     words = sorted(mapping["word_to_index"], key=mapping["word_to_index"].get)
     groups = configurations[spec.feature_config]
-    fdim = feature_dim(groups)
-    dsets = {s: SequenceDataset(index, arrays_dir, s, spec.window, spec.feature_config, configurations, mapping)
-             for s in SPLITS if counts[s] > 0}
+    drop_columns = tuple(sorted(set(int(c) for c in drop_columns)))
+    fdim = feature_dim(groups) - len(drop_columns)
+    dsets = {s: SequenceDataset(index, arrays_dir, s, spec.window, spec.feature_config, configurations, mapping,
+                                drop_columns=drop_columns)
+             for s in SPLITS if counts[s] > 0 and (evaluate_test or s != "test")}
+    if train_augment is not None and spec.model == "rf":
+        raise ValueError("training augmentation is implemented for neural models only")
+    train_fit = dsets["train"] if train_augment is None else SequenceDataset(
+        index, arrays_dir, "train", spec.window, spec.feature_config, configurations, mapping, augment=train_augment,
+        drop_columns=drop_columns)
     exp_dir.mkdir(parents=True)
     (exp_dir / "config.json").write_text(json.dumps({"spec": asdict(spec), "step4": cfg}, indent=2) + "\n")
     meta: dict = {"experiment_id": run_id, "tag": tag, "store": store, "model": spec.model,
@@ -184,7 +196,11 @@ def run_experiment(spec: ExperimentSpec, *, store: str, index: pd.DataFrame, arr
                   "feature_dim": fdim, "seed": seed, "samples": counts,
                   "train_classes": int(index.loc[index["split"] == "train", "word"].nunique()),
                   "vocabulary_size": vocab, "label_mapping_sha256": mapping["vocabulary_sha256"],
-                  "environment": _environment(device, rt["cpu_threads"]), "started_utc": _now(), "notes": notes}
+                  "environment": _environment(device, rt["cpu_threads"]), "started_utc": _now(), "notes": notes,
+                  "test_evaluated": bool(evaluate_test and counts["test"] > 0),
+                  "dropped_feature_columns": list(drop_columns),
+                  "dropped_feature_names": [feature_names(groups)[c] for c in drop_columns],
+                  "train_augmentation": getattr(train_augment, "describe", lambda: None)() if train_augment else None}
     lc = cfg["latency"]
     eval_splits = ["train", "val", "test"] if has_val else []
     evals: dict[str, dict] = {}
@@ -202,6 +218,8 @@ def run_experiment(spec: ExperimentSpec, *, store: str, index: pd.DataFrame, arr
                     selection="none (no hyperparameter search; fixed configuration)", epochs=None, best_epoch=None,
                     params=None)
         for s in (eval_splits or ["train"]):
+            if s not in stats:
+                continue
             name = s if has_val else "train_fit"
             label = {"train": "train (fit; not generalization)", "val": "val", "test": "test"}[s]
             evals[name] = _write_eval(exp_dir, name, stats[s][1], preds[s], dsets[s], words, vocab, label)
@@ -227,7 +245,8 @@ def run_experiment(spec: ExperimentSpec, *, store: str, index: pd.DataFrame, arr
         while True:
             set_seed(seed)
             model = build_model(spec.model, fdim, vocab, nc)
-            loaders = make_dataloaders({s: dsets[s] for s in ("train", "val") if s in dsets}, batch, 0, seed)
+            loaders = make_dataloaders({"train": train_fit, **({"val": dsets["val"]} if "val" in dsets else {})},
+                                       batch, 0, seed)
             try:
                 out = fit(model, loaders["train"], loaders.get("val"), nc, exp_dir, device, max_epochs=max_epochs,
                           allow_no_validation=allow_no_validation)
@@ -277,6 +296,8 @@ def run_experiment(spec: ExperimentSpec, *, store: str, index: pd.DataFrame, arr
                                                     "end-to-end per sample: load .npz + resample + assemble + "
                                                     "model (no MediaPipe)"))
 
+    if train_augment is not None and hasattr(train_augment, "counts"):
+        meta["train_augmentation_counts"] = dict(train_augment.counts)
     meta["evaluations"] = {k: summary(v) for k, v in evals.items()}
     tr, te, va = evals.get("train"), evals.get("test"), evals.get("val")
     if tr and te:
@@ -305,10 +326,10 @@ def run_experiment(spec: ExperimentSpec, *, store: str, index: pd.DataFrame, arr
 
 
 def preflight(index: pd.DataFrame, arrays_dir: Path, spec: ExperimentSpec, configurations: dict[str, list[str]],
-              mapping: dict, full: bool = True) -> dict:
+              mapping: dict, full: bool = True, drop_columns=()) -> dict:
     """Checks before training: every label is a valid index of `mapping`, every split has samples
     and every sequence is float32 [window, F] and finite. Raises ValueError on any problem."""
-    fdim = feature_dim(configurations[spec.feature_config])
+    fdim = feature_dim(configurations[spec.feature_config]) - len(set(drop_columns))
     nc, w2i = mapping["num_classes"], mapping["word_to_index"]
     problems, out = [], {"window": spec.window, "feature_dim": fdim, "num_classes": nc, "splits": {}}
     if not index["label"].between(0, nc - 1).all():
@@ -316,7 +337,8 @@ def preflight(index: pd.DataFrame, arrays_dir: Path, spec: ExperimentSpec, confi
     if not (index["word"].map(w2i) == index["label"]).all():
         problems.append("index label does not match the mapping")
     for s in SPLITS:
-        ds = SequenceDataset(index, arrays_dir, s, spec.window, spec.feature_config, configurations, mapping)
+        ds = SequenceDataset(index, arrays_dir, s, spec.window, spec.feature_config, configurations, mapping,
+                             drop_columns=drop_columns)
         if not len(ds):
             problems.append(f"no {s} samples")
             continue
@@ -335,13 +357,16 @@ def preflight(index: pd.DataFrame, arrays_dir: Path, spec: ExperimentSpec, confi
     return out
 
 
-def export_model(exp_dir: Path, out_dir: Path, mapping: dict, configurations: dict[str, list[str]]) -> dict:
+def export_model(exp_dir: Path, out_dir: Path, mapping: dict, configurations: dict[str, list[str]],
+                 preprocessing: dict | None = None) -> dict:
     """Copy the selected checkpoint of a finished neural experiment to <out_dir>/best_model.pt and
     write <out_dir>/class_mapping.json. The .pt holds the weights plus everything needed to rebuild
     the model and its input (architecture, window, feature groups, label mapping hash)."""
     meta = json.loads((exp_dir / "metadata.json").read_text())
     if meta["model"] == "rf" or meta.get("checkpoint") != "best.pt":
         raise ValueError("only a neural experiment selected on validation (best.pt) can be exported")
+    if meta.get("dropped_feature_columns"):
+        raise ValueError("a feature-ablation run cannot be exported: inference does not support the reduced feature set")
     ck = torch.load(exp_dir / "best.pt", map_location="cpu", weights_only=True)
     words = sorted(mapping["word_to_index"], key=mapping["word_to_index"].get)
     if meta["vocabulary_size"] != len(words) or meta["label_mapping_sha256"] != mapping["vocabulary_sha256"]:
@@ -354,7 +379,10 @@ def export_model(exp_dir: Path, out_dir: Path, mapping: dict, configurations: di
                   "window": meta["window_size"], "feature_config": meta["feature_config"],
                   "groups": configurations[meta["feature_config"]], "epoch": ck["epoch"],
                   "val_macro_f1": ck["val_macro_f1"], "label_mapping_sha256": mapping["vocabulary_sha256"],
-                  "source_experiment": _rel(exp_dir), "store": meta["store"]}
+                  "source_experiment": _rel(exp_dir), "store": meta["store"], "seed": meta["seed"],
+                  "experiment_id": meta["experiment_id"]}
+    if preprocessing is not None:  # how inputs must be built (inference refuses a mismatch)
+        model_info["preprocessing"] = preprocessing
     torch.save({"state_dict": ck["state_dict"], **model_info}, out_dir / "best_model.pt")
     (out_dir / "class_mapping.json").write_text(json.dumps(
         {"num_classes": len(words), "vocabulary_sha256": mapping["vocabulary_sha256"],

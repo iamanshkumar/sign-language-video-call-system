@@ -14,12 +14,20 @@ from asl.sequences.resample import resample_interval
 _AUX = ["flags", "pose_vis"]
 
 
-def load_sequence(path: Path, groups: list[str], start: int, end: int, window: int) -> np.ndarray:
-    """[window, F] float32 for one stored clip; reads only the needed groups."""
+def load_sequence(path: Path, groups: list[str], start: int, end: int, window: int, augment=None,
+                  drop_columns=()) -> np.ndarray:
+    """[window, F] float32 for one stored clip; reads only the needed groups. `augment` (training only)
+    maps the active interval's arrays to augmented interval arrays before the same resampling.
+    `drop_columns` (feature ablation, every split alike) removes those feature columns after assembly."""
     with np.load(path) as z:
         arrays = {k: z[k] for k in groups + [k for k in _AUX if k in z.files]}
+    if augment is not None:
+        arrays = augment({k: v[start:end + 1] for k, v in arrays.items()})
+        start, end = 0, len(arrays["flags"]) - 1
     seq = assemble_features(resample_interval(arrays, groups, start, end, window), groups)
     assert seq.shape == (window, feature_dim(groups)) and np.isfinite(seq).all()
+    if len(drop_columns):
+        seq = np.ascontiguousarray(np.delete(seq, list(drop_columns), axis=1))
     return seq
 
 
@@ -31,9 +39,14 @@ class SequenceDataset(Dataset):
     """
 
     def __init__(self, index: pd.DataFrame, arrays_dir: Path, split: str, window: int, configuration: str,
-                 configurations: dict[str, list[str]], label_mapping: dict, preload: bool = False) -> None:
+                 configurations: dict[str, list[str]], label_mapping: dict, preload: bool = False,
+                 augment=None, drop_columns=()) -> None:
         if split not in ("train", "val", "test"):
             raise ValueError(split)
+        if augment is not None and (split != "train" or preload):
+            raise ValueError("augmentation is for the training split only and cannot be preloaded")
+        self.augment = augment
+        self.drop_columns = tuple(sorted(set(int(c) for c in drop_columns)))
         rows = index[index["split"] == split].sort_values("sample_id", ignore_index=True)
         mapped = rows["word"].map(label_mapping["word_to_index"])
         if mapped.isna().any() or not (mapped.astype("int64") == rows["label"]).all():
@@ -41,14 +54,16 @@ class SequenceDataset(Dataset):
         self.rows, self.arrays_dir = rows, Path(arrays_dir)
         self.split, self.window, self.configuration = split, window, configuration
         self.groups = configurations[configuration]
-        self.feature_dim = feature_dim(self.groups)
+        if self.drop_columns and (self.drop_columns[0] < 0 or self.drop_columns[-1] >= feature_dim(self.groups)):
+            raise ValueError("drop_columns outside the feature vector")
+        self.feature_dim = feature_dim(self.groups) - len(self.drop_columns)
         self.num_classes = label_mapping["num_classes"]
         self._cache = [self._load(i) for i in range(len(rows))] if preload else None
 
     def _load(self, i: int) -> np.ndarray:
         r = self.rows.iloc[i]
         return load_sequence(self.arrays_dir / r.array_file, self.groups, int(r.active_start_frame),
-                             int(r.active_end_frame), self.window)
+                             int(r.active_end_frame), self.window, self.augment, self.drop_columns)
 
     def __len__(self) -> int:
         return len(self.rows)

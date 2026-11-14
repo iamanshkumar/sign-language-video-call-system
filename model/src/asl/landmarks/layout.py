@@ -50,6 +50,17 @@ def feature_names(groups: list[str]) -> list[str]:
     return names
 
 
+def pose_landmark_columns(groups: list[str], landmarks) -> list[int]:
+    """Feature columns (x, y, z and visibility) of the given pose landmarks in assemble_features order."""
+    if "pose" not in groups:
+        raise ValueError("these groups have no pose")
+    lms = sorted(set(int(l) for l in landmarks))
+    if not lms or lms[0] < 0 or lms[-1] >= GROUPS["pose"]:
+        raise ValueError(f"pose landmarks must be in [0, {GROUPS['pose']}): {lms}")
+    wanted = {f"pose_{l}_{k}" for l in lms for k in ("x", "y", "z", "vis")}
+    return [i for i, n in enumerate(feature_names(groups)) if n in wanted]
+
+
 def flag_mask(flags: np.ndarray, group: str, bit: int) -> np.ndarray:
     return (flags[:, GROUP_INDEX[group]] & bit) != 0
 
